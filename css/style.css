@@ -1,0 +1,706 @@
+/* ==========================================================================
+   CIGARCONNECT — Feuille de Style Principale
+   "Where Cigars Connect" — www.cigarconnect.net
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Nuances de Tabac & Bois Précieux */
+  --bg-deep: #0a0807;
+  --bg-surface: #14100d;
+  --bg-card: #1c1612;
+  --bg-card-elevated: #241d17;
+  --bg-card-hover: #2d241d;
+  --wood-cedar: #733917;
+  --wood-dark: #3a1b0d;
+  --tobacco-maduro: #2a1a12;
+
+  /* Or Bruni & Laiton Doré */
+  --gold-primary: #d4af37;
+  --gold-light: #fae69e;
+  --gold-dark: #a17f1a;
+  --gold-gradient: linear-gradient(135deg, #d4af37 0%, #fae69e 45%, #b38822 100%);
+  --gold-gradient-subtle: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(250, 230, 158, 0.05) 100%);
+  --gold-glow: 0 0 25px rgba(212, 175, 55, 0.25);
+
+  /* Couleurs de Statut & Indicateurs */
+  --emerald-authentic: #2ea068;
+  --emerald-bg: rgba(46, 160, 104, 0.12);
+  --amber-limited: #e58e26;
+  --amber-bg: rgba(229, 142, 38, 0.12);
+  --ruby-rare: #b83232;
+  --ruby-bg: rgba(184, 50, 50, 0.12);
+  --blue-verified: #3880ff;
+
+  /* Textes & Contrastes */
+  --text-primary: #f5f1eb;
+  --text-secondary: #beb3a4;
+  --text-muted: #7d7265;
+  --text-gold: #e2be52;
+
+  /* Bordures & Séparateurs */
+  --border-gold: rgba(212, 175, 55, 0.24);
+  --border-gold-strong: rgba(212, 175, 55, 0.6);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+
+  /* Ombres Portées */
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-luxury: 0 15px 40px rgba(0, 0, 0, 0.75), 0 0 30px rgba(212, 175, 55, 0.07);
+  --shadow-modal: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 50px rgba(212, 175, 55, 0.15);
+
+  /* Typographies */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-display: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Transitions & Rayons */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Normalisation */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-deep);
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(139, 69, 19, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(58, 27, 13, 0.15) 0%, transparent 50%),
+    linear-gradient(to bottom, #0a0807, #0d0a09, #080605);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typographie Générale */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* Conteneur Global */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Effets Texte Doré & Monogramme */
+.text-gold {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gold-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: var(--gold-gradient-subtle);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-light);
+}
+
+/* Barre d'Annonce Supérieure */
+.top-announcement-bar {
+  background: linear-gradient(90deg, #18130f 0%, #261b12 50%, #18130f 100%);
+  border-bottom: 1px solid var(--border-gold);
+  padding: 0.45rem 1rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.top-announcement-bar span {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   NAVIGATION & HEADER PRESTIGE
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(14, 11, 9, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-gold);
+  transition: background-color var(--transition-fast);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  gap: 1.5rem;
+}
+
+/* Logo & Monogramme */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.brand-crest {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #2a2018 0%, #15110d 100%);
+  border: 1.5px solid var(--gold-primary);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--gold-light);
+  letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-crest::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 45%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 55%
+  );
+  transform: rotate(30deg);
+}
+
+.brand-text h1 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.brand-text .tagline {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  display: block;
+}
+
+/* Menu de Navigation */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  list-style: none;
+}
+
+.nav-tab-btn {
+  background: transparent;
+  border: none;
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.nav-tab-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-tab-btn.active {
+  color: var(--gold-light);
+  background: var(--gold-gradient-subtle);
+  border: 1px solid var(--border-gold);
+  font-weight: 600;
+}
+
+/* Actions Header */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.btn-icon:hover {
+  border-color: var(--border-gold);
+  color: var(--gold-light);
+  background: var(--bg-card-elevated);
+}
+
+.notification-badge-count {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: var(--ruby-rare);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bg-deep);
+}
+
+/* Boutons de Style */
+.btn-primary-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--gold-gradient);
+  color: #1a140d;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  padding: 0.65rem 1.3rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--gold-light);
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.28);
+  transition: all var(--transition-fast);
+}
+
+.btn-primary-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 26px rgba(212, 175, 55, 0.45);
+  filter: brightness(1.05);
+}
+
+.btn-secondary-luxury {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.65rem 1.3rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-gold);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary-luxury:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+}
+
+/* Profil Pill Header */
+.user-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.35rem 0.85rem 0.35rem 0.45rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.user-pill:hover {
+  background: var(--bg-card-elevated);
+  border-color: var(--gold-light);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #733917, #3a1b0d);
+  border: 1px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--gold-light);
+}
+
+.user-info-text {
+  text-align: left;
+}
+
+.user-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+  line-height: 1.2;
+}
+
+.user-status {
+  font-size: 0.68rem;
+  color: var(--gold-light);
+  display: block;
+}
+
+/* Menu Mobile Toggle */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   HERO SECTION IMMERSIVE
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  padding: 4.5rem 0 3.5rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.hero-bg-glow {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 650px;
+  height: 350px;
+  background: radial-gradient(ellipse, rgba(212, 175, 55, 0.12) 0%, rgba(115, 57, 23, 0.08) 50%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.hero-tagline-wrapper {
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.3rem, 5vw, 4.2rem);
+}
+
+.hero-lead {
+  font-size: 1.15rem;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+/* Live Stats Strip */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  background: rgba(28, 22, 18, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-luxury);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -0.75rem;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: var(--border-gold);
+  opacity: 0.5;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+}
+
+/* ==========================================================================
+   DISPOSITION DES ONGLETS / SECTIONS SPA
+   ========================================================================== */
+.view-section {
+  display: none;
+  padding: 3rem 0 5rem;
+}
+
+.view-section.active {
+  display: block;
+  animation: fadeInView 0.35s ease forwards;
+}
+
+@keyframes fadeInView {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2.2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.section-title-wrap h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.35rem;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   FOOTER PRESTIGE
+   ========================================================================== */
+.site-footer {
+  background: #080605;
+  border-top: 1px solid var(--border-gold);
+  padding: 4.5rem 0 2.5rem;
+  margin-top: 4rem;
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-brand-col p {
+  margin: 1.2rem 0 1.5rem;
+  font-size: 0.92rem;
+  max-width: 340px;
+}
+
+.footer-col h4 {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 1.4rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-col a {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.footer-col a:hover {
+  color: var(--gold-light);
+  padding-left: 4px;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.legal-notice {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: block;
+  }
+  .stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .stat-item:nth-child(2)::after {
+    display: none;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-strip {
+    grid-template-columns: 1fr;
+  }
+  .stat-item::after {
+    display: none !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .hero-actions .btn-primary-gold,
+  .hero-actions .btn-secondary-luxury {
+    width: 100%;
+  }
+}

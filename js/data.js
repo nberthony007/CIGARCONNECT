@@ -1,0 +1,272 @@
+/**
+ * CIGARCONNECT — Base de Données Initiale
+ * "Where Cigars Connect" — www.cigarconnect.net
+ */
+
+const INITIAL_CIGARS = [
+  {
+    id: "cig-behike-56",
+    brand: "Cohiba",
+    name: "Behike BHK 56",
+    origin: "Cuba",
+    countryFlag: "🇨🇺",
+    vitola: "Laguito No. 6",
+    ringGauge: 56,
+    lengthMm: 166,
+    vintage: "2010",
+    rarity: "ultra-rare",
+    rarityLabel: "Édition Mythique",
+    strength: 5, // 1 to 5
+    estimatedValue: "€ 450",
+    condition: "Parfait (69% HR / 19°C)",
+    owner: "Don Alejandro",
+    ownerReputation: "4.98 ★ (42 échanges)",
+    aromas: ["Cuir Noble", "Cèdre", "Cacao Noir", "Sous-Bois", "Terre Fertile"],
+    description: "Le sommet absolu de la manufacture El Laguito. Intègre la rare feuille de 'Medio Tiempo' cueillie sur les deux étages foliaires supérieurs des plants de tabac cultivés au soleil.",
+    boxCode: "BBM MAY 10",
+    ringColor: "#d4af37",
+    isAuthenticVerified: true
+  },
+  {
+    id: "cig-opusx-forbidden",
+    brand: "Arturo Fuente",
+    name: "OpusX ForbiddenX Phantom",
+    origin: "République Dominicaine",
+    countryFlag: "🇩🇴",
+    vitola: "Lancero",
+    ringGauge: 41,
+    lengthMm: 192,
+    vintage: "2018",
+    rarity: "exclusive",
+    rarityLabel: "Réserve Privée",
+    strength: 4,
+    estimatedValue: "€ 280",
+    condition: "Excellente (68% HR)",
+    owner: "Chateau_Collector",
+    ownerReputation: "5.0 ★ (19 échanges)",
+    aromas: ["Poivre Doux", "Bois de Rose", "Mélasse", "Cannelle", "Café Crème"],
+    description: "Vieilli dans des fûts de chêne français de Cognac d'exception au Château de la Fuente. Une élégance et un tirage d'une perfection chirurgicale.",
+    boxCode: "FFX-2018-09",
+    ringColor: "#9b2226",
+    isAuthenticVerified: true
+  },
+  {
+    id: "cig-padron-80th",
+    brand: "Padrón",
+    name: "1926 Serie 80th Anniversary Maduro",
+    origin: "Nicaragua",
+    countryFlag: "🇳🇮",
+    vitola: "Perfecto",
+    ringGauge: 54,
+    lengthMm: 171,
+    vintage: "2015",
+    rarity: "vintage",
+    rarityLabel: "Millésimé",
+    strength: 5,
+    estimatedValue: "€ 195",
+    condition: "Parfait (69% HR)",
+    owner: "Geneva_Aficionado",
+    ownerReputation: "4.95 ★ (35 échanges)",
+    aromas: ["Espresso Ristretto", "Chocolat Amer", "Terre Noire", "Noix Grillées"],
+    description: "Tabacs nicaraguayens d'au moins 8 ans d'âge. Boîte pressée à chaud avec bagues numérotées individuellement pour garantir l'unicité absolue.",
+    boxCode: "PAD-80-8812",
+    ringColor: "#8b4513",
+    isAuthenticVerified: true
+  },
+  {
+    id: "cig-davidoff-oroblanco",
+    brand: "Davidoff",
+    name: "Oro Blanco Special Reserve 2002",
+    origin: "République Dominicaine",
+    countryFlag: "🇩🇴",
+    vitola: "Toro Extra",
+    ringGauge: 54,
+    lengthMm: 152,
+    vintage: "2002",
+    rarity: "ultra-rare",
+    rarityLabel: "Trésor Royal",
+    strength: 3,
+    estimatedValue: "€ 620",
+    condition: "Scellé & Inspecté (70% HR)",
+    owner: "Lord Cohiba (Vous)",
+    ownerReputation: "5.0 ★ (Membre VIP)",
+    aromas: ["Cèdre Espagnol", "Caramel Beurre Salé", "Épices Douces", "Fleur Blanche"],
+    description: "Composé de tabacs rares de la récolte 2002 affinés pendant plus de 12 ans par le légendaire Master Blender Eladio Diaz. Chaque cigare est signé à la main.",
+    boxCode: "ORO-BL-02-VIP",
+    ringColor: "#fae69e",
+    isAuthenticVerified: true
+  },
+  {
+    id: "cig-partagas-seried4-el",
+    brand: "Partagás",
+    name: "Serie D No. 4 Edición Limitada",
+    origin: "Cuba",
+    countryFlag: "🇨🇺",
+    vitola: "Robusto",
+    ringGauge: 50,
+    lengthMm: 124,
+    vintage: "2019",
+    rarity: "exclusive",
+    rarityLabel: "Édition Limitée",
+    strength: 5,
+    estimatedValue: "€ 140",
+    condition: "Conservé en humidor cèdre",
+    owner: "HavanaClub_Sam",
+    ownerReputation: "4.91 ★ (27 échanges)",
+    aromas: ["Cuir Tanné", "Terre Minérale", "Poivre Noir", "Bois Brûlé"],
+    description: "Cape sombre soigneusement sélectionnée et vieillie 2 ans au minimum. L'essence pure de la puissance et de l'intensité légendaire de Partagás.",
+    boxCode: "UME SEP 19",
+    ringColor: "#590d22",
+    isAuthenticVerified: true
+  },
+  {
+    id: "cig-trinidad-fundadores",
+    brand: "Trinidad",
+    name: "Fundadores Vintage Cabinet",
+    origin: "Cuba",
+    countryFlag: "🇨🇺",
+    vitola: "Laguito Especial",
+    ringGauge: 40,
+    lengthMm: 192,
+    vintage: "1998",
+    rarity: "vintage",
+    rarityLabel: "Cabinet 1998",
+    strength: 3,
+    estimatedValue: "€ 390",
+    condition: "Cave tempérée (18.5°C / 68%)",
+    owner: "Baron_De_Roth",
+    ownerReputation: "4.99 ★ (51 échanges)",
+    aromas: ["Noisette Fraîche", "Cèdre Délicat", "Fève Tonka", "Miel d'Acacia"],
+    description: "À l'origine réservé exclusivement aux diplomates étrangers par le gouvernement cubain. Doté de la célèbre queue de cochon (pig-tail) signature.",
+    boxCode: "EOG 07 98",
+    ringColor: "#c5a059",
+    isAuthenticVerified: true
+  }
+];
+
+const INITIAL_USER_HUMIDOR = [
+  {
+    id: "my-cig-1",
+    brand: "Davidoff",
+    name: "Oro Blanco Special Reserve 2002",
+    origin: "République Dominicaine",
+    vitola: "Toro Extra (54 x 152mm)",
+    vintage: "2002",
+    quantity: 2,
+    valuePerUnit: 620,
+    isTradeable: true,
+    conditionHr: "70% HR",
+    dateAdded: "12/03/2024"
+  },
+  {
+    id: "my-cig-2",
+    brand: "Cohiba",
+    name: "Siglo VI Gran Reserva Cosecha 2003",
+    origin: "Cuba",
+    vitola: "Cañonazo (52 x 150mm)",
+    vintage: "2003",
+    quantity: 3,
+    valuePerUnit: 340,
+    isTradeable: true,
+    conditionHr: "69% HR",
+    dateAdded: "05/06/2024"
+  },
+  {
+    id: "my-cig-3",
+    brand: "Montecristo",
+    name: "No. 2 Reserva Especial",
+    origin: "Cuba",
+    vitola: "Pirámides (52 x 156mm)",
+    vintage: "2015",
+    quantity: 5,
+    valuePerUnit: 85,
+    isTradeable: false,
+    conditionHr: "69% HR",
+    dateAdded: "18/08/2024"
+  },
+  {
+    id: "my-cig-4",
+    brand: "Arturo Fuente",
+    name: "Don Carlos Eye of the Shark",
+    origin: "République Dominicaine",
+    vitola: "Torpedo Box-Pressed",
+    vintage: "2017",
+    quantity: 2,
+    valuePerUnit: 145,
+    isTradeable: true,
+    conditionHr: "68% HR",
+    dateAdded: "29/11/2024"
+  }
+];
+
+const INITIAL_TRADES = [
+  {
+    id: "trade-001",
+    proposerName: "Don Alejandro",
+    proposerReputation: "4.98 ★ (42 échanges)",
+    proposerLocation: "Paris, France",
+    offeredCigar: "Cohiba Behike BHK 56 (2010)",
+    desiredCigar: "Davidoff Oro Blanco (2002) ou Trinidad Fundadores 1998",
+    status: "Ouvert",
+    statusClass: "open",
+    notes: "Conservé en humidor Adorini armoire régulé électroniquement à 69% HR. Bague holographique et boîte originale vérifiées.",
+    date: "Il y a 3 heures"
+  },
+  {
+    id: "trade-002",
+    proposerName: "Chateau_Collector",
+    proposerReputation: "5.0 ★ (19 échanges)",
+    proposerLocation: "Lausanne, Suisse",
+    offeredCigar: "Arturo Fuente OpusX ForbiddenX (2018)",
+    desiredCigar: "Padrón 80th Maduro + Cohiba Siglo VI",
+    status: "En discussion",
+    statusClass: "negotiating",
+    notes: "Échange en main propre possible à Genève ou expédition ultra-sécurisée avec Boveda 69% et assurance.",
+    date: "Hier à 18h40"
+  },
+  {
+    id: "trade-003",
+    proposerName: "HavanaClub_Sam",
+    proposerReputation: "4.91 ★ (27 échanges)",
+    proposerLocation: "Bruxelles, Belgique",
+    offeredCigar: "Partagás Serie D No. 4 Edición Limitada 2019",
+    desiredCigar: "Ramon Allones Specially Selected Vintage pré-2015",
+    status: "Ouvert",
+    statusClass: "open",
+    notes: "Recherche un tirage vintage doux. Mon Partagas a une cape maduro très huileuse et un arôme envoûtant.",
+    date: "Il y a 2 jours"
+  }
+];
+
+const INITIAL_THREADS = [
+  {
+    id: "th-1",
+    author: "Baron_De_Roth",
+    title: "Quel accord spiritueux pour sublimer la puissance d'un Behike 56 ?",
+    category: "Accords & Dégustations",
+    replies: 18,
+    likes: 34,
+    time: "Il y a 4h",
+    snippet: "Après avoir laissé reposer mon exemplaire pendant 6 mois à 69% HR, j'hésite entre un vieux rhum Zacapa XO ou un Single Malt d'Islay non tourbé..."
+  },
+  {
+    id: "th-2",
+    author: "Geneva_Aficionado",
+    title: "Comment stabiliser son humidor à 69% en période hivernale ?",
+    category: "Conservation & Caves",
+    replies: 24,
+    likes: 47,
+    time: "Hier",
+    snippet: "Avec le chauffage central, le taux d'humidité ambiant chute drastiquement. Voici mes 3 astuces pour préserver vos capes fragiles sans risque de moisissure."
+  },
+  {
+    id: "th-3",
+    author: "AuthenticExpert_Marc",
+    title: "Guide 2026 : Reconnaitre les nouveaux hologrammes Habanos sous lampe UV",
+    category: "Authentification & Sécurité",
+    replies: 41,
+    likes: 89,
+    time: "Il y a 3 jours",
+    snippet: "Attention aux contrefaçons circulant sur les vitoles rares. Analyse détaillée des micro-inscriptions dorées et des numéros de série gravés."
+  }
+];

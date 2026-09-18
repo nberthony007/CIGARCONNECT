@@ -1,0 +1,111 @@
+/* ==========================================================================
+   CIGARCONNECT — Animations & Micro-interactions
+   "Where Cigars Connect" — www.cigarconnect.net
+   ========================================================================== */
+
+/* Apparition en fondu */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Balayage de brillance dorée */
+@keyframes goldShineSweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gold-shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-shine-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(250, 230, 158, 0.25),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: 0.75s ease;
+}
+
+.gold-shine-effect:hover::after {
+  left: 150%;
+}
+
+/* Lente pulsation d'hygromètre */
+@keyframes pulseSubtle {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+  }
+}
+
+.pulse-hygrometer {
+  animation: pulseSubtle 4s infinite ease-in-out;
+}
+
+/* Volute de fumée flottante décorative */
+@keyframes smokeFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-15px) scale(1.08);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.2;
+  }
+}
+
+.smoke-accent {
+  animation: smokeFloat 8s infinite ease-in-out;
+}
+
+/* Indicateur en direct */
+@keyframes liveDotPing {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 160, 104, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(46, 160, 104, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 160, 104, 0);
+  }
+}
+
+.live-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--emerald-authentic);
+  display: inline-block;
+  animation: liveDotPing 2s infinite cubic-bezier(0.45, 0, 0.55, 1);
+}
