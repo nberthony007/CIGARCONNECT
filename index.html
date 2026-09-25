@@ -3,61 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CigarConnect — Where Cigars Connect | Le Réseau des Passionnés & Cigares Rares</title>
-  <meta name="description" content="CigarConnect.net est la première plateforme haut de gamme dédiée à l'échange de cigares rares et de collection, aux caves virtuelles et au networking entre aficionados.">
+  <title>CigarConnect — Where Cigars Connect | Cercle Privé & Haute Traçabilité</title>
+  <meta name="description" content="CigarConnect est la première plateforme dédiée aux collections privées de cigares rares : conservation, traçabilité certifiée et échanges entre passionnés.">
+  <link rel="icon" type="image/svg+xml" href="assets/icon-cigarconnect-gold.svg">
+  <link rel="alternate icon" href="assets/icon-gold.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
+  <script src="js/icons.js"></script>
 </head>
 <body>
 
   <!-- ========================================================================
-       BARRE D'ANNONCE SUPÉRIEURE
+       BARRE D'ANNONCE TRANSPARENTE — PHASE PILOTE
        ======================================================================== -->
   <div class="top-announcement-bar">
-    ⚜️ <span>CigarConnect.net</span> — Le premier sanctuaire mondial dédié à l'échange de cigares rares & de collection.
+    <span class="demo-badge">
+      <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      Démonstration
+    </span> — Données fictives pour la phase pilote. <em>Where Cigars Connect</em>.
   </div>
 
   <!-- ========================================================================
-       NAVIGATION & HEADER PRESTIGE
+       NAVIGATION ÉPURÉE
        ======================================================================== -->
   <header class="site-header">
-    <div class="container nav-container">
-      <!-- Logo de Marque & Monogramme -->
-      <div class="brand-logo" onclick="switchView('view-catalog')">
-        <div class="brand-crest">CC</div>
-        <div class="brand-text">
-          <h1>CIGARCONNECT</h1>
-          <span class="tagline">Where Cigars Connect</span>
-        </div>
-      </div>
+    <div class="container nav-container header-container">
+      <!-- Logo officiel couleur détouré et agrandi -->
+      <a class="brand-logo" href="javascript:void(0)" onclick="navigateToHome()" title="CigarConnect — Where Cigars Connect">
+        <img src="assets/logo-header-trimmed.png" alt="CIGARCONNECT — Cigar Social Networking" class="brand-logo-img">
+      </a>
 
-      <!-- Menu Principal de Navigation SPA -->
+      <!-- Menu Principal : Collections · Le Cercle · Journal · Comment ça marche · Confiance · Mon Humidor -->
       <nav>
         <ul class="nav-links">
           <li>
             <button class="nav-tab-btn active" data-view="view-catalog">
-              <span>🍂</span> Trésors & Galerie
+              <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              <span>Collections</span>
             </button>
           </li>
           <li>
             <button class="nav-tab-btn" data-view="view-trade">
-              <span>⇄</span> Bourse d'Échange
-            </button>
-          </li>
-          <li>
-            <button class="nav-tab-btn" data-view="view-humidor">
-              <span>🏛️</span> Mon Humidor
+              <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10h14l-4-4"/><path d="M17 14H3l4 4"/></svg>
+              <span>Le Cercle</span>
             </button>
           </li>
           <li>
             <button class="nav-tab-btn" data-view="view-academy">
-              <span>📜</span> Académie & Rituels
+              <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="7" x2="16" y2="7"/><line x1="9" y1="11" x2="14" y2="11"/></svg>
+              <span>Journal</span>
             </button>
           </li>
           <li>
-            <button class="nav-tab-btn" data-view="view-lounge">
-              <span>🍸</span> Lounge & Club
+            <button class="nav-tab-btn" data-view="view-how-it-works">
+              <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+              <span>Comment ça marche</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-tab-btn" data-view="view-trust">
+              <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Confiance</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-tab-btn" data-view="view-humidor">
+              <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+              <span>Mon Humidor</span>
             </button>
           </li>
         </ul>
@@ -65,44 +81,108 @@
 
       <!-- Actions Rapides & Profil -->
       <div class="header-actions">
-        <!-- Bouton Notifications -->
-        <button class="btn-icon" id="notificationBellBtn" title="Notifications">
-          🔔
+        <button class="btn-icon" id="notificationBellBtn" title="Notifications" aria-label="Notifications">
+          <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
           <span class="notification-badge-count">2</span>
         </button>
 
-        <!-- CTA Proposition d'échange -->
-        <button class="btn-primary-gold" onclick="cigarTrade.openTradeProposalModal()">
-          <span>⇄</span> Proposer un échange
+        <button class="btn-primary-gold" onclick="userHumidor.openAddModal()" title="Déposer une vitole">
+          <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <span class="btn-label-text">Déposer une vitole</span>
         </button>
 
-        <!-- Profil Membre -->
-        <div class="user-pill" onclick="switchView('view-humidor')">
-          <div class="user-avatar">LC</div>
-          <div class="user-info-text">
-            <span class="user-name">Lord Cohiba</span>
-            <span class="user-status">Membre Connoisseur ★</span>
+        <div class="user-pill header-profile-chip" onclick="userProfile.openEditModal()" title="Modifier mon profil d'aficionado">
+          <div class="user-avatar" id="headerUserAvatar">AM</div>
+          <div class="user-info-text profile-text-wrap">
+            <span class="user-name" id="headerUserName">Alexandre de Montmirail</span>
+            <span class="user-status" id="headerUserLocation">Paris, France</span>
           </div>
         </div>
+
+        <!-- Bouton Menu Mobile (Hamburger) -->
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Ouvrir le menu de navigation" onclick="window.toggleMobileNav(true)">
+          <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
       </div>
     </div>
   </header>
 
   <!-- ========================================================================
+       NAVIGATION MOBILE : TIROIR LATÉRAL & BACKDROP
+       ======================================================================== -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop" onclick="window.toggleMobileNav(false)"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Navigation mobile">
+    <div class="mobile-nav-header">
+      <h3 class="mobile-nav-title">CigarConnect</h3>
+      <button class="mobile-nav-close" onclick="window.toggleMobileNav(false)" aria-label="Fermer le menu">
+        <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li>
+        <button class="mobile-nav-item-btn active" data-view="view-catalog" onclick="window.selectMobileView('view-catalog')">
+          <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span>Collections</span>
+        </button>
+      </li>
+      <li>
+        <button class="mobile-nav-item-btn" data-view="view-trade" onclick="window.selectMobileView('view-trade')">
+          <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10h14l-4-4"/><path d="M17 14H3l4 4"/></svg>
+          <span>Le Cercle</span>
+        </button>
+      </li>
+      <li>
+        <button class="mobile-nav-item-btn" data-view="view-academy" onclick="window.selectMobileView('view-academy')">
+          <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="7" x2="16" y2="7"/><line x1="9" y1="11" x2="14" y2="11"/></svg>
+          <span>Journal</span>
+        </button>
+      </li>
+      <li>
+        <button class="mobile-nav-item-btn" data-view="view-how-it-works" onclick="window.selectMobileView('view-how-it-works')">
+          <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          <span>Comment ça marche</span>
+        </button>
+      </li>
+      <li>
+        <button class="mobile-nav-item-btn" data-view="view-trust" onclick="window.selectMobileView('view-trust')">
+          <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Confiance</span>
+        </button>
+      </li>
+      <li>
+        <button class="mobile-nav-item-btn" data-view="view-humidor" onclick="window.selectMobileView('view-humidor')">
+          <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          <span>Mon Humidor</span>
+        </button>
+      </li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <button class="btn-primary-gold" style="width: 100%; justify-content: center;" onclick="window.toggleMobileNav(false); userHumidor.openAddModal()">
+        <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Déposer une vitole
+      </button>
+      <button class="btn-secondary-stone" style="width: 100%; justify-content: center;" onclick="window.toggleMobileNav(false); userProfile.openEditModal()">
+        <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Profil & Confidentialité
+      </button>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
        PANNEAU DÉROULANT DES NOTIFICATIONS
        ======================================================================== -->
-  <div id="notificationsDrawer" style="position: absolute; top: 85px; right: 2rem; width: 360px; background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); box-shadow: var(--shadow-modal); padding: 1.25rem; z-index: 1000; display: none;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-subtle);">
-      <h4 style="font-family: var(--font-display); font-size: 0.85rem; color: var(--gold-light); text-transform: uppercase;">Notifications Récentes</h4>
+  <div id="notificationsDrawer" style="position: absolute; top: 90px; right: 2rem; width: 360px; background: #FFFFFF; border: 1px solid var(--stone-border); border-radius: var(--radius-md); box-shadow: var(--shadow-modal); padding: 1.25rem; z-index: 1000; display: none;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--stone-border);">
+      <h4 style="font-family: var(--font-serif); font-size: 1rem; color: var(--text-primary); font-weight: 600;">Communications Récentes</h4>
       <span style="font-size: 0.75rem; color: var(--text-muted); cursor: pointer;" onclick="document.getElementById('notificationsDrawer').style.display='none'">Fermer</span>
     </div>
-    <div style="display: flex; flex-direction: column; gap: 0.85rem;">
-      <div style="background: var(--bg-surface); padding: 0.75rem; border-radius: var(--radius-md); border-left: 3px solid var(--emerald-authentic); font-size: 0.82rem;">
-        <strong style="color:var(--text-primary);">Nouvelle offre sur votre vitole !</strong><br>
-        <span style="color:var(--text-secondary);">Don Alejandro s'intéresse à votre Davidoff Oro Blanco 2002.</span>
+    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+      <div style="background: var(--bg-card-elevated); padding: 0.75rem; border-radius: var(--radius-sm); border-left: 3px solid var(--pine-verify); font-size: 0.82rem;">
+        <strong style="color:var(--text-primary);">Nouvelle marque d'intérêt sur votre cave</strong><br>
+        <span style="color:var(--text-secondary);">Don Alejandro souhaite discuter de votre Davidoff Oro Blanco 2002.</span>
         <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.3rem;">Il y a 25 minutes</div>
       </div>
-      <div style="background: var(--bg-surface); padding: 0.75rem; border-radius: var(--radius-md); border-left: 3px solid var(--gold-primary); font-size: 0.82rem;">
+      <div style="background: var(--bg-card-elevated); padding: 0.75rem; border-radius: var(--radius-sm); border-left: 3px solid var(--wood-cedar); font-size: 0.82rem;">
         <strong style="color:var(--text-primary);">Contrôle Humidor Optimal</strong><br>
         <span style="color:var(--text-secondary);">Votre cave est parfaitement régulée à 69% HR et 19.2°C.</span>
         <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.3rem;">Aujourd'hui à 14:00</div>
@@ -112,65 +192,170 @@
 
   <main>
     <!-- ======================================================================
-         HERO SECTION IMMERSIVE
+         HERO SECTION ÉDITORIALE & PHOTOGRAPHIQUE
          ====================================================================== -->
     <section class="hero-section">
-      <div class="hero-bg-glow"></div>
-      <div class="container hero-content">
-        <div class="hero-tagline-wrapper">
-          <span class="gold-badge">Where Cigars Connect</span>
-        </div>
-        <h1 class="hero-title">
-          Le Premier Sanctuaire d'Échange & de Passion pour les <span class="text-gold">Cigares Rares</span>
-        </h1>
-        <p class="hero-lead">
-          Connectez-vous avec des passionnés et collectionneurs exigeants à travers le monde. Échangez vos trésors les plus précieux, partagez vos connaissances de dégustation et faites certifier l'authenticité de vos pièces maîtresses.
-        </p>
+      <div class="container">
+        <div class="hero-editorial-layout">
+          <!-- Côté Gauche : Promesse Principale & 2 Actions Claires -->
+          <div class="hero-text-side">
+            <div class="hero-subtag">Where Cigars Connect · Phase Pilote Privée</div>
+            <h1 class="hero-title">
+              Un lieu à la hauteur de votre <span class="text-gold">collection</span>.
+            </h1>
+            <p class="hero-lead">
+              Documentez vos pièces, découvrez des collections privées et rencontrez d’autres passionnés.
+            </p>
 
-        <div class="hero-actions">
-          <button class="btn-primary-gold" onclick="switchView('view-catalog')">
-            <span>🍂</span> Explorer les Trésors Rares
-          </button>
-          <button class="btn-secondary-luxury" onclick="switchView('view-humidor')">
-            <span>🏛️</span> Ouvrir ma Cave Virtuelle
-          </button>
-          <button class="btn-secondary-luxury" onclick="openVipModal()">
-            <span>💎</span> Rejoindre le Club Privé VIP
-          </button>
+            <div class="hero-actions">
+              <button class="btn-primary-gold" onclick="switchView('view-catalog')">
+                <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span>Découvrir les collections</span>
+              </button>
+              <button class="btn-secondary-luxury" onclick="switchView('view-humidor')">
+                <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                <span>Créer mon humidor</span>
+              </button>
+            </div>
+
+            <div class="hero-trust-row">
+              <div class="trust-item">
+                <span class="icon">
+                  <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span>Collections privées documentées</span>
+              </div>
+              <div class="trust-item">
+                <span class="icon">
+                  <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span>Troc de gré à gré sans intermédiaire</span>
+              </div>
+              <div class="trust-item">
+                <span class="icon">
+                  <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span>Confidentialité native par défaut</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Côté Droit : Photographie Muséale du Cabinet -->
+          <div class="hero-photo-frame">
+            <img src="assets/hero-cigar-library.jpg" alt="Cabinet Privé de Dégustation" class="hero-main-img">
+            <div class="hero-photo-caption">
+              <div>
+                <div class="hero-caption-title">Cabinet Privé de Dégustation</div>
+                <div class="hero-caption-sub">Éditions Millésimées & Réserves Rares</div>
+              </div>
+              <span style="font-size: 0.72rem; opacity: 0.8;">CigarConnect Archives</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Métriques en direct de la plateforme -->
+        <!-- Métriques honnêtes de la phase pilote -->
         <div class="stats-strip">
           <div class="stat-item">
-            <span class="stat-value">1,420+</span>
-            <span class="stat-label">Cigares de Collection Répertoriés</span>
+            <span class="stat-value">Pilote</span>
+            <span class="stat-label">Phase Fermée sur Invitation</span>
           </div>
           <div class="stat-item">
-            <span class="stat-value">850+</span>
-            <span class="stat-label">Échanges Conclus en Sécurité</span>
+            <span class="stat-value">68–70%</span>
+            <span class="stat-label">Norme de Conservation HR</span>
           </div>
           <div class="stat-item">
-            <span class="stat-value">99.8%</span>
-            <span class="stat-label">Taux d'Authenticité Certifié</span>
+            <span class="stat-value">Troc Pur</span>
+            <span class="stat-label">Échanges de Pair-à-Pair sans Frais</span>
           </div>
           <div class="stat-item">
-            <span class="stat-value">24</span>
-            <span class="stat-label">Salons & Lounges Partenaires</span>
+            <span class="stat-value">Privé</span>
+            <span class="stat-label">Données Personnelles Réservées</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         VUE 1 : CATALOGUE & GALERIE DES CIGARES RARES
+         LES 3 USAGES CLÉS : CONSERVER · DÉCOUVRIR · RENCONTRER
+         ====================================================================== -->
+    <section class="container" style="margin-top: 2.75rem; margin-bottom: 2rem;">
+      <div class="pillars-grid">
+        <div class="pillar-card" onclick="switchView('view-humidor')">
+          <div class="icon-box-minimal">
+            <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          </div>
+          <h3 class="pillar-title">Conserver</h3>
+          <p class="pillar-desc">
+            Documentez vos vitoles, modules, millésimes et conditions de conservation (hygrométrie 68–70% HR). Gardez le contrôle total sur votre inventaire privé.
+          </p>
+          <span class="pillar-link">Ouvrir mon humidor →</span>
+        </div>
+
+        <div class="pillar-card" onclick="switchView('view-catalog')">
+          <div class="icon-box-minimal">
+            <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="pillar-title">Découvrir</h3>
+          <p class="pillar-desc">
+            Explorez des pièces d'exception, vitoles historiques et éditions limitées conservées avec rigueur par d'autres collectionneurs passionnés.
+          </p>
+          <span class="pillar-link">Explorer les collections →</span>
+        </div>
+
+        <div class="pillar-card" onclick="switchView('view-trade')">
+          <div class="icon-box-minimal">
+            <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10h14l-4-4"/><path d="M17 14H3l4 4"/></svg>
+          </div>
+          <h3 class="pillar-title">Rencontrer</h3>
+          <p class="pillar-desc">
+            Proposez des échanges de pair-à-pair dans le respect des règles et de l'art de vivre. Troc direct entre collectionneurs sans spéculation.
+          </p>
+          <span class="pillar-link">Accéder au Cercle →</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION NOUVEAUTÉS DU CERCLE
+         ====================================================================== -->
+    <section class="container" style="margin-top: 3rem; margin-bottom: 2rem;">
+      <div class="new-arrivals-section">
+        <div class="new-arrivals-header">
+          <div>
+            <div class="sub-heading" style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--wood-cedar); font-weight:600; margin-bottom:0.25rem;">
+              En Direct des Caves Privées
+            </div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.55rem; color: var(--text-primary); margin: 0;">
+              Dernières Entrées en <span class="text-gold">Humidor</span>
+            </h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.25rem;">
+              Pièces d'exception fraîchement ajoutées et documentées par les membres du cercle.
+            </p>
+          </div>
+          <div>
+            <button class="btn-secondary-luxury" onclick="userHumidor.openAddModal()">
+              + Déposer une vitole en cave
+            </button>
+          </div>
+        </div>
+
+        <!-- Grille dynamique des Nouveautés -->
+        <div class="new-arrivals-grid" id="newArrivalsGrid">
+          <!-- Rempli dynamiquement par catalog.js avec photos réelles -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VUE 1 : COLLECTIONS & GALERIE DES CIGARES RARES
          ====================================================================== -->
     <section id="view-catalog" class="view-section active">
       <div class="container">
         <div class="section-header">
           <div class="section-title-wrap">
-            <span class="gold-badge">Base de données & Vitrine</span>
-            <h2>Catalogue des <span class="text-gold">Pièces d'Exception</span></h2>
-            <p class="section-subtitle">Découvrez des vitoles mythiques, éditions limitées et millésimes soigneusement conservés par notre communauté.</p>
+            <div class="sub-heading">Répertoire International</div>
+            <h2>Collections & <span class="text-gold">Pièces d'Exception</span></h2>
+            <p class="section-subtitle">Découvrez des vitoles mythiques, éditions limitées et cabinets millésimés soigneusement conservés.</p>
           </div>
           <div>
             <button class="btn-primary-gold" onclick="cigarTrade.openTradeProposalModal()">
@@ -183,17 +368,19 @@
         <div class="filter-search-hub">
           <div class="search-primary-bar">
             <div class="search-input-wrapper">
-              <span class="search-icon-svg">🔍</span>
-              <input type="text" id="catalogSearchInput" placeholder="Rechercher par marque, terroir, millésime ou notes de dégustation (ex: Cohiba, Cuir, 2010)...">
+              <span class="search-icon-svg">
+                <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </span>
+              <input type="text" id="catalogSearchInput" placeholder="Rechercher par marque, terroir, vitola ou arômes (ex: Cohiba, Behike, Cèdre, 2010)...">
             </div>
           </div>
 
           <div class="filter-pills-row">
             <span class="filter-label-tag">Terroirs :</span>
             <button class="filter-pill-btn filter-pill-origin active" data-origin="all">Tous les terroirs</button>
-            <button class="filter-pill-btn filter-pill-origin" data-origin="Cuba">🇨🇺 Cuba</button>
-            <button class="filter-pill-btn filter-pill-origin" data-origin="République Dominicaine">🇩🇴 Rép. Dominicaine</button>
-            <button class="filter-pill-btn filter-pill-origin" data-origin="Nicaragua">🇳🇮 Nicaragua</button>
+            <button class="filter-pill-btn filter-pill-origin" data-origin="Cuba"><span class="origin-tag-minimal">CU</span> Cuba</button>
+            <button class="filter-pill-btn filter-pill-origin" data-origin="République Dominicaine"><span class="origin-tag-minimal">DO</span> Rép. Dominicaine</button>
+            <button class="filter-pill-btn filter-pill-origin" data-origin="Nicaragua"><span class="origin-tag-minimal">NI</span> Nicaragua</button>
 
             <span class="filter-label-tag" style="margin-left: 1rem;">Rareté :</span>
             <select id="rarityFilterSelect" class="filter-dropdown-select">
@@ -203,56 +390,90 @@
               <option value="vintage">Cabinet Millésimé (Vintage)</option>
             </select>
 
-            <span id="catalogResultsCount" style="margin-left: auto; font-size: 0.82rem; color: var(--gold-light); font-weight: 600;">
+            <span id="catalogResultsCount" style="margin-left: auto; font-size: 0.82rem; color: var(--wood-cedar); font-weight: 600;">
               Chargement...
             </span>
           </div>
         </div>
 
-        <!-- Grille dynamique des cigares -->
+        <!-- Grille dynamique des cigares avec photographie muséale -->
         <div class="cigars-grid" id="catalogGridContainer">
           <!-- Injecté par catalog.js -->
         </div>
+
+        <!-- ESPACE PARTENAIRE INDÉPENDANT 1 : KASHIMBO CIGARS (Vert, Blanc, Noir) -->
+        <aside aria-label="Partenaire Kashimbo Cigars" style="margin-top: 3.5rem; margin-bottom: 2rem; background: linear-gradient(135deg, #04190D 0%, #0A2E1A 60%, #031209 100%); border: 1px solid #165633; border-radius: 1.25rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); color: #FFFFFF;">
+          <div style="padding: 0.75rem 1.5rem; background: rgba(3, 19, 10, 0.9); border-bottom: 1px solid rgba(22, 86, 51, 0.6); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; font-size: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="background: #FFFFFF; color: #041D10; font-weight: 900; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.18em; padding: 0.25rem 0.6rem; border-radius: 4px;">Sponsorisé</span>
+              <span style="color: #A7F3D0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">Partenaire Indépendant · Manufacture Artisanale</span>
+            </div>
+            <div style="color: rgba(167, 243, 208, 0.85); font-family: monospace;">www.kashimbocigars.com</div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: center;">
+            <div style="position: relative; min-height: 220px; max-height: 280px; overflow: hidden;">
+              <img src="assets/kashimbo-cigars-banner.jpg" alt="Manufacture artisanale Kashimbo Cigars" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="padding: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+              <div>
+                <div style="color: #34D399; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 0.4rem;">Kashimbo Cigars</div>
+                <h3 style="color: #FFFFFF; font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.6rem;">Manufacture Artisanale & Cigares d'Exception Roulés Main</h3>
+                <p style="color: #D1E7DD; font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.25rem;">Cigares d'auteur roulés en tripa larga par des maîtres torcedores chevronnés. Sélection rigoureuse de terroirs et feuilles nobles pour une combustion et un tirage parfaits.</p>
+                <a href="https://www.kashimbocigars.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #FFFFFF; color: #041D10; padding: 0.75rem 1.4rem; border-radius: 0.6rem; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+                  <span>Découvrir Kashimbo Cigars</span>
+                  <span>↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
     <!-- ======================================================================
-         VUE 2 : BOURSE D'ÉCHANGE & NÉGOCIATIONS (TRADE HUB)
+         VUE 2 : LE CERCLE & BOURSE D'ÉCHANGE
          ====================================================================== -->
     <section id="view-trade" class="view-section">
       <div class="container">
         <div class="section-header">
           <div class="section-title-wrap">
-            <span class="gold-badge">Réseau d'Échange Sécurisé</span>
-            <h2>Bourse d'Échange <span class="text-gold">Peer-to-Peer</span></h2>
-            <p class="section-subtitle">Consultez les demandes en cours, proposez vos propres vitoles et négociez en toute discrétion.</p>
+            <div class="sub-heading">Réseau d'Échange Sécurisé</div>
+            <h2>Le Cercle & <span class="text-gold">Bourse d'Échange</span></h2>
+            <p class="section-subtitle">Consultez les demandes en cours, proposez vos vitoles et négociez en lounge privé ou sous séquestre sécurisé.</p>
           </div>
           <button class="btn-primary-gold" onclick="cigarTrade.openTradeProposalModal()">
-            <span>✨</span> Créer une nouvelle offre d'échange
+            <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10h14l-4-4"/><path d="M17 14H3l4 4"/></svg>
+            <span>Créer une nouvelle offre d'échange</span>
           </button>
         </div>
 
-        <!-- Bandeau d'information sur la sécurité des transactions -->
-        <div style="background: rgba(22, 17, 13, 0.8); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 1.5rem 2rem; margin-bottom: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+        <!-- Principes du Troc Sécurisé -->
+        <div class="trade-guarantees-grid" style="background: #FFFFFF; border: 1px solid var(--stone-border); border-radius: var(--radius-md); padding: 1.5rem 2rem; margin-bottom: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; box-shadow: var(--shadow-subtle);">
           <div style="display: flex; align-items: center; gap: 0.85rem;">
-            <div style="font-size: 1.8rem;">🛡️</div>
+            <div class="icon-box-minimal" style="margin-bottom: 0;">
+              <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="12"/><line x1="15" y1="22" x2="15" y2="12"/><line x1="12" y1="6" x2="12.01" y2="6"/><line x1="16" y1="6" x2="16.01" y2="6"/><line x1="8" y1="6" x2="8.01" y2="6"/><line x1="12" y1="10" x2="12.01" y2="10"/><line x1="16" y1="10" x2="16.01" y2="10"/><line x1="8" y1="10" x2="8.01" y2="10"/></svg>
+            </div>
             <div>
-              <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Tiers de Confiance</div>
-              <div style="font-size: 0.78rem; color: var(--text-muted);">Vérification des sceaux & codes sous UV</div>
+              <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Lieux de Rencontre Convenus</div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary);">Remise en main propre dans des salons privés ou clubs choisis d'un commun accord</div>
             </div>
           </div>
           <div style="display: flex; align-items: center; gap: 0.85rem;">
-            <div style="font-size: 1.8rem;">📦</div>
+            <div class="icon-box-minimal" style="margin-bottom: 0; color: var(--pine-verify);">
+              <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+            </div>
             <div>
-              <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Expédition Sous Boveda</div>
-              <div style="font-size: 0.78rem; color: var(--text-muted);">Sachets régulés 69% HR garantissant la fraîcheur</div>
+              <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Troc Pur & Courtoisie</div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary);">Échange direct de pièces de collection sans compensation monétaire ni intermédiaire</div>
             </div>
           </div>
           <div style="display: flex; align-items: center; gap: 0.85rem;">
-            <div style="font-size: 1.8rem;">⚖️</div>
+            <div class="icon-box-minimal" style="margin-bottom: 0; color: var(--brass-patina);">
+              <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
             <div>
-              <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Évaluation Équitable</div>
-              <div style="font-size: 0.78rem; color: var(--text-muted);">Compensations financières ajustables en cas de différentiel</div>
+              <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Conditionnement Soigné</div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary);">Recommandation d'étuis protecteurs avec sachet régulateur Boveda 68–70% HR</div>
             </div>
           </div>
         </div>
@@ -261,78 +482,159 @@
         <div class="trades-stream" id="tradesStreamContainer">
           <!-- Injecté par trade.js -->
         </div>
+
+        <!-- ESPACE PARTENAIRE INDÉPENDANT 2 : FERMIN PEREZ CIGARS (Noir et Or) -->
+        <aside aria-label="Partenaire Fermin Perez Cigars" style="margin-top: 3.5rem; margin-bottom: 2rem; background: linear-gradient(135deg, #080808 0%, #15130E 60%, #0A0A0A 100%); border: 1px solid #A8862A; border-radius: 1.25rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.4); color: #FFFFFF;">
+          <div style="padding: 0.75rem 1.5rem; background: rgba(8, 8, 8, 0.95); border-bottom: 1px solid rgba(168, 134, 42, 0.4); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; font-size: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="background: linear-gradient(135deg, #F5D061 0%, #D4AF37 50%, #B8860B 100%); color: #0A0A0A; font-weight: 900; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.18em; padding: 0.25rem 0.6rem; border-radius: 4px;">Sponsorisé</span>
+              <span style="color: #F5D061; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">Partenaire Indépendant · Little Havana & Estelí</span>
+            </div>
+            <div style="color: #D4AF37; font-family: monospace;">ferminperez.com</div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: center;">
+            <div style="position: relative; min-height: 220px; max-height: 280px; overflow: hidden;">
+              <img src="assets/fermin-perez-banner.jpg" alt="Cigares de terroir Fermin Perez" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="padding: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+              <div>
+                <div style="color: #F5D061; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 0.4rem;">Fermin Perez Cigars</div>
+                <h3 style="color: #FFFFFF; font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.6rem;">Terroirs d'Estelí — De la Graine à la Vitole de Maître</h3>
+                <p style="color: #D5CCA8; font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.25rem;">Maison boutique d'Estelí (Nicaragua) et Little Havana. Capes San Andrés Maduro d'une richesse aromatique remarquable, série de prestige notée 90+ par la critique internationale.</p>
+                <a href="https://ferminperez.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #F5D061 0%, #D4AF37 50%, #996515 100%); color: #0A0A0A; padding: 0.75rem 1.4rem; border-radius: 0.6rem; font-size: 0.78rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none; box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);">
+                  <span>Accéder à Fermin Perez Cigars</span>
+                  <span>↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
     <!-- ======================================================================
-         VUE 3 : CAVE VIRTUELLE ("MON HUMIDOR")
+         VUE 3 : MON HUMIDOR UNIFIÉ (VUE GALERIE & VUE INVENTAIRE)
          ====================================================================== -->
     <section id="view-humidor" class="view-section">
       <div class="container">
         <div class="section-header">
           <div class="section-title-wrap">
-            <span class="gold-badge">Espace Privé</span>
-            <h2>Mon Humidor & <span class="text-gold">Cave Numérique</span></h2>
-            <p class="section-subtitle">Surveillez l'hygrométrie de votre cave, calculez la valeur de votre patrimoine et choisissez les vitoles échangeables.</p>
+            <div class="sub-heading">Sanctuaire Privé</div>
+            <h2>Mon Humidor & <span class="text-gold">Cave Personnelle</span></h2>
+            <p class="section-subtitle">Surveillez l'hygrométrie de votre cave, contemplez votre collection ou gérez l'inventaire complet de vos pièces.</p>
           </div>
-          <button class="btn-primary-gold" onclick="userHumidor.openAddModal()">
-            <span>+</span> Ajouter une vitole à mon humidor
-          </button>
+          <div class="humidor-action-bar-top" style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+            <button class="btn-secondary-luxury" onclick="userProfile.openVisitorPreview()" title="Voir ce que les autres membres voient de votre profil">
+              <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span>Voir comme visiteur</span>
+            </button>
+            <button class="btn-secondary-luxury" onclick="userHumidor.exportCollectionJson()" title="Télécharger votre inventaire complet en JSON">
+              <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Exporter (JSON)</span>
+            </button>
+            <button class="btn-secondary-luxury" onclick="userProfile.openEditModal()">
+              <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Profil & Confidentialité</span>
+            </button>
+            <button class="btn-primary-gold" onclick="userHumidor.openAddModal()">
+              <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <span>Déposer une vitole</span>
+            </button>
+          </div>
         </div>
 
-        <!-- Dashboard Humidor & Jauges en temps réel -->
+        <!-- Tableau de bord : Jauges & Climat -->
         <div class="humidor-dashboard-banner">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
             <div>
-              <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-primary); font-weight: 700;">
-                Statut de Conservation en Direct
+              <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--wood-cedar); font-weight: 600;">
+                Conditions de Vieillissement
               </div>
-              <h3 style="font-size: 1.5rem; color: #fff; margin-top: 0.2rem;">Armoire Cèdre d'Espagne — Lord Cohiba</h3>
+              <h3 style="font-size: 1.35rem; color: var(--text-primary); margin-top: 0.2rem;" id="humidorCellarName">
+                Armoire Cèdre d'Espagne — Lord Cohiba
+              </h3>
             </div>
-            <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(46, 160, 104, 0.15); border: 1px solid var(--emerald-authentic); padding: 0.4rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem; color: var(--emerald-authentic); font-weight: 600;">
-              <span class="live-indicator-dot"></span> Conditions Idéales de Vieillissement
+            <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--pine-bg); border: 1px solid var(--pine-verify); padding: 0.4rem 0.9rem; border-radius: var(--radius-sm); font-size: 0.82rem; color: var(--pine-verify); font-weight: 600;">
+              <span>●</span> Conditions Idéales de Vieillissement (68–70% HR)
             </div>
           </div>
 
           <div class="humidor-gauges-grid">
-            <div class="gauge-card pulse-hygrometer">
-              <div class="gauge-circular-icon">💧</div>
-              <div class="gauge-info">
+            <div class="gauge-card">
+              <div class="gauge-circular-icon">
+                <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+              </div>
+              <div>
                 <div class="gauge-val">69.2 %</div>
-                <div class="gauge-lbl">Hygrométrie Relative (HR)</div>
-                <div class="gauge-status-optimum">Zone Parfaite (68-70%)</div>
+                <div class="gauge-lbl">Hygrométrie Déclarée (HR)</div>
               </div>
             </div>
 
             <div class="gauge-card">
-              <div class="gauge-circular-icon">🌡️</div>
-              <div class="gauge-info">
+              <div class="gauge-circular-icon">
+                <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+              </div>
+              <div>
                 <div class="gauge-val">19.4 °C</div>
                 <div class="gauge-lbl">Température de Cave</div>
-                <div class="gauge-status-optimum">Stabilité Thermique Optimale</div>
               </div>
             </div>
 
             <div class="gauge-card">
-              <div class="gauge-circular-icon">💎</div>
-              <div class="gauge-info">
-                <div class="gauge-val" id="humidorTotalWorth">€ 0</div>
-                <div class="gauge-lbl">Valeur Estimée de la Collection</div>
+              <div class="gauge-circular-icon">
+                <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 18 3 22 9 12 22 2 9 6 3"/><polyline points="2 9 12 9 22 9"/><polyline points="12 22 6 9 12 3 18 9 12 22"/></svg>
+              </div>
+              <div>
+                <div class="gauge-val" id="humidorTotalWorth">Confidentiel</div>
+                <div class="gauge-lbl">
+                  Valeur de la Collection
+                  <button id="humidorValuationToggle" class="btn-text-toggle">
+                    <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    Afficher les valeurs
+                  </button>
+                </div>
               </div>
             </div>
 
             <div class="gauge-card">
-              <div class="gauge-circular-icon">📦</div>
-              <div class="gauge-info">
+              <div class="gauge-circular-icon">
+                <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              </div>
+              <div>
                 <div class="gauge-val" id="humidorTotalSticks">0</div>
-                <div class="gauge-lbl">Vitoles Répertoriées (<span id="humidorTradeableCount" style="color:var(--emerald-authentic);">0</span> actives à l'échange)</div>
+                <div class="gauge-lbl">
+                  Unités en cave (<span id="humidorTotalLots">0</span> lots · <span id="humidorAvailableSticks" style="color:var(--pine-verify);">0</span> dispo)
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Inventaire de la cave -->
-        <div class="humidor-table-card">
+        <!-- Barre de Contrôle : Switcher Vue Galerie / Vue Inventaire -->
+        <div class="humidor-controls-bar">
+          <div class="view-mode-toggle">
+            <button id="btnViewGallery" class="view-mode-btn active">
+              <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              <span>Vue Galerie (Contemplation)</span>
+            </button>
+            <button id="btnViewTable" class="view-mode-btn">
+              <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              <span>Vue Inventaire (Gestion)</span>
+            </button>
+          </div>
+
+          <div style="font-size: 0.82rem; color: var(--text-muted);">
+            Toutes les vitoles marquées "Actif" sont visibles sur votre profil public.
+          </div>
+        </div>
+
+        <!-- 1. Conteneur Vue Galerie (Grille de photographies) -->
+        <div class="cigars-grid" id="humidorGalleryContainer" style="display: grid;">
+          <!-- Injecté dynamiquement par humidor.js -->
+        </div>
+
+        <!-- 2. Conteneur Vue Inventaire (Tableau structuré) -->
+        <div class="humidor-table-card" id="humidorTableContainer" style="display: none;">
           <table class="humidor-table">
             <thead>
               <tr>
@@ -346,7 +648,7 @@
               </tr>
             </thead>
             <tbody id="humidorTableBody">
-              <!-- Injecté par humidor.js -->
+              <!-- Injecté dynamiquement par humidor.js -->
             </tbody>
           </table>
         </div>
@@ -354,181 +656,258 @@
     </section>
 
     <!-- ======================================================================
-         VUE 4 : ACADÉMIE, AUTHENTICITÉ & RITUELS
+         VUE 4 : JOURNAL & ACADÉMIE
          ====================================================================== -->
     <section id="view-academy" class="view-section">
       <div class="container">
         <div class="section-header">
           <div class="section-title-wrap">
-            <span class="gold-badge">Savoir & Transmission</span>
-            <h2>Académie & <span class="text-gold">Guide d'Authentification</span></h2>
-            <p class="section-subtitle">Maîtrisez l'art de la conservation, apprenez à déjouer les contrefaçons et explorez les accords d'exception.</p>
+            <div class="sub-heading">Transmission & Rituels</div>
+            <h2>Journal, Académie & <span class="text-gold">Authenticité</span></h2>
+            <p class="section-subtitle">Maîtrisez l'art de la conservation, apprenez à identifier les contrefaçons et explorez les rituels de service.</p>
           </div>
         </div>
 
         <!-- Outil Interactif : Vérificateur d'Authenticité Anti-Contrefaçon -->
-        <div class="authenticity-checker-box">
-          <div class="checker-header">
-            <span class="gold-badge" style="margin-bottom: 0.5rem;">Outil de Diagnostic</span>
-            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Protocole de Vérification d'une Vitole Rare</h3>
-            <p style="font-size: 0.92rem; color: var(--text-secondary);">
-              Cochez les points de contrôle observés sur votre cigare (particulièrement pour les vitoles cubaines d'exception comme Cohiba Behike ou Montecristo Reserva) pour calculer la conformité :
+        <div class="authenticity-checker-box" style="background:#FFFFFF; border:1px solid var(--stone-border); border-radius:var(--radius-md); padding:2rem; margin-bottom:2.5rem; box-shadow:var(--shadow-subtle);">
+          <div class="checker-header" style="margin-bottom:1.5rem;">
+            <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--wood-cedar); font-weight:600; margin-bottom:0.35rem;">Protocole de Diagnostic</div>
+            <h3 style="font-family:var(--font-serif); font-size: 1.6rem; margin-bottom: 0.5rem; color:var(--text-primary);">Contrôle de Conformité d'une Vitole Rare</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+              Cochez les points de contrôle observés sur votre cigare (hologrammes Habanos, micro-inscriptions, triple perilla) pour évaluer l'indice de certitude :
             </p>
           </div>
 
-          <div class="checker-grid">
-            <div class="checks-list">
-              <label class="check-item-label">
-                <input type="checkbox" class="auth-check-input" checked>
+          <div class="checker-grid" style="display:grid; grid-template-columns: 2fr 1fr; gap:2rem;">
+            <div class="checks-list" style="display:flex; flex-direction:column; gap:0.85rem;">
+              <label class="check-item-label" style="display:flex; gap:0.75rem; font-size:0.88rem; color:var(--text-secondary); cursor:pointer;">
+                <input type="checkbox" class="auth-check-input" checked style="margin-top:3px;">
                 <div>
-                  <span class="check-item-title">Bague holographique en relief & micro-motifs</span>
-                  <span class="check-item-desc">Les têtes de profil et damiers présentent un relief au toucher et des micro-écritures dorées sans bavure.</span>
+                  <strong style="color:var(--text-primary);">Bague holographique en relief & micro-motifs</strong>
+                  <div style="font-size:0.78rem; color:var(--text-muted);">Les têtes de profil et damiers présentent un relief net sans bavure.</div>
                 </div>
               </label>
 
-              <label class="check-item-label">
-                <input type="checkbox" class="auth-check-input" checked>
+              <label class="check-item-label" style="display:flex; gap:0.75rem; font-size:0.88rem; color:var(--text-secondary); cursor:pointer;">
+                <input type="checkbox" class="auth-check-input" checked style="margin-top:3px;">
                 <div>
-                  <span class="check-item-title">Numéro de série du sceau de garantie Habanos sous lampe UV</span>
-                  <span class="check-item-desc">Le code-barres gravé réagit sous les rayons ultraviolets avec les armoiries invisibles à l'œil nu.</span>
+                  <strong style="color:var(--text-primary);">Sceau de garantie Habanos sous lampe UV</strong>
+                  <div style="font-size:0.78rem; color:var(--text-muted);">Le code-barres réagit sous rayons UV avec les armoiries invisibles à l'œil nu.</div>
                 </div>
               </label>
 
-              <label class="check-item-label">
-                <input type="checkbox" class="auth-check-input" checked>
+              <label class="check-item-label" style="display:flex; gap:0.75rem; font-size:0.88rem; color:var(--text-secondary); cursor:pointer;">
+                <input type="checkbox" class="auth-check-input" checked style="margin-top:3px;">
                 <div>
-                  <span class="check-item-title">Finesse de la cape & veines discrètes</span>
-                  <span class="check-item-desc">Feuille de cape soyeuse, huileuse, sans nervures épaisses et couleur parfaitement homogène sur toute la boîte.</span>
+                  <strong style="color:var(--text-primary);">Cape soyeuse, huileuse & veinage fin</strong>
+                  <div style="font-size:0.78rem; color:var(--text-muted);">Feuille de cape sans nervures épaisses et couleur parfaitement homogène.</div>
                 </div>
               </label>
 
-              <label class="check-item-label">
-                <input type="checkbox" class="auth-check-input">
+              <label class="check-item-label" style="display:flex; gap:0.75rem; font-size:0.88rem; color:var(--text-secondary); cursor:pointer;">
+                <input type="checkbox" class="auth-check-input" style="margin-top:3px;">
                 <div>
-                  <span class="check-item-title">Triple calotte (Perilla) parfaitement roulée</span>
-                  <span class="check-item-desc">La tête du cigare est scellée par trois couches de tabac distinctes taillées au millimètre.</span>
-                </div>
-              </label>
-
-              <label class="check-item-label">
-                <input type="checkbox" class="auth-check-input">
-                <div>
-                  <span class="check-item-title">Tampon d'usine & code dateur au bas du coffret</span>
-                  <span class="check-item-desc">Marquage à chaud authentique (ex: 'BBM MAY 10' ou 'UME SEP 19') non imprimé au tampon encreur simple.</span>
+                  <strong style="color:var(--text-primary);">Triple calotte (Perilla) parfaitement posée</strong>
+                  <div style="font-size:0.78rem; color:var(--text-muted);">La tête est scellée par trois couches de tabac distinctes taillées au millimètre.</div>
                 </div>
               </label>
             </div>
 
             <!-- Score en direct -->
-            <div class="authenticity-score-display">
-              <div class="auth-seal-icon" id="authSealIcon">🔍</div>
-              <div class="auth-percentage" id="authScoreValue">60%</div>
-              <div class="auth-status-label" id="authStatusLabel">⚠️ Présomption Forte (Examen UV Recommandé)</div>
-              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.5;">
-                Sur CigarConnect, chaque échange peut être garanti par notre service d'expertise tiers qui inspecte physiquement la vitole avant expédition finale.
+            <div class="authenticity-score-display" style="background:var(--bg-card-elevated); border:1px solid var(--stone-border); border-radius:var(--radius-md); padding:1.5rem; text-align:center;">
+              <div class="auth-seal-icon" id="authSealIcon" style="color:var(--gold-accent); margin-bottom:0.5rem; display:flex; justify-content:center;">
+                <svg class="cc-icon cc-icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </div>
+              <div class="auth-percentage" id="authScoreValue" style="font-family:var(--font-display); font-size:2.2rem; font-weight:700; color:var(--wood-cedar);">75%</div>
+              <div class="auth-status-label" id="authStatusLabel" style="font-size:0.82rem; font-weight:600; color:var(--pine-verify); margin-top:0.25rem;">Présomption d'Authenticité Forte</div>
+              <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.85rem; line-height: 1.4;">
+                Sur CigarConnect, chaque échange s'appuie sur le protocole de courtoisie et la vérification visuelle attentive des signes distinctifs.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- Grille de Guides & Articles Éducatifs -->
+        <!-- Articles du Journal -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
-          <article style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2rem;">
-            <div style="font-size: 2rem; margin-bottom: 1rem;">🌿</div>
-            <span class="gold-badge" style="font-size: 0.68rem; margin-bottom: 0.5rem;">Conservation</span>
-            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--text-primary);">
+          <article style="background: #FFFFFF; border: 1px solid var(--stone-border); border-radius: var(--radius-md); padding: 2rem; box-shadow:var(--shadow-subtle);">
+            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--wood-cedar); font-weight: 600; margin-bottom: 0.5rem;">Conservation</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--text-primary);">
               La Règle d'Or des 69% d'Hygrométrie
             </h3>
             <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
               Pourquoi dépasser 72% d'humidité relative favorise l'apparition de moisissures ou du charançon du tabac, alors qu'en dessous de 64%, les huiles essentielles s'évaporent irréversiblement.
             </p>
-            <a href="#" style="color: var(--gold-light); font-size: 0.85rem; font-weight: 600;" onclick="showToast('Article complet disponible dans l\'espace membre.')">Lire le guide complet →</a>
+            <a href="javascript:void(0)" style="color: var(--wood-cedar); font-size: 0.85rem; font-weight: 600;" onclick="showToast('Article complet archivé dans la bibliothèque du Cercle.')">Lire l'étude technique →</a>
           </article>
 
-          <article style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2rem;">
-            <div style="font-size: 2rem; margin-bottom: 1rem;">🔥</div>
-            <span class="gold-badge" style="font-size: 0.68rem; margin-bottom: 0.5rem;">Rituels & Allumage</span>
-            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--text-primary);">
-              L'Art de l'Allumage au Cèdre Espagnol
+          <article style="background: #FFFFFF; border: 1px solid var(--stone-border); border-radius: var(--radius-md); padding: 2rem; box-shadow:var(--shadow-subtle);">
+            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--wood-cedar); font-weight: 600; margin-bottom: 0.5rem;">Terroirs</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--text-primary);">
+              La Légende de la feuille de 'Medio Tiempo'
             </h3>
             <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
-              Éviter la contamination de la tripe par les gaz d'un briquet au pétrole. Utiliser une lamelle de cèdre naturel pour toaster doucement le pied du cigare sans contact direct de flamme.
+              Analyse des deux petites feuilles sommitales des plants de tabac de la Vuelta Abajo, récoltées uniquement lors des années fastes pour la confection des mythiques Behike.
             </p>
-            <a href="#" style="color: var(--gold-light); font-size: 0.85rem; font-weight: 600;" onclick="showToast('Article complet disponible dans l\'espace membre.')">Lire le guide complet →</a>
+            <a href="javascript:void(0)" style="color: var(--wood-cedar); font-size: 0.85rem; font-weight: 600;" onclick="showToast('Article complet archivé dans la bibliothèque du Cercle.')">Explorer le terroir →</a>
           </article>
+        </div>
 
-          <article style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2rem;">
-            <div style="font-size: 2rem; margin-bottom: 1rem;">🥃</div>
-            <span class="gold-badge" style="font-size: 0.68rem; margin-bottom: 0.5rem;">Accords Sublimes</span>
-            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--text-primary);">
-              Cigares de Caractère & Spiritueux Nobles
-            </h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
-              Harmonie des tanins : accorder un Maduro corsé du Nicaragua avec un Rhum vieux de mélasse, ou un Churchill cubain subtil avec un Single Malt du Speyside vieilli en fût de Sherry.
+        <!-- ESPACE PARTENAIRE INDÉPENDANT 3 : MAISON ELIE BLEU PARIS (Bleu Nuit, Blanc Platine, Laiton Doré) -->
+        <aside aria-label="Partenaire Maison Elie Bleu Paris" style="margin-top: 3.5rem; margin-bottom: 2rem; background: linear-gradient(135deg, #051220 0%, #0E2847 60%, #061524 100%); border: 1px solid #1E4675; border-radius: 1.25rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.35); color: #FFFFFF;">
+          <div style="padding: 0.75rem 1.5rem; background: rgba(5, 20, 36, 0.95); border-bottom: 1px solid rgba(30, 70, 117, 0.6); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; font-size: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="background: #C5A059; color: #071626; font-weight: 900; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.18em; padding: 0.25rem 0.6rem; border-radius: 4px;">Sponsorisé</span>
+              <span style="color: #93C5FD; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">Partenaire Indépendant · Haute Ébénisterie Parisienne</span>
+            </div>
+            <div style="color: #BFDBFE; font-family: monospace;">Paris · www.eliebleu.com</div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: center;">
+            <div style="position: relative; min-height: 220px; max-height: 280px; overflow: hidden;">
+              <img src="assets/elie-bleu-paris-banner.jpg" alt="Caves à cigares d'art Elie Bleu Paris" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="padding: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+              <div>
+                <div style="color: #E2C17C; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 0.4rem;">Maison Elie Bleu Paris</div>
+                <h3 style="color: #FFFFFF; font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.6rem;">Écrins d'Exception & Caves en Cèdre d'Espagne depuis 1976</h3>
+                <p style="color: #BACDDF; font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.25rem;">Manufacture d'art française mondialement reconnue pour ses humidors de prestige. Marqueterie d'essences précieuses, intérieurs en cèdre d'Espagne et conservation hygrométrique absolue.</p>
+                <a href="https://www.eliebleu.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #0B223D; border: 2px solid #C5A059; color: #FFFFFF; padding: 0.75rem 1.4rem; border-radius: 0.6rem; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                  <span>Consulter la Maison Elie Bleu</span>
+                  <span>↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VUE 5 : COMMENT ÇA MARCHE (PILOTE, TROC, RÈGLES)
+         ====================================================================== -->
+    <section id="view-how-it-works" class="view-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <div class="sub-heading">Fonctionnement & Philosophie</div>
+            <h2>Comment fonctionne <span class="text-gold">CigarConnect</span></h2>
+            <p class="section-subtitle">
+              Une plateforme pensée pour les collectionneurs exigeants, articulée autour de la conservation rigoureuse et du respect entre passionnés.
             </p>
-            <a href="#" style="color: var(--gold-light); font-size: 0.85rem; font-weight: 600;" onclick="showToast('Article complet disponible dans l\'espace membre.')">Lire le guide complet →</a>
-          </article>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <button class="btn-primary-gold" onclick="switchView('view-humidor')">
+              <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+              <span>Créer mon humidor</span>
+            </button>
+            <button class="btn-secondary-luxury" onclick="switchView('view-trade')">
+              <svg class="cc-icon cc-icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10h14l-4-4"/><path d="M17 14H3l4 4"/></svg>
+              <span>Explorer Le Cercle</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="explanatory-grid">
+          <div class="explanatory-card">
+            <div class="icon-box-minimal">
+              <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3 class="explanatory-title">1. Une Phase Pilote Fermée & Maîtrisée</h3>
+            <p class="explanatory-text">
+              L'accès à CigarConnect s'effectue sur parrainage ou invitation afin de garantir un cercle restreint d'aficionados passionnés. Nous privilégions la qualité des échanges, la précision documentaire et l'intégrité de la communauté avant toute ouverture élargie.
+            </p>
+          </div>
+
+          <div class="explanatory-card">
+            <div class="icon-box-minimal">
+              <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10h14l-4-4"/><path d="M17 14H3l4 4"/></svg>
+            </div>
+            <h3 class="explanatory-title">2. Le Troc Pur de Gré à Gré</h3>
+            <p class="explanatory-text">
+              Aucun intermédiaire commercial, aucune commission prélevée et aucun flux monétaire dans cette version. Les propositions reposent exclusivement sur le troc de pièces équivalentes convenues d'un commun accord entre adultes majeurs consentants.
+            </p>
+          </div>
+
+          <div class="explanatory-card">
+            <div class="icon-box-minimal">
+              <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="explanatory-title">3. Confidentialité Native par Défaut</h3>
+            <p class="explanatory-text">
+              Vos vitoles, vos quantités et vos estimations financières sont strictement privées par défaut. Une pièce n'apparaît aux autres membres que si vous décidez explicitement de l'ouvrir aux propositions d'échange sur Le Cercle. Vous pouvez prévisualiser votre profil visiteur à tout instant.
+            </p>
+          </div>
+
+          <div class="explanatory-card">
+            <div class="icon-box-minimal">
+              <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+            </div>
+            <h3 class="explanatory-title">4. Exigences de Conservation (68–70% HR)</h3>
+            <p class="explanatory-text">
+              Les pièces répertoriées doivent être préservées selon les règles de l'art dans des caves régulées (68 à 70% HR, 18 à 20°C). La transparence sur l'état de la bague, la cape, le conditionnement d'origine et le code boîte officiel est la pierre angulaire de chaque échange.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         VUE 5 : LOUNGE & CLUB PRIVÉ (COMMUNAUTÉ & MONÉTISATION)
+         VUE 6 : CONFIANCE, DÉONTOLOGIE & TRANSPARENCE
          ====================================================================== -->
-    <section id="view-lounge" class="view-section">
+    <section id="view-trust" class="view-section">
       <div class="container">
         <div class="section-header">
           <div class="section-title-wrap">
-            <span class="gold-badge">Espace d'Échange & Convivialité</span>
-            <h2>Le Lounge & <span class="text-gold">Club Privé</span></h2>
-            <p class="section-subtitle">Discutez en direct avec vos pairs, rejoignez des masterclasses exclusives et découvrez nos services privilèges.</p>
+            <div class="sub-heading">Charte Déontologique</div>
+            <h2>Confiance, Transparence & <span class="text-gold">Vérité</span></h2>
+            <p class="section-subtitle">
+              Pas de promesses infondées ni d'artifices technologiques : des principes clairs, honnêtes et directement vérifiables.
+            </p>
           </div>
-          <button class="btn-primary-gold" onclick="openNewThreadModal()">
-            <span>💬</span> Ouvrir un nouveau sujet
+          <button class="btn-secondary-luxury" onclick="userHumidor.exportCollectionJson()">
+            <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Exporter mes données personnelles (JSON)</span>
           </button>
         </div>
 
-        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; align-items: start;">
-          <!-- Flux des discussions de la communauté -->
-          <div>
-            <h3 style="font-size: 1.4rem; margin-bottom: 1.25rem; font-family: var(--font-serif);">Discussions en Direct</h3>
-            <div id="loungeThreadsContainer">
-              <!-- Injecté par app.js -->
+        <div class="explanatory-grid">
+          <div class="explanatory-card">
+            <div class="icon-box-minimal">
+              <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M6 8l6-3 6 3"/><path d="M6 8L3 14h6L6 8z"/><path d="M18 8l-3 6h6l-3-6z"/><line x1="3" y1="21" x2="21" y2="21"/></svg>
             </div>
+            <h3 class="explanatory-title">Distinction Révélée : Déclaré vs Vérifié</h3>
+            <p class="explanatory-text">
+              Nous distinguons explicitement les informations déclarées par le propriétaire (millésime, provenance estimée, hygrométrie) des éléments physiquement contrôlés. CigarConnect ne revendique aucun label ni partenariat institutionnel non formalisé : la clarté prime sur l'artifice.
+            </p>
           </div>
 
-          <!-- Colonne Latérale : Tiers VIP & Événements -->
-          <div>
-            <!-- Box Adhésion Club Privé VIP -->
-            <div style="background: linear-gradient(135deg, #261912, #18120d); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 2rem; box-shadow: var(--shadow-luxury);">
-              <span class="gold-badge" style="margin-bottom: 0.5rem;">Adhésion Privilège</span>
-              <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 0.5rem;">CigarConnect Connoisseur VIP</h3>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
-                Accédez aux transactions prioritaires sans commission, à la délivrance de certificats d'authenticité et aux invitations aux soirées privées en lounge.
-              </p>
-              <button class="btn-primary-gold" style="width: 100%;" onclick="openVipModal()">
-                Découvrir les Privilèges VIP
-              </button>
+          <div class="explanatory-card">
+            <div class="icon-box-minimal">
+              <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
+            <h3 class="explanatory-title">Aucune Fiction Technologique</h3>
+            <p class="explanatory-text">
+              Nous refusons de simuler des puces magiques ou des capteurs connectés factices. La traçabilité s'appuie sur des données tangibles : les codes boîte officiels des manufactures (ex. Habanos S.A.), les sceaux de garantie UV, l'historique d'acquisition et les photographies sous éclairage neutre.
+            </p>
+          </div>
 
-            <!-- Box Événements & Masterclasses -->
-            <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.75rem;">
-              <h4 style="font-family: var(--font-display); font-size: 0.88rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem;">
-                Événements à Venir
-              </h4>
-              <div style="display: flex; flex-direction: column; gap: 1rem;">
-                <div style="padding-bottom: 0.85rem; border-bottom: 1px solid var(--border-subtle);">
-                  <div style="font-size: 0.75rem; color: var(--gold-primary); font-weight: 700;">28 NOVEMBRE 2026 · EN LIGNE</div>
-                  <div style="font-weight: 600; font-size: 0.9rem; margin: 0.2rem 0;">Masterclass Virtuelle avec un Torcedor Cubain</div>
-                  <div style="font-size: 0.78rem; color: var(--text-muted);">Secrets de sélection des feuilles de ligador.</div>
-                </div>
-                <div>
-                  <div style="font-size: 0.75rem; color: var(--gold-primary); font-weight: 700;">14 DÉCEMBRE 2026 · PARIS LOUNGE</div>
-                  <div style="font-weight: 600; font-size: 0.9rem; margin: 0.2rem 0;">Dégustation Privée : Millésimes Rares & Vieux Rhums</div>
-                  <div style="font-size: 0.78rem; color: var(--text-muted);">Réservé aux membres Connoisseur & Master Collector.</div>
-                </div>
-              </div>
+          <div class="explanatory-card">
+            <div class="icon-box-minimal">
+              <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="12"/><line x1="15" y1="22" x2="15" y2="12"/><line x1="12" y1="6" x2="12.01" y2="6"/><line x1="16" y1="6" x2="16.01" y2="6"/><line x1="8" y1="6" x2="8.01" y2="6"/><line x1="12" y1="10" x2="12.01" y2="10"/><line x1="16" y1="10" x2="16.01" y2="10"/><line x1="8" y1="10" x2="8.01" y2="10"/></svg>
             </div>
+            <h3 class="explanatory-title">Respect de la Législation & Majorité</h3>
+            <p class="explanatory-text">
+              L'accès à CigarConnect est strictement réservé aux personnes majeures. Notre plateforme n'est pas un site de commerce de tabac : elle sert exclusivement de carnet de cave personnel et de cercle de rencontre pour passionnés échangeant des pièces de collection à titre privé.
+            </p>
+          </div>
+
+          <div class="explanatory-card">
+            <div class="icon-box-minimal">
+              <svg class="cc-icon cc-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            <h3 class="explanatory-title">Souveraineté des Données & Droit à l'Effacement</h3>
+            <p class="explanatory-text">
+              Vos collections vous appartiennent en propre. À tout moment, vous pouvez télécharger une archive complète de votre humidor au format standard JSON ou procéder à l'effacement immédiat et irréversible de l'intégralité de vos données locales.
+            </p>
           </div>
         </div>
       </div>
@@ -536,82 +915,75 @@
   </main>
 
   <!-- ========================================================================
-       FOOTER PRESTIGE
+       FOOTER PRESTIGE (FOND SOMBRE & LOGO OR)
        ======================================================================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand-col">
-          <div class="brand-logo" onclick="switchView('view-catalog')">
-            <div class="brand-crest">CC</div>
-            <div class="brand-text">
-              <h1>CIGARCONNECT</h1>
-              <span class="tagline">Where Cigars Connect</span>
-            </div>
-          </div>
+          <a href="javascript:void(0)" onclick="navigateToHome()" title="CigarConnect — Where Cigars Connect">
+            <img src="assets/logo-luxury-dark.png" alt="CIGARCONNECT — Cigar Social Networking" class="footer-logo-img">
+          </a>
           <p>
-            La première plateforme internationale dédiée aux passionnés de cigares rares : échange sécurisé, caves virtuelles, authentification et club privé.
+            Le sanctuaire privé dédié aux collectionneurs de vitoles rares : traçabilité documentaire, humidor personnel et cercle de troc de gré à gré.
           </p>
-          <div style="display: flex; gap: 0.75rem;">
-            <span class="gold-badge" style="font-size: 0.7rem;">Éducation</span>
-            <span class="gold-badge" style="font-size: 0.7rem;">Networking</span>
-            <span class="gold-badge" style="font-size: 0.7rem;">Accessibilité</span>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="border: 1px solid rgba(255,255,255,0.15); padding: 0.25rem 0.6rem; border-radius: var(--radius-sm); font-size: 0.7rem; color: #CBB48C;">Where Cigars Connect</span>
+            <span style="border: 1px solid rgba(255,255,255,0.15); padding: 0.25rem 0.6rem; border-radius: var(--radius-sm); font-size: 0.7rem; color: #CBB48C;">Pilote Démonstration</span>
           </div>
         </div>
 
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="javascript:void(0)" onclick="switchView('view-catalog')">Trésors & Galerie</a></li>
-            <li><a href="javascript:void(0)" onclick="switchView('view-trade')">Bourse d'Échange</a></li>
-            <li><a href="javascript:void(0)" onclick="switchView('view-humidor')">Mon Humidor Virtuel</a></li>
-            <li><a href="javascript:void(0)" onclick="switchView('view-academy')">Guide d'Authenticité</a></li>
-            <li><a href="javascript:void(0)" onclick="switchView('view-lounge')">Lounge Communautaire</a></li>
+            <li><a href="javascript:void(0)" onclick="switchView('view-catalog')">Collections</a></li>
+            <li><a href="javascript:void(0)" onclick="switchView('view-trade')">Le Cercle d'Échange</a></li>
+            <li><a href="javascript:void(0)" onclick="switchView('view-academy')">Journal & Savoir</a></li>
+            <li><a href="javascript:void(0)" onclick="switchView('view-how-it-works')">Comment ça marche</a></li>
+            <li><a href="javascript:void(0)" onclick="switchView('view-trust')">Confiance & Déontologie</a></li>
+            <li><a href="javascript:void(0)" onclick="switchView('view-humidor')">Mon Humidor Privé</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Services & Club</h4>
+          <h4>Services & Privilèges</h4>
           <ul>
             <li><a href="javascript:void(0)" onclick="openVipModal()">Adhésion Connoisseur VIP</a></li>
-            <li><a href="javascript:void(0)" onclick="showToast('Service d\'expertise physique disponible pour les membres.')">Service d'Expertise Physique</a></li>
-            <li><a href="javascript:void(0)" onclick="showToast('Section accessoires de prestige bientôt disponible.')">Boutique d'Accessoires</a></li>
-            <li><a href="javascript:void(0)" onclick="showToast('Programme partenaires ouvert aux lounges et manufactures.')">Partenariats & Lounges</a></li>
+            <li><a href="javascript:void(0)" onclick="openBrandModal()">Charte & Palette Officielle</a></li>
+            <li><a href="javascript:void(0)" onclick="userProfile.openVisitorPreview()">Aperçu Profil Visiteur</a></li>
+            <li><a href="javascript:void(0)" onclick="userHumidor.exportCollectionJson()">Export JSON de ma collection</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Sécurité & Règles</h4>
+          <h4>Déontologie & Contact</h4>
           <ul>
-            <li><a href="javascript:void(0)" onclick="showToast('Protocole de tiers de confiance actif sur tous les échanges.')">Protocole Tiers de Confiance</a></li>
-            <li><a href="javascript:void(0)" onclick="showToast('Charte de courtoisie et respect de la législation en vigueur.')">Charte Déontologique</a></li>
-            <li><a href="javascript:void(0)" onclick="showToast('Données cryptées et hébergées selon les normes européennes.')">Confidentialité des Données</a></li>
-            <li><a href="javascript:void(0)" onclick="showToast('Contactez notre équipe de conciergerie à contact@cigarconnect.net')">Conciergerie & Contact</a></li>
+            <li><a href="javascript:void(0)" onclick="switchView('view-trust')">Principes de Confiance</a></li>
+            <li><a href="javascript:void(0)" onclick="switchView('view-how-it-works')">Règles du Troc Pur</a></li>
+            <li><a href="javascript:void(0)" onclick="showToast('Contactez notre équipe pilote à contact@cigarconnect.net')">Contact Pilote</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div>
-          © 2026 <strong>CigarConnect.net</strong> — Tous droits réservés.
+          © 2026 <strong>CigarConnect.net</strong> — Démonstration Pilote. Tous droits réservés.
         </div>
         <div class="legal-notice">
-          Avertissement légal : Plateforme réservée aux personnes majeures. L'usage du tabac est dangereux pour la santé. Les échanges s'effectuent sous la responsabilité des membres dans le respect des réglementations applicables aux collections privées.
+          Avertissement légal : Plateforme réservée aux personnes majeures. L'usage du tabac est dangereux pour la santé. Les échanges s'effectuent sous la responsabilité exclusive des membres dans le cadre de trocs privés non commerciaux.
         </div>
       </div>
     </div>
   </footer>
 
   <!-- ========================================================================
-       MODALE 1 : FICHE DÉTAILLÉE DU CIGARE (MODAL D'INSPECTION)
+       MODALE 1 : DOSSIER DE COLLECTION (FICHE D'EXPERTISE DU CIGARE)
        ======================================================================== -->
   <div class="modal-overlay" id="cigarDetailModal">
     <div class="modal-box">
       <div class="modal-header">
-        <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--gold-light); text-transform: uppercase;">
-          Fiche d'Expertise & Dégustation
-        </h3>
-        <button class="modal-close-btn" onclick="cigarDetailModalClose()">✕</button>
+        <h3>Dossier d'Expertise & de Traçabilité</h3>
+        <button class="modal-close-btn" onclick="cigarDetailModalClose()"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
       <div class="modal-content-body" id="cigarDetailModalBody">
         <!-- Rempli dynamiquement par catalog.js -->
@@ -620,45 +992,59 @@
   </div>
 
   <!-- ========================================================================
-       MODALE 2 : PROPOSER UN ÉCHANGE (WIZARD D'ÉCHANGE)
+       MODALE 2 : NOUVELLE PROPOSITION DE TROC PUR (SANS PAIEMENT)
        ======================================================================== -->
   <div class="modal-overlay" id="tradeProposalModal">
     <div class="modal-box" style="max-width: 650px;">
       <div class="modal-header">
-        <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--gold-light); text-transform: uppercase;">
-          Nouvelle Proposition d'Échange
-        </h3>
-        <button class="modal-close-btn" onclick="cigarTrade.closeProposalModal()">✕</button>
+        <h3>Nouvelle Proposition de Troc Pur</h3>
+        <button class="modal-close-btn" onclick="cigarTrade.closeProposalModal()"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
       <div class="modal-content-body">
+        <div style="background: var(--bg-card-elevated); border: 1px solid var(--stone-border); padding: 0.85rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1.25rem; font-size: 0.82rem; color: var(--text-secondary);">
+          <strong style="color: var(--text-primary);">Règle du Cercle :</strong> Troc pur de pair-à-pair. Aucun flux monétaire ni soulte financière n'est géré sur la plateforme.
+        </div>
+
         <form id="tradeProposalForm">
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label>1. Vitole que vous offrez (depuis votre Humidor) :</label>
+              <select id="tradeProposalMyCigar" class="form-select" required></select>
+            </div>
+            <div class="form-group">
+              <label>Quantité offerte :</label>
+              <input type="number" id="tradeProposalMyQty" class="form-input" value="1" min="1" required>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label>2. Vitole convoitée en échange :</label>
+              <select id="tradeProposalTargetCigar" class="form-select" required></select>
+            </div>
+            <div class="form-group">
+              <label>Quantité souhaitée :</label>
+              <input type="number" id="tradeProposalTargetQty" class="form-input" value="1" min="1" required>
+            </div>
+          </div>
+
           <div class="form-group">
-            <label>1. Vitole que vous offrez (depuis votre Humidor) :</label>
-            <select id="tradeProposalMyCigar" class="form-select" required>
-              <!-- Rempli dynamiquement depuis userHumidor -->
+            <label>3. Précisions sur l'état de conservation & boîte d'origine :</label>
+            <textarea id="tradeProposalNotes" class="form-textarea" rows="3" placeholder="Ex: Cigare conservé en armoire cèdre régulée à 69% HR. Cape intacte, bague sans froissement, étui individuel fourni..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>4. Modalité ou lieu de remise convenue :</label>
+            <select id="tradeProposalLocationType" class="form-select" required>
+              <option value="Remise en main propre en salon privé convenu">Remise en main propre en salon ou club convenu d'un commun accord</option>
+              <option value="Dégustation partagée en cercle d'aficionados">Dégustation partagée en cercle d'aficionados</option>
+              <option value="Envoi sécurisé avec sachet régulateur Boveda 68–70% HR">Envoi soigné sous emballage protecteur avec Boveda 68–70% HR</option>
             </select>
-          </div>
-
-          <div class="form-group">
-            <label>2. Vitole que vous convoitez en retour :</label>
-            <select id="tradeProposalTargetCigar" class="form-select" required>
-              <!-- Rempli dynamiquement depuis catalog -->
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label>3. Compensation financière éventuelle (€ d'ajustement si valeur inégale) :</label>
-            <input type="number" id="tradeProposalAdjustment" class="form-input" placeholder="0 (laisser vide si échange pur)" min="0">
-          </div>
-
-          <div class="form-group">
-            <label>4. Précisions sur l'état de conservation & boîte d'origine :</label>
-            <textarea id="tradeProposalNotes" class="form-textarea" rows="3" placeholder="Ex: Cigare maintenu en humidor armoire cèdre à 69% HR. Bague impeccable, étui individuel d'origine disponible..."></textarea>
           </div>
 
           <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
             <button type="submit" class="btn-primary-gold" style="flex: 1;">
-              Publier l'Offre d'Échange Sécurisé
+              Transmettre la Proposition au Cercle
             </button>
             <button type="button" class="btn-secondary-luxury" onclick="cigarTrade.closeProposalModal()">
               Annuler
@@ -670,23 +1056,19 @@
   </div>
 
   <!-- ========================================================================
-       MODALE 3 : DIALOGUE DE NÉGOCIATION & CHAT SÉCURISÉ
+       MODALE 3 : DIALOGUE DE NÉGOCIATION EN DIRECT
        ======================================================================== -->
   <div class="modal-overlay" id="tradeNegotiationModal">
-    <div class="modal-box" style="max-width: 700px;">
+    <div class="modal-box" style="max-width: 680px;">
       <div class="modal-header">
-        <h3 id="negotiationModalTitle" style="font-family: var(--font-display); font-size: 1.1rem; color: var(--gold-light); text-transform: uppercase;">
-          Négociation en Direct
-        </h3>
-        <button class="modal-close-btn" onclick="cigarTrade.closeNegotiation()">✕</button>
+        <h3 id="negotiationModalTitle">Négociation en Direct</h3>
+        <button class="modal-close-btn" onclick="cigarTrade.closeNegotiation()"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
       <div class="modal-content-body">
-        <div id="negotiationChatMessages" style="max-height: 350px; overflow-y: auto; margin-bottom: 1.25rem; padding-right: 0.5rem;">
-          <!-- Messages injectés dynamiquement -->
-        </div>
+        <div id="negotiationChatMessages" style="max-height: 320px; overflow-y: auto; margin-bottom: 1.25rem; padding-right: 0.5rem;"></div>
 
         <div style="display: flex; gap: 0.75rem;">
-          <input type="text" id="negotiationInputMessage" class="form-input" placeholder="Rédigez votre proposition ou contre-offre..." onkeydown="if(event.key==='Enter') cigarTrade.sendChatMessage()">
+          <input type="text" id="negotiationInputMessage" class="form-input" placeholder="Rédigez votre message au membre..." onkeydown="if(event.key==='Enter') cigarTrade.sendChatMessage()">
           <button class="btn-primary-gold" onclick="cigarTrade.sendChatMessage()">
             Envoyer
           </button>
@@ -696,26 +1078,27 @@
   </div>
 
   <!-- ========================================================================
-       MODALE 4 : AJOUT D'UNE VITOLE À MON HUMIDOR
+       MODALE 4 : DÉPOSER UNE VITOLE DANS MON HUMIDOR
        ======================================================================== -->
   <div class="modal-overlay" id="addCigarHumidorModal">
-    <div class="modal-box" style="max-width: 620px;">
+    <div class="modal-box" style="max-width: 680px;">
       <div class="modal-header">
-        <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--gold-light); text-transform: uppercase;">
-          Ajouter une Vitole à mon Humidor
-        </h3>
-        <button class="modal-close-btn" onclick="userHumidor.closeAddModal()">✕</button>
+        <div>
+          <h3>Déposer une Vitole dans mon Humidor</h3>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Documentez avec précision vos pièces privées</div>
+        </div>
+        <button class="modal-close-btn" onclick="userHumidor.closeAddModal()"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
       <div class="modal-content-body">
         <form id="addCigarForm">
           <div class="form-grid-2">
             <div class="form-group">
-              <label>Marque :</label>
-              <input type="text" id="inputCigarBrand" class="form-input" placeholder="Ex: Cohiba, Partagás, Davidoff..." required>
+              <label>Marque * :</label>
+              <input type="text" id="inputCigarBrand" class="form-input" placeholder="Ex: Cohiba, Partagás, Trinidad..." required>
             </div>
             <div class="form-group">
-              <label>Nom du Cigare / Vitole :</label>
-              <input type="text" id="inputCigarName" class="form-input" placeholder="Ex: Siglo VI, Serie D No. 4..." required>
+              <label>Nom de la Vitole / Édition * :</label>
+              <input type="text" id="inputCigarName" class="form-input" placeholder="Ex: Behike 56, Fundadores, Lusitanias..." required>
             </div>
           </div>
 
@@ -723,43 +1106,84 @@
             <div class="form-group">
               <label>Pays d'Origine / Terroir :</label>
               <select id="inputCigarOrigin" class="form-select">
-                <option value="Cuba">Cuba 🇨🇺</option>
-                <option value="République Dominicaine">République Dominicaine 🇩🇴</option>
-                <option value="Nicaragua">Nicaragua 🇳🇮</option>
-                <option value="Honduras">Honduras 🇭🇳</option>
+                <option value="Cuba">Cuba</option>
+                <option value="République Dominicaine">République Dominicaine</option>
+                <option value="Nicaragua">Nicaragua</option>
+                <option value="Honduras">Honduras</option>
                 <option value="Autre">Autre Terroir</option>
               </select>
             </div>
             <div class="form-group">
               <label>Format / Module :</label>
-              <input type="text" id="inputCigarVitola" class="form-input" placeholder="Ex: Robusto, Churchill, Toro...">
+              <input type="text" id="inputCigarVitola" class="form-input" placeholder="Ex: Robusto, Pirámide, Toro, Laguito No. 1...">
+            </div>
+          </div>
+
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label>Millésime / Année :</label>
+              <input type="text" id="inputCigarVintage" class="form-input" placeholder="Ex: 2010, 2018, 2022...">
+            </div>
+            <div class="form-group">
+              <label>Quantité détenue * :</label>
+              <input type="number" id="inputCigarQuantity" class="form-input" value="1" min="1" required>
+            </div>
+            <div class="form-group">
+              <label>Conditionnement :</label>
+              <select id="inputCigarPackaging" class="form-select">
+                <option value="Unité individuelle">Unité individuelle</option>
+                <option value="Boîte scellée 10">Boîte scellée (10)</option>
+                <option value="Boîte scellée 25">Boîte scellée (25)</option>
+                <option value="Cabinet 50">Cabinet (50)</option>
+                <option value="Jarre de collection">Jarre numérotée</option>
+              </select>
             </div>
           </div>
 
           <div class="form-grid-2">
             <div class="form-group">
-              <label>Millésime / Année :</label>
-              <input type="text" id="inputCigarVintage" class="form-input" placeholder="Ex: 2018, 2021...">
+              <label>Code boîte / Numéro de série :</label>
+              <input type="text" id="inputCigarBoxCode" class="form-input" placeholder="Ex: RSE MAY 10, UEB DIC 18...">
             </div>
             <div class="form-group">
-              <label>Quantité possédée :</label>
-              <input type="number" id="inputCigarQuantity" class="form-input" value="1" min="1" required>
+              <label>Provenance déclarée :</label>
+              <input type="text" id="inputCigarProvenance" class="form-input" placeholder="Ex: La Casa del Habano Paris, Achat Suisse...">
             </div>
           </div>
 
           <div class="form-group">
-            <label>Valeur estimée par unité (€) :</label>
-            <input type="number" id="inputCigarValue" class="form-input" value="120" min="5" required>
+            <label>Notes sur l'état de conservation :</label>
+            <textarea id="inputCigarConditionNotes" class="form-textarea" rows="2" placeholder="Ex: Conservé en armoire cèdre d'Espagne à 69% HR. Bague intacte, cape brillante et grasse..."></textarea>
           </div>
 
-          <div class="form-group" style="display: flex; align-items: center; gap: 0.85rem; margin-top: 1rem; background: var(--bg-surface); padding: 0.85rem; border-radius: var(--radius-md);">
-            <input type="checkbox" id="inputCigarTradeable" style="width: 20px; height: 20px; accent-color: var(--gold-primary);" checked>
-            <label for="inputCigarTradeable" style="margin-bottom: 0; cursor: pointer; text-transform: none; font-size: 0.9rem; color: var(--text-primary);">
-              Rendre cette vitole immédiatement <strong>disponible à l'échange</strong> sur la Bourse
+          <div class="form-grid-2" style="background: var(--bg-card-elevated); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--stone-border); margin-bottom: 1.25rem;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label>Estimation financière facultative (€ / unité) :</label>
+              <input type="number" id="inputCigarValuation" class="form-input" placeholder="Ex: 120 (reste privé)" min="0">
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label>Source de l'estimation :</label>
+              <select id="inputCigarValuationSource" class="form-select">
+                <option value="Estimation personnelle">Estimation personnelle</option>
+                <option value="Dernière cote d'enchère">Dernière cote d'enchère</option>
+                <option value="Prix d'acquisition en civette">Prix d'acquisition en civette</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" style="display: flex; align-items: center; gap: 0.85rem; background: var(--bg-surface); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--stone-border);">
+            <input type="checkbox" id="inputCigarTradeable" style="width: 18px; height: 18px; accent-color: var(--wood-cedar);">
+            <label for="inputCigarTradeable" style="margin-bottom: 0; cursor: pointer; text-transform: none; font-size: 0.88rem; color: var(--text-primary);">
+              Rendre cette vitole <strong>ouverte aux propositions d'échange</strong> sur Le Cercle
             </label>
           </div>
 
-          <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+          <div class="draft-indicator-box" style="margin-bottom: 1.25rem;">
+            <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            <span>Brouillon mémorisé automatiquement au fil de votre saisie.</span>
+          </div>
+
+          <div style="display: flex; gap: 1rem;">
             <button type="submit" class="btn-primary-gold" style="flex: 1;">
               Enregistrer dans mon Humidor
             </button>
@@ -773,75 +1197,189 @@
   </div>
 
   <!-- ========================================================================
-       MODALE 5 : MONÉTISATION & ADHÉSION CLUB PRIVÉ VIP
+       MODALE 5 : PROFIL & COORDONNÉES AFICIONADO
        ======================================================================== -->
-  <div class="modal-overlay" id="vipClubModal">
-    <div class="modal-box" style="max-width: 900px;">
+  <div class="modal-overlay" id="editProfileModal">
+    <div class="modal-box" style="max-width: 600px;">
       <div class="modal-header">
-        <h3 style="font-family: var(--font-display); font-size: 1.2rem; color: var(--gold-light); text-transform: uppercase;">
-          Adhésions & Privilèges CigarConnect
-        </h3>
-        <button class="modal-close-btn" onclick="closeVipModal()">✕</button>
+        <h3>Identité & Coordonnées d'Aficionado</h3>
+        <button class="modal-close-btn" onclick="userProfile.closeEditModal()"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
       <div class="modal-content-body">
-        <div style="text-align: center; max-width: 600px; margin: 0 auto 2.5rem;">
-          <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 0.5rem;">Élevez Votre Expérience</h2>
-          <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Choisissez le niveau d'adhésion qui correspond à votre collection et bénéficiez de services exclusifs d'expertise et de networking.
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+          Votre nom, prénom, ville et pays apparaissent comme signature de confiance sur vos vitoles en humidor, dans les nouveautés du cercle et lors des propositions d'échange.
+        </p>
+
+        <form id="editProfileForm">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label>Prénom *</label>
+              <input type="text" id="inputProfileFirstName" class="form-input" placeholder="Ex: Alexandre" required>
+            </div>
+            <div class="form-group">
+              <label>Nom de famille *</label>
+              <input type="text" id="inputProfileLastName" class="form-input" placeholder="Ex: de Montmirail" required>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label>Ville où vous vivez *</label>
+              <input type="text" id="inputProfileCity" class="form-input" placeholder="Ex: Paris, Genève, Lausanne..." required>
+            </div>
+            <div class="form-group">
+              <label>Pays où vous vivez *</label>
+              <input type="text" id="inputProfileCountry" class="form-input" placeholder="Ex: France, Suisse, Monaco..." required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Bio / Préférences de dégustation & Vitoles fétiches :</label>
+            <textarea id="inputProfileBio" class="form-textarea" rows="3" placeholder="Ex: Collectionneur passionné de vitoles cubaines vintage, grand format Churchill et éditions exclusives..."></textarea>
+          </div>
+
+          <div class="form-group" style="display: flex; align-items: center; gap: 0.75rem; background: var(--bg-card-elevated); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--stone-border);">
+            <input type="checkbox" id="inputProfileShowLoc" style="width: 18px; height: 18px; accent-color: var(--wood-cedar);" checked>
+            <label for="inputProfileShowLoc" style="margin-bottom: 0; cursor: pointer; text-transform: none; font-size: 0.85rem; color: var(--text-primary);">
+              Afficher ma ville et mon pays sur mon profil public (Confidentialité)
+            </label>
+          </div>
+
+          <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+            <button type="submit" class="btn-primary-gold" style="flex: 1;">
+              Enregistrer mes coordonnées
+            </button>
+            <button type="button" class="btn-secondary-luxury" onclick="userProfile.closeEditModal()">
+              Annuler
+            </button>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--stone-border); flex-wrap: wrap; gap: 0.5rem;">
+            <button type="button" class="btn-secondary-luxury" onclick="userProfile.closeEditModal(); userProfile.openVisitorPreview();" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">
+              <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span>Voir mon profil comme un visiteur</span>
+            </button>
+            <button type="button" onclick="userProfile.resetAccountData()" style="background: none; border: none; color: var(--ruby-rare); font-size: 0.78rem; cursor: pointer; text-decoration: underline;" title="Effacer toutes les données locales">
+              Réinitialiser mes données locales
+            </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODALE 6 : ADHÉSIONS PRIVILÈGE VIP
+       ======================================================================== -->
+  <div class="modal-overlay" id="vipClubModal">
+    <div class="modal-box" style="max-width: 850px;">
+      <div class="modal-header">
+        <h3>Adhésions & Privilèges du Cercle</h3>
+        <button class="modal-close-btn" onclick="closeVipModal()"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <div class="modal-content-body">
+        <div style="text-align: center; max-width: 580px; margin: 0 auto 2rem;">
+          <h2 style="font-family: var(--font-serif); font-size: 1.85rem; margin-bottom: 0.5rem; color:var(--text-primary);">Élevez Votre Expérience</h2>
+          <p style="color: var(--text-secondary); font-size: 0.92rem;">
+            Rejoignez les confréries fermées de collectionneurs pour bénéficier d'une conciergerie privée et d'expertises physiques prioritaires.
           </p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-          <!-- Tier 1 -->
-          <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2rem; display: flex; flex-direction: column;">
-            <div style="font-size: 0.8rem; font-family: var(--font-display); text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem;">Découverte</div>
-            <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 0.5rem;">Aficionado</h3>
-            <div style="font-size: 2rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1.25rem;">Gratuit</div>
-            <ul style="list-style: none; font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 2rem; flex: 1;">
-              <li>✓ Accès au catalogue public</li>
-              <li>✓ Humidor virtuel jusqu'à 15 vitoles</li>
-              <li>✓ 3 propositions d'échange / mois</li>
-              <li>✓ Accès aux forums du Lounge</li>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+          <div style="background: var(--bg-card-elevated); border: 1px solid var(--stone-border); border-radius: var(--radius-md); padding: 1.75rem; display: flex; flex-direction: column;">
+            <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight:600; margin-bottom: 0.4rem;">Découverte</div>
+            <h3 style="font-size: 1.3rem; color: var(--text-primary); margin-bottom: 0.4rem;">Aficionado</h3>
+            <div style="font-size: 1.8rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem;">Gratuit</div>
+            <ul style="list-style: none; font-size: 0.82rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; flex: 1; padding: 0;">
+              <li style="display:flex; align-items:center; gap:0.4rem;"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--pine-verify); flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg><span>Accès aux collections publiques</span></li>
+              <li style="display:flex; align-items:center; gap:0.4rem;"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--pine-verify); flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg><span>Humidor virtuel jusqu'à 15 vitoles</span></li>
+              <li style="display:flex; align-items:center; gap:0.4rem;"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--pine-verify); flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg><span>3 propositions d'échange / mois</span></li>
             </ul>
             <button class="btn-secondary-luxury" onclick="subscribeTier('Aficionado')">Adhésion Active</button>
           </div>
 
-          <!-- Tier 2 (Recommandé) -->
-          <div style="background: linear-gradient(135deg, #261b12, #18120d); border: 2px solid var(--gold-primary); border-radius: var(--radius-lg); padding: 2rem; display: flex; flex-direction: column; position: relative; box-shadow: var(--shadow-luxury);">
-            <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold-gradient); color: #16110c; font-size: 0.68rem; font-weight: 800; font-family: var(--font-display); text-transform: uppercase; padding: 0.25rem 0.85rem; border-radius: var(--radius-full);">
-              Recommandé
+          <div style="background: #FFFFFF; border: 2px solid var(--wood-cedar); border-radius: var(--radius-md); padding: 1.75rem; display: flex; flex-direction: column; box-shadow: var(--shadow-luxury);">
+            <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--wood-cedar); font-weight:700; margin-bottom: 0.4rem;">Recommandé</div>
+            <h3 style="font-size: 1.3rem; color: var(--wood-cedar); margin-bottom: 0.4rem;">Connoisseur VIP</h3>
+            <div style="font-size: 1.8rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem;">
+              19 € <span style="font-size: 0.85rem; font-weight: 400; color: var(--text-muted);">/ mois</span>
             </div>
-            <div style="font-size: 0.8rem; font-family: var(--font-display); text-transform: uppercase; color: var(--gold-primary); margin-bottom: 0.5rem;">Prestige</div>
-            <h3 style="font-size: 1.4rem; color: var(--gold-light); margin-bottom: 0.5rem;">Connoisseur VIP</h3>
-            <div style="font-size: 2rem; font-weight: 800; color: var(--gold-light); margin-bottom: 1.25rem;">
-              19 € <span style="font-size: 0.9rem; font-weight: 400; color: var(--text-muted);">/ mois</span>
-            </div>
-            <ul style="list-style: none; font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 2rem; flex: 1;">
-              <li>✓ Échanges illimités sans commission</li>
-              <li>✓ Humidor virtuel illimité avec hygromètre connecté</li>
-              <li>✓ Badge 'Vérifié Connoisseur'</li>
-              <li>✓ 1 certificat d'expertise physique offert / an</li>
-              <li>✓ Accès prioritaire aux vitoles ultra-rares</li>
+            <ul style="list-style: none; font-size: 0.82rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; flex: 1; padding: 0;">
+              <li style="display:flex; align-items:center; gap:0.4rem;"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--pine-verify); flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg><span>Échanges illimités sans commission</span></li>
+              <li style="display:flex; align-items:center; gap:0.4rem;"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--pine-verify); flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg><span>Humidor illimité avec suivi HR</span></li>
+              <li style="display:flex; align-items:center; gap:0.4rem;"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--pine-verify); flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg><span>1 certificat d'expertise physique offert / an</span></li>
+              <li style="display:flex; align-items:center; gap:0.4rem;"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--pine-verify); flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg><span>Accès prioritaire aux pièces ultra-rares</span></li>
             </ul>
             <button class="btn-primary-gold" onclick="subscribeTier('Connoisseur VIP')">Devenir Connoisseur VIP</button>
           </div>
 
-          <!-- Tier 3 -->
-          <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2rem; display: flex; flex-direction: column;">
-            <div style="font-size: 0.8rem; font-family: var(--font-display); text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem;">Collectionneur d'Art</div>
-            <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 0.5rem;">Master Collector</h3>
-            <div style="font-size: 2rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1.25rem;">
-              49 € <span style="font-size: 0.9rem; font-weight: 400; color: var(--text-muted);">/ mois</span>
+          <div style="background: var(--bg-card-elevated); border: 1px solid var(--stone-border); border-radius: var(--radius-md); padding: 1.75rem; display: flex; flex-direction: column;">
+            <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight:600; margin-bottom: 0.4rem;">Haute Confrérie</div>
+            <h3 style="font-size: 1.3rem; color: var(--text-primary); margin-bottom: 0.4rem;">Master Collector</h3>
+            <div style="font-size: 1.8rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem;">
+              49 € <span style="font-size: 0.85rem; font-weight: 400; color: var(--text-muted);">/ mois</span>
             </div>
-            <ul style="list-style: none; font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 2rem; flex: 1;">
-              <li>✓ Tous les avantages Connoisseur VIP</li>
-              <li>✓ Conciergerie privée pour recherche de perles rares</li>
-              <li>✓ Invitations aux dîners privés & dégustations fermées</li>
-              <li>✓ Analyse laboratoire UV & sceaux prioritaires</li>
+            <ul style="list-style: none; font-size: 0.82rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; flex: 1; padding: 0;">
+              <li style="display:flex; align-items:center; gap:0.4rem;"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--pine-verify); flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg><span>Conciergerie privée pour perles rares</span></li>
+              <li style="display:flex; align-items:center; gap:0.4rem;"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--pine-verify); flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg><span>Invitations aux dégustations fermées</span></li>
+              <li style="display:flex; align-items:center; gap:0.4rem;"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--pine-verify); flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg><span>Analyse labo UV & traçabilité scellée</span></li>
             </ul>
             <button class="btn-secondary-luxury" onclick="subscribeTier('Master Collector')">Rejoindre les Masters</button>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODALE 7 : CHARTE GRAPHIQUE & IDENTITÉ OFFICIELLE
+       ======================================================================== -->
+  <div id="brandCharterModal" class="modal-overlay">
+    <div class="modal-box" style="max-width: 800px;">
+      <div class="modal-header">
+        <h3>Charte Graphique & Identité Officielle</h3>
+        <button class="modal-close-btn" onclick="closeBrandModal()"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <div class="modal-content-body">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+          <h2 style="font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 0.35rem;">Matrices & Nuanciers CigarConnect</h2>
+          <p style="color: var(--text-secondary); font-size: 0.88rem;">
+            Spécifications officielles extraites directement du Brand Book.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+          <div style="background: #241E1A; color: #FFFFFF; padding: 1.25rem; border-radius: var(--radius-sm); text-align: center;">
+            <div style="font-weight: 600; font-size: 0.9rem;">Ink Brown</div>
+            <div style="font-family: monospace; font-size: 0.8rem; opacity: 0.8;">#241E1A</div>
+          </div>
+          <div style="background: #71513B; color: #FFFFFF; padding: 1.25rem; border-radius: var(--radius-sm); text-align: center;">
+            <div style="font-weight: 600; font-size: 0.9rem;">Cedar Wood</div>
+            <div style="font-family: monospace; font-size: 0.8rem; opacity: 0.8;">#71513B</div>
+          </div>
+          <div style="background: #AA8959; color: #FFFFFF; padding: 1.25rem; border-radius: var(--radius-sm); text-align: center;">
+            <div style="font-weight: 600; font-size: 0.9rem;">Patinated Brass</div>
+            <div style="font-family: monospace; font-size: 0.8rem; opacity: 0.8;">#AA8959</div>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <button class="btn-secondary-luxury" onclick="closeBrandModal()">Fermer la charte</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODALE 8 : APERÇU PROFIL COMME UN VISITEUR (CONFIDENTIALITÉ)
+       ======================================================================== -->
+  <div class="modal-overlay" id="visitorProfileModal">
+    <div class="modal-box" style="max-width: 680px;">
+      <div class="modal-header">
+        <h3>Aperçu Public : "Voir mon profil comme un visiteur"</h3>
+        <button class="modal-close-btn" onclick="userProfile.closeVisitorPreview()"><svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <div class="modal-content-body" id="visitorProfileModalBody">
+        <!-- Rempli dynamiquement par profile.js -->
       </div>
     </div>
   </div>
@@ -851,6 +1389,7 @@
   <script src="js/catalog.js"></script>
   <script src="js/humidor.js"></script>
   <script src="js/trade.js"></script>
+  <script src="js/profile.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

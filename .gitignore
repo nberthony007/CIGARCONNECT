@@ -10,3 +10,37 @@ Thumbs.db
 
 # Dropbox sync conflicts
 *.sync-conflict-*
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js build output
+.next/
+out/
+
+# Environment variables & secrets (CRUCIAL: NEVER COMMIT SECRETS)
+.env
+.env*.local
+.env.development
+.env.production
+.env.test
+!.env.example
+
+# Local SQLite databases
+*.db
+*.db-journal
+prisma/*.db
+prisma/*.db-journal
+
+# Vercel
+.vercel
+
+# Temporary Preview & Verification Screenshots
+/*.png
+*-preview.png
+*_preview.png
+*_verified.png
+*_check.png
+auth_modal_signup.png

@@ -1,11 +1,22 @@
 /**
  * CIGARCONNECT — Module Catalogue & Galerie de Cigares Rares
  * "Where Cigars Connect" — www.cigarconnect.net
+ * Direction : Galerie Photographique de Maître & Dossier d'Expertise
  */
 
 class CigarCatalog {
   constructor() {
-    this.cigars = JSON.parse(localStorage.getItem('cigarconnect_catalog')) || INITIAL_CIGARS;
+    let saved = null;
+    try {
+      saved = JSON.parse(localStorage.getItem('cigarconnect_catalog'));
+    } catch(e) {}
+
+    if (!saved || !saved.length || !saved[0].image || !saved[0].harvestYear) {
+      saved = typeof DEMO_CATALOG_CIGARS !== 'undefined' ? [...DEMO_CATALOG_CIGARS] : (typeof INITIAL_CIGARS !== 'undefined' ? [...INITIAL_CIGARS] : []);
+      localStorage.setItem('cigarconnect_catalog', JSON.stringify(saved));
+    }
+
+    this.cigars = saved;
     this.filteredCigars = [...this.cigars];
     this.activeOriginFilter = 'all';
     this.activeRarityFilter = 'all';
@@ -23,9 +34,10 @@ class CigarCatalog {
     this.raritySelect = document.getElementById('rarityFilterSelect');
     this.resultsCount = document.getElementById('catalogResultsCount');
     
-    // Modal Détail
+    // Modal Dossier de Collection
     this.detailModal = document.getElementById('cigarDetailModal');
     this.modalBody = document.getElementById('cigarDetailModalBody');
+    this.newArrivalsGrid = document.getElementById('newArrivalsGrid');
   }
 
   bindEvents() {
@@ -57,20 +69,20 @@ class CigarCatalog {
 
   applyFilters() {
     this.filteredCigars = this.cigars.filter(cigar => {
-      // Filtre Recherche
+      // Recherche textuelle
       const matchesSearch = 
         cigar.name.toLowerCase().includes(this.searchQuery) ||
         cigar.brand.toLowerCase().includes(this.searchQuery) ||
         cigar.origin.toLowerCase().includes(this.searchQuery) ||
         cigar.vitola.toLowerCase().includes(this.searchQuery) ||
-        cigar.aromas.some(a => a.toLowerCase().includes(this.searchQuery));
+        (cigar.aromas && cigar.aromas.some(a => a.toLowerCase().includes(this.searchQuery)));
 
-      // Filtre Terroir / Origine
+      // Terroir / Origine
       const matchesOrigin = 
         this.activeOriginFilter === 'all' || 
         cigar.origin.toLowerCase() === this.activeOriginFilter.toLowerCase();
 
-      // Filtre Rareté
+      // Rareté
       const matchesRarity = 
         this.activeRarityFilter === 'all' || 
         cigar.rarity === this.activeRarityFilter;
@@ -81,7 +93,61 @@ class CigarCatalog {
     this.render();
   }
 
+  renderNewArrivals() {
+    if (!this.newArrivalsGrid) return;
+    
+    let arrivals = null;
+    try {
+      arrivals = JSON.parse(localStorage.getItem('cigarconnect_new_arrivals'));
+    } catch(e) {}
+
+    if (!arrivals || !arrivals.length || !arrivals[0].image) {
+      arrivals = typeof DEMO_NEW_ARRIVALS !== 'undefined' ? [...DEMO_NEW_ARRIVALS] : (typeof INITIAL_NEW_ARRIVALS !== 'undefined' ? [...INITIAL_NEW_ARRIVALS] : []);
+      localStorage.setItem('cigarconnect_new_arrivals', JSON.stringify(arrivals));
+    }
+
+    this.newArrivalsGrid.innerHTML = arrivals.map(item => `
+      <article class="new-arrival-card" data-arrival-id="${item.id}">
+        <div class="arrival-media-wrap">
+          <img src="${item.image || 'assets/hero-cigar-library.jpg'}" alt="${item.brand} ${item.name}" class="arrival-img" loading="lazy">
+          <span class="arrival-time-tag">${item.timeAgo || 'Récent'}</span>
+        </div>
+
+        <div class="arrival-content-box">
+          <div class="arrival-brand-tag">${item.brand}</div>
+          <h4 class="arrival-cigar-title">${item.name}</h4>
+
+          <div class="arrival-owner-row">
+            <div class="arrival-avatar-mini">${item.ownerAvatar || 'AM'}</div>
+            <div style="flex:1; min-width:0;">
+              <strong style="color:var(--text-primary); font-size:0.82rem;">${item.owner}</strong>
+              <div style="font-size:0.72rem; color:var(--text-muted); display:flex; align-items:center; gap:0.25rem;">
+                <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                ${item.ownerLocation || 'Cercle Privé'}
+              </div>
+            </div>
+          </div>
+
+          <div style="font-size:0.78rem; color:var(--text-secondary); margin-bottom: 0.75rem;">
+            ${item.vitola} · <em>${item.harvestYear || item.vintage || ''}</em>
+          </div>
+
+          <div class="arrival-footer-bar">
+            <div class="arrival-price" style="font-size:0.82rem; font-weight:600; color: ${item.isTradeable ? 'var(--pine-verify)' : 'var(--wood-cedar)'};">
+              ${item.estimatedValue || (item.isTradeable ? '● Ouvert au troc' : '○ Collection privée')}
+            </div>
+            <button class="btn-arrival-inspect" onclick="cigarCatalog.openDetailModal('${item.cigarId || item.id}')">
+              Consulter le dossier
+            </button>
+          </div>
+        </div>
+      </article>
+    `).join('');
+  }
+
   render() {
+    this.renderNewArrivals();
+
     if (!this.gridContainer) return;
 
     if (this.resultsCount) {
@@ -90,69 +156,76 @@ class CigarCatalog {
 
     if (this.filteredCigars.length === 0) {
       this.gridContainer.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px dashed var(--border-gold);">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🍂</div>
-          <h3 style="font-family: var(--font-serif); margin-bottom: 0.5rem;">Aucun cigare ne correspond à ces critères</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Modifiez vos filtres ou effectuez une recherche plus large.</p>
+        <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; background: #FFFFFF; border-radius: var(--radius-md); border: 1px solid var(--stone-border);">
+          <h3 style="font-family: var(--font-serif); margin-bottom: 0.5rem; color:var(--text-primary);">Aucune vitole ne correspond à ces critères</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Ajustez vos filtres de terroirs ou votre mot-clé de recherche.</p>
         </div>
       `;
       return;
     }
 
     this.gridContainer.innerHTML = this.filteredCigars.map(cigar => {
-      const strengthDots = Array.from({ length: 5 }).map((_, i) => 
-        `<span style="display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:3px; background:${i < cigar.strength ? 'var(--gold-primary)' : 'rgba(255,255,255,0.15)'};"></span>`
-      ).join('');
+      const photoSrc = cigar.image || 'assets/hero-cigar-library.jpg';
 
       return `
         <article class="cigar-card" data-cigar-id="${cigar.id}">
           <div class="cigar-card-media">
-            <div class="cigar-media-bg-pattern"></div>
-            
+            <img src="${photoSrc}" alt="${cigar.brand} ${cigar.name}" class="cigar-card-img" loading="lazy">
             <div class="cigar-badges-overlay">
-              <span class="origin-badge">
-                <span>${cigar.countryFlag}</span>
-                <span>${cigar.origin}</span>
-              </span>
-              <span class="rarity-pill ${cigar.rarity}">${cigar.rarityLabel}</span>
-            </div>
-
-            <div class="cigar-visual-art">
-              <div class="cigar-band-ring" style="border-color:${cigar.ringColor || 'var(--gold-primary)'}">
-                ${cigar.brand.substring(0, 2).toUpperCase()}
-              </div>
-              <div class="cigar-body-stick"></div>
+              <span class="origin-tag-minimal">${cigar.origin}</span>
+              <span class="rarity-tag-clean">${cigar.rarityLabel || 'Collection'}</span>
             </div>
           </div>
 
           <div class="cigar-card-body">
-            <div class="cigar-card-brand">${cigar.brand} · ${cigar.vintage}</div>
+            <div class="cigar-card-brand">${cigar.brand}</div>
             <h3 class="cigar-card-title">${cigar.name}</h3>
 
-            <div class="cigar-specs-row">
-              <span>Module : <strong>${cigar.vitola}</strong></span>
-              <span>Bague : <strong>${cigar.ringGauge}</strong></span>
-              <span>Puissance : ${strengthDots}</span>
+            <div class="cigar-provenance-row">
+              <span>${cigar.harvestYear || ('Millésime ' + cigar.vintage)}</span>
+              <span>·</span>
+              <span>${cigar.boxYear || 'Bague d\'Origine'}</span>
             </div>
 
-            <div class="cigar-aromas-list">
-              ${cigar.aromas.map(a => `<span class="aroma-tag">${a}</span>`).join('')}
-            </div>
-
-            <div class="cigar-humidor-status">
-              <div class="condition-pill">
-                <span>${cigar.condition}</span>
+            <!-- Caractéristiques précises -->
+            <div class="cigar-specs-grid">
+              <div class="spec-cell">
+                <span class="lbl">Module</span>
+                <span class="val">${cigar.vitola}</span>
               </div>
-              <div class="estimated-value-text">${cigar.estimatedValue}</div>
+              <div class="spec-cell">
+                <span class="lbl">Calibre</span>
+                <span class="val">${cigar.ringGauge} (${cigar.lengthMm || 150}mm)</span>
+              </div>
+              <div class="spec-cell">
+                <span class="lbl">Conservation</span>
+                <span class="val">69% HR</span>
+              </div>
             </div>
 
-            <div class="cigar-card-actions">
-              <button class="btn-inspect" onclick="cigarCatalog.openDetailModal('${cigar.id}')">
-                Examiner
-              </button>
-              <button class="btn-trade" onclick="cigarTrade.openTradeProposalModal('${cigar.id}')">
-                Proposer un échange
-              </button>
+            <!-- Détenteur vérifié de la vitole -->
+            <div class="cigar-owner-bar">
+              <div class="cigar-owner-avatar">${cigar.ownerAvatar || 'AM'}</div>
+              <div class="cigar-owner-info">
+                <div class="cigar-owner-name">${cigar.owner || 'Aficionado Anonyme'}</div>
+                <div class="cigar-owner-loc" style="display:flex; align-items:center; gap:0.35rem;">
+                  <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  ${cigar.ownerLocation || 'Cercle Privé'}
+                </div>
+              </div>
+            </div>
+
+            <!-- Pied de carte -->
+            <div class="cigar-card-footer">
+              <div class="cigar-price-val">${(cigar.valuation && cigar.valuation.amount) ? `€ ${cigar.valuation.amount.toLocaleString('fr-FR')}` : (cigar.estimatedValue || 'Cote indicative')}</div>
+              <div class="cigar-actions-group">
+                <button class="btn-card-inspect" onclick="cigarCatalog.openDetailModal('${cigar.id}')">
+                  Dossier
+                </button>
+                <button class="btn-card-trade" onclick="cigarTrade.openTradeProposalModal('${cigar.id}')" title="Proposer un échange">
+                  Échanger
+                </button>
+              </div>
             </div>
           </div>
         </article>
@@ -161,116 +234,120 @@ class CigarCatalog {
   }
 
   openDetailModal(cigarId) {
-    const cigar = this.cigars.find(c => c.id === cigarId);
+    let cigar = this.cigars.find(c => c.id === cigarId);
+    if (!cigar) {
+      const arrivals = JSON.parse(localStorage.getItem('cigarconnect_new_arrivals')) || [];
+      cigar = arrivals.find(a => a.id === cigarId || a.cigarId === cigarId);
+    }
     if (!cigar || !this.detailModal || !this.modalBody) return;
 
-    const strengthText = ['Très Doux', 'Doux à Moyen', 'Moyen', 'Moyen à Fort', 'Pleine Puissance'][cigar.strength - 1];
+    const photoSrc = cigar.image || 'assets/hero-cigar-library.jpg';
 
     this.modalBody.innerHTML = `
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.5rem; align-items: start;">
+        <!-- Colonne Gauche : Photographie & Authentification -->
         <div>
-          <div style="background: linear-gradient(135deg, #221812, #140e0a); border-radius: var(--radius-lg); padding: 2rem; text-align: center; border: 1px solid var(--border-gold); margin-bottom: 1.5rem;">
-            <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold-primary); margin-bottom: 0.5rem;">
-              Pièce de Collection Certifiée
-            </div>
-            <h2 style="font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 0.5rem;">${cigar.brand} ${cigar.name}</h2>
-            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(46, 160, 104, 0.15); border: 1px solid var(--emerald-authentic); color: var(--emerald-authentic); padding: 0.35rem 0.85rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">
-              ✓ Authenticité Vérifiée par Expert
-            </div>
+          <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--stone-border); margin-bottom: 1.25rem; background: #241E1A;">
+            <img src="${photoSrc}" alt="${cigar.brand} ${cigar.name}" style="width: 100%; height: 360px; object-fit: cover; display: block;">
           </div>
 
-          <div style="background: var(--bg-surface); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); margin-bottom: 1.5rem;">
-            <h4 style="font-family: var(--font-display); font-size: 0.82rem; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.75rem;">
-              Caractéristiques Techniques
-            </h4>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.85rem;">
-              <div>Terroir : <strong style="color:var(--text-primary);">${cigar.countryFlag} ${cigar.origin}</strong></div>
-              <div>Vitola : <strong style="color:var(--text-primary);">${cigar.vitola}</strong></div>
-              <div>Bague / Calibre : <strong style="color:var(--text-primary);">${cigar.ringGauge} (Ø ${(cigar.ringGauge * 0.397).toFixed(1)}mm)</strong></div>
-              <div>Longueur : <strong style="color:var(--text-primary);">${cigar.lengthMm} mm</strong></div>
-              <div>Millésime : <strong style="color:var(--text-primary);">${cigar.vintage}</strong></div>
-              <div>Puissance : <strong style="color:var(--text-primary);">${strengthText}</strong></div>
-              <div>Code Boîte : <strong style="color:var(--gold-light); font-family: monospace;">${cigar.boxCode || 'Vérifié'}</strong></div>
-              <div>Valeur estimée : <strong style="color:var(--gold-light);">${cigar.estimatedValue}</strong></div>
+          <!-- Encadré Traçabilité & Conservation -->
+          <div style="background: var(--bg-card-elevated); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--stone-border); font-size: 0.85rem;">
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--wood-cedar); font-weight: 600; margin-bottom: 0.6rem;">
+              Traçabilité & Conservation Déclarée
             </div>
-          </div>
-
-          <div style="background: var(--bg-surface); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
-            <h4 style="font-family: var(--font-display); font-size: 0.82rem; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.5rem;">
-              Propriétaire & Garantie de Conservation
-            </h4>
-            <div style="display: flex; align-items: center; justify-content: space-between;">
-              <div>
-                <div style="font-weight: 600; font-size: 0.95rem; color: var(--text-primary);">${cigar.owner}</div>
-                <div style="font-size: 0.8rem; color: var(--text-muted);">${cigar.ownerReputation}</div>
+            <div style="display: flex; flex-direction: column; gap: 0.65rem; color: var(--text-secondary);">
+              <div style="display: flex; align-items: flex-start; gap: 0.45rem;">
+                <svg class="cc-icon cc-icon-sm" style="margin-top: 3px; color: var(--wood-cedar);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <div><strong>Provenance :</strong> ${cigar.provenance || 'Manufacture officielle et collection privée.'}</div>
               </div>
-              <div style="text-align: right; font-size: 0.8rem; color: var(--emerald-authentic);">
-                ${cigar.condition}
+              <div style="display: flex; align-items: flex-start; gap: 0.45rem;">
+                <svg class="cc-icon cc-icon-sm" style="margin-top: 3px; color: var(--wood-cedar);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                <div><strong>Humidor :</strong> ${cigar.declaredConservation || cigar.condition || 'Armoire tempérée 18.5°C / 69% HR'}</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.45rem;">
+                <svg class="cc-icon cc-icon-sm" style="color: var(--wood-cedar);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                <div><strong>Code Boîte :</strong> <code style="background:#FFFFFF; padding: 2px 6px; border:1px solid var(--stone-border); border-radius:3px; font-weight:600; color:var(--text-primary);">${cigar.boxCode || 'Fabrique certifiée'}</code></div>
+              </div>
+              <div style="color: var(--pine-verify); font-weight: 600; display:flex; align-items:center; gap: 0.35rem; margin-top: 0.25rem;">
+                <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Déclaration membre : Bague et boîte d'origine déclarées intactes</span>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Colonne Droite : Fiche d'Expertise & Échange -->
         <div>
-          <h4 style="font-family: var(--font-display); font-size: 0.82rem; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.75rem;">
-            Histoire & Notes de Dégustation
-          </h4>
-          <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 1.5rem;">
-            ${cigar.description}
-          </p>
+          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--wood-cedar); font-weight: 600; margin-bottom: 0.3rem;">
+            ${cigar.brand} · <span class="origin-tag-minimal">${cigar.origin}</span>
+          </div>
+          <h2 style="font-family: var(--font-serif); font-size: 1.85rem; color: var(--text-primary); margin-bottom: 0.75rem; line-height: 1.2;">
+            ${cigar.name}
+          </h2>
 
-          <h4 style="font-family: var(--font-display); font-size: 0.82rem; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem;">
-            Pyramide Aromatique & Signature Gustative
-          </h4>
-          
-          <div style="display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 2rem;">
+          <div style="display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--stone-border);">
+            <span style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 600; color: var(--wood-cedar);">${cigar.estimatedValue}</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">(Estimation indicative déclarée)</span>
+          </div>
+
+          <!-- Dates Qualifiées -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; background: var(--bg-card-elevated); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--stone-border); margin-bottom: 1.5rem; font-size: 0.8rem;">
             <div>
-              <div style="display:flex; justify-content:space-between; font-size: 0.8rem; margin-bottom: 0.25rem;">
-                <span>Bois Précieux & Cèdre Espagnol</span>
-                <span style="color:var(--gold-light);">95%</span>
-              </div>
-              <div style="height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
-                <div style="height: 100%; width: 95%; background: var(--gold-gradient);"></div>
-              </div>
+              <div style="color:var(--text-muted); font-size:0.7rem; text-transform:uppercase;">Récolte</div>
+              <strong style="color:var(--text-primary);">${cigar.harvestYear || 'Cosecha ' + cigar.vintage}</strong>
             </div>
-
             <div>
-              <div style="display:flex; justify-content:space-between; font-size: 0.8rem; margin-bottom: 0.25rem;">
-                <span>Cuir de Russie & Terre Minérale</span>
-                <span style="color:var(--gold-light);">90%</span>
-              </div>
-              <div style="height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
-                <div style="height: 100%; width: 90%; background: var(--gold-gradient);"></div>
-              </div>
+              <div style="color:var(--text-muted); font-size:0.7rem; text-transform:uppercase;">Mise en boîte</div>
+              <strong style="color:var(--text-primary);">${cigar.boxYear || cigar.vintage}</strong>
             </div>
-
             <div>
-              <div style="display:flex; justify-content:space-between; font-size: 0.8rem; margin-bottom: 0.25rem;">
-                <span>Cacao Noir & Torréfaction</span>
-                <span style="color:var(--gold-light);">85%</span>
-              </div>
-              <div style="height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
-                <div style="height: 100%; width: 85%; background: var(--gold-gradient);"></div>
-              </div>
+              <div style="color:var(--text-muted); font-size:0.7rem; text-transform:uppercase;">Acquisition</div>
+              <strong style="color:var(--text-primary);">${cigar.acquisitionDate ? cigar.acquisitionDate.split('(')[0].trim() : '2020'}</strong>
             </div>
+          </div>
 
-            <div>
-              <div style="display:flex; justify-content:space-between; font-size: 0.8rem; margin-bottom: 0.25rem;">
-                <span>Épices Douces & Poivre Blanc</span>
-                <span style="color:var(--gold-light);">78%</span>
+          <!-- Notes de dégustation -->
+          <div style="margin-bottom: 1.5rem;">
+            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--wood-cedar); font-weight: 600; margin-bottom: 0.4rem;">
+              Notes du Conservateur
+            </div>
+            <p style="font-size: 0.92rem; line-height: 1.65; color: var(--text-secondary); margin-bottom: 1rem;">
+              ${cigar.description || 'Vitole conservée dans des conditions muséales irréprochables. Cape huileuse et arômes tertiaires épanouis.'}
+            </p>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              ${(cigar.aromas || ['Cuir', 'Cèdre', 'Cacao', 'Terre']).map(a => `
+                <span style="background: #FFFFFF; border: 1px solid var(--stone-border); padding: 0.25rem 0.65rem; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--text-primary);">
+                  ${a}
+                </span>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Carte Détenteur & Action -->
+          <div style="background: #FFFFFF; border: 1px solid var(--stone-border); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.85rem;">
+              <div class="cigar-owner-avatar" style="width: 40px; height: 40px; font-size: 0.95rem;">
+                ${cigar.ownerAvatar || 'AM'}
               </div>
-              <div style="height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
-                <div style="height: 100%; width: 78%; background: var(--gold-gradient);"></div>
+              <div style="flex: 1;">
+                <div style="font-weight: 600; color: var(--text-primary); font-size: 0.95rem;">${cigar.owner || 'Aficionado Anonyme'}</div>
+                <div style="font-size: 0.78rem; color: var(--text-muted); display:flex; align-items:center; gap:0.35rem;">
+                  <svg class="cc-icon cc-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="12" r="3"/></svg>
+                  ${cigar.ownerLocation || 'Cercle Privé'} · Réputation ${cigar.ownerReputation || '5.0'}
+                </div>
               </div>
             </div>
           </div>
 
-          <div style="display: flex; gap: 1rem;">
-            <button class="btn-primary-gold" style="flex:1;" onclick="cigarDetailModalClose(); cigarTrade.openTradeProposalModal('${cigar.id}');">
-              Proposer un Échange Sécurisé
+          <!-- Actions avec appel discret -->
+          <div style="display: flex; gap: 0.85rem;">
+            <button class="btn-primary-gold" style="flex: 1; padding: 0.85rem 1.25rem;" onclick="cigarDetailModalClose(); cigarTrade.openTradeProposalModal('${cigar.id}')">
+              Discuter de cette pièce
             </button>
-            <button class="btn-secondary-luxury" onclick="showToast('Cigare ajouté à vos favoris secrets !')">
-              ♡ Enregistrer
+            <button class="btn-secondary-luxury" style="padding: 0.85rem 1.25rem;" onclick="cigarDetailModalClose()">
+              Fermer le dossier
             </button>
           </div>
         </div>
@@ -285,4 +362,3 @@ function cigarDetailModalClose() {
   const modal = document.getElementById('cigarDetailModal');
   if (modal) modal.classList.remove('active');
 }
-window.cigarDetailModalClose = cigarDetailModalClose;

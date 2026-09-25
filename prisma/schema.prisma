@@ -1,0 +1,309 @@
+// CigarConnect — Schéma de Données de Référence Full-Stack
+// Conçu pour SQLite en développement local et PostgreSQL / Supabase en production
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Aficionado & Membre du Cercle
+model User {
+  id                   String                 @id @default(cuid())
+  email                String                 @unique
+  firstName            String
+  lastName             String
+  city                 String
+  country              String
+  avatarInitials       String                 @default("CC")
+  bio                  String?
+  role                 String                 @default("MEMBER") // MEMBER, VIP_CONNOISSEUR, MASTER_COLLECTOR, CURATOR_ADMIN
+  createdAt            DateTime               @default(now())
+  updatedAt            DateTime               @updatedAt
+
+  // Confidentialité native
+  privacySettings      PrivacySettings?
+
+  // Relations Humidor & Échanges
+  humidorLots          HumidorLot[]
+  sentTrades           TradeProposal[]        @relation("ProposerTrades")
+  receivedTrades       TradeProposal[]        @relation("RecipientTrades")
+  tradeMessages        TradeMessage[]
+
+  // Le Salon unique (/app/salon) & Contributions
+  salonMessages        SalonMessage[]         @relation("SalonAuthor")
+  salonPreference      SalonPreference?
+  salonReports         SalonModerationRecord[]
+  blockedUsers         BlockedUser[]          @relation("UserBlocker")
+  blockedBy            BlockedUser[]          @relation("UserBlocked")
+  catalogContributions CatalogContribution[]
+}
+
+model PrivacySettings {
+  id                  String   @id @default(cuid())
+  userId              String   @unique
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  showLocation        Boolean  @default(true) // Afficher "Paris, France" vs "Localisation confidentielle"
+  showValuation       Boolean  @default(false) // Masqué par défaut
+  allowDirectMessages Boolean  @default(true)
+}
+
+// Catalogue Patrimonial de Référence (Grandes Vitoles)
+model CigarReference {
+  id              String             @id @default(cuid())
+  brand           String             // ex: Cohiba, Trinidad, Montecristo
+  name            String             // ex: Behike BHK 56
+  origin          String             // Cuba, République Dominicaine, Nicaragua
+  countryCode     String             // CU, DO, NI
+  vitola          String             // Laguito No. 6, Pirámide, Robusto
+  ringGauge       Int                // Calibre (cepo, ex: 56)
+  lengthMm        Int                // Longueur en mm (ex: 166)
+  vintageYear     String?            // 2010
+  rarityGrade     String             @default("REGULAR") // REGULAR, VINTAGE, LIMITED_EDITION, RESERVA, GRAN_RESERVA, ULTRA_RARE
+  rarityLabel     String             // "Édition Limitée Historique"
+  defaultImageUrl String
+  factoryNotes    String?            // Notes de cape, terroir, méthode
+  strength        String             @default("Moyenne à Forte") // Douce, Moyenne, Forte
+  lots            HumidorLot[]
+  variants        ReferenceVariant[]
+}
+
+// Variantes documentées d'un modèle (Section 3.1)
+model ReferenceVariant {
+  id               String         @id @default(cuid())
+  cigarReferenceId String
+  cigarReference   CigarReference @relation(fields: [cigarReferenceId], references: [id], onDelete: Cascade)
+  variantName      String         // ex: "Cabinet de 25 verni 2010"
+  editionDetails   String?
+  ringGauge        Int?
+  lengthMm         Int?
+  createdAt        DateTime       @default(now())
+}
+
+// Cave Personnelle ("Mon Humidor") — Modèle hybride (Sections 3.3, 4)
+model HumidorLot {
+  id                   String          @id @default(cuid())
+  userId               String
+  user                 User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  cigarReferenceId     String?
+  cigarReference       CigarReference? @relation(fields: [cigarReferenceId], references: [id])
+
+  // Données d'une pièce personnalisée / hors catalogue
+  isCustomPiece        Boolean         @default(false)
+  customBrand          String?
+  customName           String?
+  customVitola         String?
+  customOrigin         String?
+
+  // Emplacement & Gestion stricte des stocks
+  humidorLocation      String?         // ex: "Humidor Cèdre Salon — Tiroir supérieur"
+  quantity             Int             @default(1)
+  reservedQuantity     Int             @default(0) // Quantité bloquée dans un échange actif
+
+  // Conservation (Norme 68-70% HR, 18-20°C)
+  conditionHr          String          @default("69% HR") // 68-70% recommandé
+  conditionTemp        String          @default("19°C")
+  conditionNotes       String?
+  packaging            String          @default("Unité individuelle") // Boîte de 10, Cabinet de 25, Unité sous étui cèdre
+  boxCode              String?         // ex: "BBM MAY 10"
+  boxCodeVerified      Boolean         @default(false)
+  provenanceDeclared   String?
+  customPhotoUrl       String?
+
+  // Acquisition & Valorisation privée (Sections 3.3, 4)
+  acquisitionDate      String?
+  purchasePrice        Float?
+  purchaseCurrency     String?         @default("EUR")
+  privateNotes         String?         // Notes personnelles de dégustation et conservation
+  valuationAmount      Float?
+  valuationSource      String?         @default("Estimation déclarée")
+
+  // Visibilité & Échangeabilité
+  isTradeable          Boolean         @default(false)
+  isPublic             Boolean         @default(false)
+
+  createdAt            DateTime        @default(now())
+  updatedAt            DateTime        @updatedAt
+}
+
+// Contributions Volontaires au Catalogue (Section 5)
+model CatalogContribution {
+  id                 String   @id @default(cuid())
+  userId             String
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lotId              String?
+  brand              String
+  line               String?
+  name               String
+  format             String
+  ringGauge          Int?
+  lengthMm           Int?
+  originCountry      String?
+  shareableImageUrl  String?
+  status             String   @default("submitted") // draft, submitted, needs_information, under_review, accepted, linked_existing, rejected, withdrawn
+  reviewNotes        String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+// Bourse de Troc Pur ("Le Cercle")
+model TradeProposal {
+  id                   String          @id @default(cuid())
+  proposerId           String
+  proposer             User            @relation("ProposerTrades", fields: [proposerId], references: [id])
+  recipientId          String
+  recipient            User            @relation("RecipientTrades", fields: [recipientId], references: [id])
+
+  status               String          @default("SUBMITTED") // SUBMITTED, NEGOTIATING, MUTUALLY_AGREED, IN_TRANSIT, COMPLETED, DECLINED
+  currentVersion       Int             @default(1)
+
+  // Modalité convenue d'un commun accord (Cahier des charges 8.1)
+  exchangeLocationType String          @default("Remise en main propre en salon privé convenu")
+  notes                String?
+
+  // Historique des versions et discussions
+  versions             TradeVersion[]
+  messages             TradeMessage[]
+
+  createdAt            DateTime        @default(now())
+  updatedAt            DateTime        @updatedAt
+}
+
+model TradeVersion {
+  id                   String          @id @default(cuid())
+  tradeProposalId      String
+  tradeProposal        TradeProposal   @relation(fields: [tradeProposalId], references: [id], onDelete: Cascade)
+  versionNumber        Int
+  offeredLotId         String
+  offeredQuantity      Int             @default(1)
+  desiredLotId         String
+  desiredQuantity      Int             @default(1)
+  notes                String?
+  signedByProposer     Boolean         @default(true)
+  signedByRecipient    Boolean         @default(false)
+  createdAt            DateTime        @default(now())
+}
+
+model TradeMessage {
+  id                   String          @id @default(cuid())
+  tradeProposalId      String
+  tradeProposal        TradeProposal   @relation(fields: [tradeProposalId], references: [id], onDelete: Cascade)
+  senderId             String
+  sender               User            @relation(fields: [senderId], references: [id])
+  content              String
+  isSystemEvent        Boolean         @default(false)
+  createdAt            DateTime        @default(now())
+}
+
+// ==========================================
+// ESPACES SPONSORISÉS DISCRETS (Sections 9-17)
+// ==========================================
+
+model SponsorshipRequest {
+  id                 String   @id @default(cuid())
+  organization       String
+  contactName        String
+  contactEmail       String
+  websiteUrl         String
+  activityDomain     String
+  targetTerritories  String
+  desiredPlacement   String   // HOME_BANNER, CATALOG_CARD, JOURNAL_BOX, CIRCLE_EVENT
+  desiredPeriod      String   // ex: "30 jours"
+  message            String?
+  commercialStatus   String   @default("lead") // lead, qualified, quoted, accepted, closed
+  paymentStatus      String   @default("not_due") // not_due, pending, paid, failed, refunded
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+model Campaign {
+  id                 String    @id @default(cuid())
+  sponsorName        String
+  placement          String    // HOME_BANNER, CATALOG_CARD, JOURNAL_BOX, CIRCLE_EVENT
+  title              String
+  description        String
+  imageUrl           String
+  destinationUrl     String
+  altText            String
+  status             String    @default("active") // draft, submitted, needs_changes, approved, scheduled, active, paused, ended, rejected, cancelled
+  territories        String    @default("ALL")
+  impressions        Int       @default(0)
+  clicks             Int       @default(0)
+  isEmergencyStopped Boolean   @default(false)
+  startDate          DateTime?
+  endDate            DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+}
+
+// ==========================================
+// LE SALON UNIQUE (/app/salon) (Sections 23-27)
+// ==========================================
+
+model SalonMessage {
+  id            String                  @id @default(cuid())
+  authorId      String
+  author        User                    @relation("SalonAuthor", fields: [authorId], references: [id], onDelete: Cascade)
+  content       String
+  replyToId     String?
+  replyTo       SalonMessage?           @relation("SalonReplies", fields: [replyToId], references: [id])
+  replies       SalonMessage[]          @relation("SalonReplies")
+  isEdited      Boolean                 @default(false)
+  isRetracted   Boolean                 @default(false)
+  retractedAt   DateTime?
+  clientSendId  String?
+  createdAt     DateTime                @default(now())
+  updatedAt     DateTime                @updatedAt
+
+  attachments   SalonAttachment[]
+  reports       SalonModerationRecord[]
+}
+
+model SalonAttachment {
+  id         String       @id @default(cuid())
+  messageId  String
+  message    SalonMessage @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  url        String
+  altText    String?
+  sizeBytes  Int?
+  mimeType   String?
+  createdAt  DateTime     @default(now())
+}
+
+model SalonPreference {
+  id                         String   @id @default(cuid())
+  userId                     String   @unique
+  user                       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  replyNotificationsEnabled  Boolean  @default(true) // Réglage unique : activées / désactivées pour les réponses directes
+  acceptedCharterVersion     String?  // Version de la charte acceptée (ex: "v2.0")
+  createdAt                  DateTime @default(now())
+  updatedAt                  DateTime @updatedAt
+}
+
+model SalonModerationRecord {
+  id         String       @id @default(cuid())
+  messageId  String
+  message    SalonMessage @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  reporterId String
+  reporter   User         @relation(fields: [reporterId], references: [id], onDelete: Cascade)
+  reason     String       // SPAM, ABUSIVE, PERSONAL_INFO, INAPPROPRIATE, OTHER
+  details    String?
+  status     String       @default("PENDING") // PENDING, REVIEWED, DISMISSED, ACTIONED
+  decision   String?
+  createdAt  DateTime     @default(now())
+}
+
+model BlockedUser {
+  id         String   @id @default(cuid())
+  blockerId  String
+  blocker    User     @relation("UserBlocker", fields: [blockerId], references: [id], onDelete: Cascade)
+  blockedId  String
+  blocked    User     @relation("UserBlocked", fields: [blockedId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+
+  @@unique([blockerId, blockedId])
+}
