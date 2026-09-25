@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ArrowLeft, Box } from "lucide-react";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Mon Humidor — Haute Conservation & Gestion de Cave | CigarConnect",
   description:

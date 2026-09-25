@@ -7,6 +7,8 @@ import Link from "next/link";
 import { ArrowLeft, ArrowLeftRight } from "lucide-react";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Le Cercle — Salon d'Échange de Gré à Gré & Négociations Privées | CigarConnect",
   description:

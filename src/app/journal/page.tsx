@@ -5,6 +5,8 @@ import { ArrowLeft, BookOpen, Clock, Calendar, ShieldCheck, ArrowRight, Sparkles
 import { getSponsoredCampaign } from "@/lib/actions/sponsors";
 import { SponsoredPlacement } from "@/components/ui/SponsoredPlacement";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Le Journal de la Manufacture — Récits & Savoir | CigarConnect",
   description:

@@ -5,6 +5,8 @@ import { CigarData } from "@/components/catalog/CigarCard";
 import { PieceDetailView } from "@/components/catalog/PieceDetailView";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 // Données de secours
 const fallbackCigars: CigarData[] = [
   {
