@@ -44,3 +44,4 @@ prisma/*.db-journal
 *_verified.png
 *_check.png
 auth_modal_signup.png
+.env*
