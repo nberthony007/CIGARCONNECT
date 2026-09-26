@@ -38,8 +38,8 @@
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-    max-width: 100%;
+    overflow-x: clip;
+    max-width: 100vw;
   }
 
   /* Défilement fluide élégant pour les ancres internes, sans perturber les transitions de pages */
@@ -51,10 +51,16 @@
 
   body {
     min-height: 100vh;
-    overflow-x: hidden;
-    max-width: 100%;
+    overflow-x: clip;
+    max-width: 100vw;
     background-color: var(--canvas);
     color: var(--ink);
+  }
+
+  @supports not (overflow-x: clip) {
+    html, body {
+      overflow-x: hidden;
+    }
   }
 
   h1, h2, h3, h4, .font-serif {
@@ -80,11 +86,23 @@
 }
 
 @layer components {
+  /* En-tête Sticky ultra-robuste avec GPU compositing pour mobile Safari et Chrome */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
   /* Effet verre minéral feutré pour header et panneaux */
   .cigar-glass {
-    background: rgba(247, 245, 240, 0.92);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: rgba(247, 245, 240, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--line);
   }
 

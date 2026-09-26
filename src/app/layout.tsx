@@ -7,6 +7,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
@@ -56,7 +57,12 @@ export default function RootLayout({
               :root { --canvas: #F7F5F0; --ink: #211D19; }
               html, body { background-color: #F7F5F0 !important; color: #211D19; margin: 0; font-family: 'Outfit', -apple-system, sans-serif; }
               img { max-width: 100%; }
-              .brand-logo img, header img, [title*="CigarConnect"] img { height: 48px !important; max-height: 48px !important; width: auto !important; object-fit: contain; }
+              @media (min-width: 640px) {
+                .brand-logo img, header img, [title*="CigarConnect"] img { height: 44px !important; max-height: 48px !important; width: auto !important; object-fit: contain; }
+              }
+              @media (max-width: 639px) {
+                .brand-logo img, header img, [title*="CigarConnect"] img { height: 32px !important; max-height: 34px !important; width: auto !important; object-fit: contain; }
+              }
             `,
           }}
         />

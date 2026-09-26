@@ -77,8 +77,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose, onO
           <img
             src="/assets/logo-header-trimmed.png"
             alt="CIGARCONNECT — Cigar Social Networking"
-            style={{ height: "40px", maxHeight: "40px", width: "auto" }}
-            className="h-10 w-auto object-contain"
+            className="h-8 sm:h-9 w-auto object-contain"
           />
         </Link>
         <button

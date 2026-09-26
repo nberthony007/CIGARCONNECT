@@ -114,7 +114,7 @@ export const NotificationsDropdown: React.FC = () => {
       {/* Bouton Cloche de Notification */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`relative w-10 h-10 rounded border flex items-center justify-center transition-all cursor-pointer ${
+        className={`relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg border flex items-center justify-center transition-all cursor-pointer ${
           isOpen
             ? "border-[#71513B] bg-[#F4F0E7] text-[#241E1A] shadow-inner"
             : "border-[#D9D0C2] bg-[#FFFFFF] text-[#5E534D] hover:border-[#AA8959] hover:text-[#241E1A] shadow-sm"
