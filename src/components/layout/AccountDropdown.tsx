@@ -75,7 +75,7 @@ export const AccountDropdown: React.FC = () => {
   };
 
   return (
-    <div ref={dropdownRef} className="relative hidden md:block">
+    <div ref={dropdownRef} className="relative hidden lg:block">
       {/* Bouton Pill "Compte AM" */}
       <button
         type="button"

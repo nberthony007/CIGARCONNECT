@@ -168,10 +168,10 @@ export const TradeDashboard: React.FC<TradeDashboardProps> = ({
       </div>
 
       {/* Barre d'Onglets de Filtrage */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none text-xs">
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none text-xs w-full max-w-full">
         <button
           onClick={() => setFilter("ALL")}
-          className={`px-4 py-2 rounded-xl font-semibold transition-all ${
+          className={`px-4 py-2 rounded-xl font-semibold transition-all shrink-0 ${
             filter === "ALL"
               ? "bg-cigar-cedar text-[#FAF7F2] shadow-sm"
               : "bg-cigar-ivory-light text-cigar-ink-muted border border-cigar-stone hover:border-cigar-brass hover:text-cigar-ink"
@@ -182,7 +182,7 @@ export const TradeDashboard: React.FC<TradeDashboardProps> = ({
 
         <button
           onClick={() => setFilter("NEGOTIATING")}
-          className={`px-4 py-2 rounded-xl font-semibold transition-all ${
+          className={`px-4 py-2 rounded-xl font-semibold transition-all shrink-0 ${
             filter === "NEGOTIATING"
               ? "bg-cigar-cedar text-[#FAF7F2] shadow-sm"
               : "bg-cigar-ivory-light text-cigar-ink-muted border border-cigar-stone hover:border-cigar-brass hover:text-cigar-ink"
@@ -193,7 +193,7 @@ export const TradeDashboard: React.FC<TradeDashboardProps> = ({
 
         <button
           onClick={() => setFilter("MUTUALLY_AGREED")}
-          className={`px-4 py-2 rounded-xl font-semibold transition-all ${
+          className={`px-4 py-2 rounded-xl font-semibold transition-all shrink-0 ${
             filter === "MUTUALLY_AGREED"
               ? "bg-cigar-cedar text-[#FAF7F2] shadow-sm"
               : "bg-cigar-ivory-light text-cigar-ink-muted border border-cigar-stone hover:border-cigar-brass hover:text-cigar-ink"
@@ -204,7 +204,7 @@ export const TradeDashboard: React.FC<TradeDashboardProps> = ({
 
         <button
           onClick={() => setFilter("COMPLETED")}
-          className={`px-4 py-2 rounded-xl font-semibold transition-all ${
+          className={`px-4 py-2 rounded-xl font-semibold transition-all shrink-0 ${
             filter === "COMPLETED"
               ? "bg-cigar-cedar text-[#FAF7F2] shadow-sm"
               : "bg-cigar-ivory-light text-cigar-ink-muted border border-cigar-stone hover:border-cigar-brass hover:text-cigar-ink"

@@ -75,8 +75,8 @@ export const Header: React.FC = () => {
             />
           </Link>
 
-          {/* Les Destinations Minimalistes & Épurées */}
-          <nav className="hidden md:flex items-center gap-1" aria-label="Navigation principale">
+          {/* Les Destinations Minimalistes & Épurées — Visibles sur desktop (>= 1024px) */}
+          <nav className="hidden lg:flex items-center gap-1" aria-label="Navigation principale">
             <Link
               href="/#catalogue"
               className={`px-3 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-colors ${
@@ -134,12 +134,12 @@ export const Header: React.FC = () => {
             <button
               ref={searchTriggerRef}
               onClick={() => setSearchDialogOpen(true)}
-              className="flex items-center justify-center gap-1.5 w-9 h-9 sm:w-auto sm:px-2.5 sm:py-1.5 rounded-full text-xs font-medium text-[#645C54] hover:text-[#211D19] hover:bg-[#EEEAE3] transition-colors border border-transparent hover:border-[#D9D2C7]"
+              className="flex items-center justify-center gap-1.5 w-9 h-9 lg:w-auto lg:px-2.5 lg:py-1.5 rounded-full text-xs font-medium text-[#645C54] hover:text-[#211D19] hover:bg-[#EEEAE3] transition-colors border border-transparent hover:border-[#D9D2C7]"
               aria-label="Rechercher dans CigarConnect"
               title="Rechercher une pièce, référence ou article (Échap pour fermer)"
             >
               <Search className="w-4 h-4 text-[#211D19]" strokeWidth={1.8} />
-              <span className="hidden sm:inline">Recherche</span>
+              <span className="hidden lg:inline">Recherche</span>
             </button>
 
             {/* Cloche de notifications interactive */}
@@ -149,7 +149,7 @@ export const Header: React.FC = () => {
             {user ? (
               <AccountDropdown />
             ) : (
-              <div className="hidden md:flex items-center gap-2">
+              <div className="hidden lg:flex items-center gap-2">
                 <button
                   type="button"
                   onClick={() => openAuthModal("login")}
@@ -167,10 +167,10 @@ export const Header: React.FC = () => {
               </div>
             )}
 
-            {/* Bouton Menu Téléphone */}
+            {/* Bouton Menu Téléphone & Tablette */}
             <button
               onClick={() => setMobileDrawerOpen(true)}
-              className="md:hidden w-9 h-9 rounded-lg border border-[#D9D2C7] bg-[#FFFFFF] flex items-center justify-center text-[#211D19] hover:border-[#6C4935] hover:bg-[#F7F5F0] transition-colors shadow-sm"
+              className="lg:hidden w-9 h-9 rounded-lg border border-[#D9D2C7] bg-[#FFFFFF] flex items-center justify-center text-[#211D19] hover:border-[#6C4935] hover:bg-[#F7F5F0] transition-colors shadow-sm"
               aria-label="Ouvrir le menu de navigation"
             >
               <Menu className="w-4 h-4" strokeWidth={1.75} />
