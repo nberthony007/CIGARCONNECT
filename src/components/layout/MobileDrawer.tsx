@@ -167,6 +167,32 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose, onO
               <ChevronRight className="w-4 h-4 text-[#857A6D]" />
             </Link>
           </div>
+
+          <div className="pt-2">
+            <Link
+              href="/aide"
+              onClick={onClose}
+              className="flex items-center justify-between py-3 text-lg font-medium text-[#211D19] hover:text-[#AA8959] transition-colors"
+            >
+              <span className="flex items-center gap-2">
+                <span>Centre d'Aide</span>
+              </span>
+              <ChevronRight className="w-4 h-4 text-[#857A6D]" />
+            </Link>
+          </div>
+
+          <div className="pt-2">
+            <Link
+              href="/app/assistance"
+              onClick={onClose}
+              className="flex items-center justify-between py-3 text-lg font-medium text-[#211D19] hover:text-[#AA8959] transition-colors"
+            >
+              <span className="flex items-center gap-2">
+                <span>Mes Demandes & Recours</span>
+              </span>
+              <ChevronRight className="w-4 h-4 text-[#857A6D]" />
+            </Link>
+          </div>
         </nav>
 
         {/* Espace Membre / Compte */}

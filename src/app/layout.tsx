@@ -34,6 +34,7 @@ import { ToastProvider } from "@/components/ui/Toast";
 import { AuthProvider } from "@/context/AuthContext";
 import { AuthModal } from "@/components/profile/AuthModal";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
+import { HelpFloatingButton } from "@/components/support/HelpFloatingButton";
 
 export default function RootLayout({
   children,
@@ -75,6 +76,7 @@ export default function RootLayout({
             <main className="flex-grow">{children}</main>
             <Footer />
             <AuthModal />
+            <HelpFloatingButton />
           </AuthProvider>
         </ToastProvider>
       </body>

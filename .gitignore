@@ -45,3 +45,4 @@ prisma/*.db-journal
 *_check.png
 auth_modal_signup.png
 .env*
+scratch/

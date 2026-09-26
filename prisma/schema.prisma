@@ -41,6 +41,16 @@ model User {
   blockedUsers         BlockedUser[]          @relation("UserBlocker")
   blockedBy            BlockedUser[]          @relation("UserBlocked")
   catalogContributions CatalogContribution[]
+
+  // Centre d'assistance & Médiation
+  requesterCases       SupportCase[]          @relation("RequesterCases")
+  agentCases           SupportCase[]          @relation("AgentCases")
+  caseParticipations   CaseParticipant[]
+  internalNotes        CaseInternalNote[]
+  caseAssignments      CaseAssignment[]       @relation("AssignedTo")
+  assignedByMe         CaseAssignment[]       @relation("AssignedBy")
+  proposalDecisions    ProposalDecision[]
+  reviewRequests       CaseReviewRequest[]
 }
 
 model PrivacySettings {
@@ -306,4 +316,211 @@ model BlockedUser {
   createdAt  DateTime @default(now())
 
   @@unique([blockerId, blockedId])
+}
+
+// ==============================================================================
+// CENTRE D'ASSISTANCE ET DE MÉDIATION (Cahier des charges v1.0 — 26 Septembre 2026)
+// ==============================================================================
+
+model SupportCase {
+  id                    String                @id @default(cuid())
+  reference             String                @unique // ex: CC-SUP-2026-0412
+  category              String                // GENERAL, TRADE_ISSUE, REPORT_MEMBER, TECHNICAL
+  subject               String                // max 120 caractères
+  description           String                // jusqu'à 10 000 caractères
+  status                String                @default("new") // new, triage, in_progress, waiting_requester, waiting_other_party, proposal_pending, agreement_follow_up, closed
+  outcomeCode           String?               // RESOLVED_ARRANGEMENT, AGREED_INCOMPLETE_FOLLOWUP, NO_AGREEMENT, WITHDRAWN_BY_REQUESTER, ADMINISTRATIVE_CLOSURE
+  priority              String                @default("NORMAL") // URGENT, HIGH, NORMAL, LOW
+  
+  // Auteur de la demande (nullable si avant authentification / invité)
+  requesterId           String?
+  requester             User?                 @relation("RequesterCases", fields: [requesterId], references: [id])
+  requesterEmail        String?
+  requesterName         String?
+  
+  // Agent / Médiateur responsable unique
+  assignedAgentId       String?
+  assignedAgent         User?                 @relation("AgentCases", fields: [assignedAgentId], references: [id])
+  
+  associatedArticleSlug String?
+  clientMetadata        String?               // Métadonnées techniques minimisées (JSON: route, browser, appVersion)
+  
+  createdAt             DateTime              @default(now())
+  updatedAt             DateTime              @updatedAt
+  closedAt              DateTime?
+
+  participants          CaseParticipant[]
+  messages              CaseMessage[]
+  internalNotes         CaseInternalNote[]
+  attachments           CaseAttachment[]
+  contextLinks          CaseContextLink[]
+  assignments           CaseAssignment[]
+  events                CaseEvent[]
+  mediationProposals    MediationProposal[]
+  followUps             ResolutionFollowUp[]
+  reviewRequests        CaseReviewRequest[]
+}
+
+model CaseParticipant {
+  id               String      @id @default(cuid())
+  caseId           String
+  supportCase      SupportCase @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  userId           String
+  user             User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role             String      // REQUESTER, OTHER_PARTY, AGENT, MEDIATOR, OBSERVER
+  canViewProposals Boolean     @default(true)
+  canMessage       Boolean     @default(true)
+  joinedAt         DateTime    @default(now())
+
+  @@unique([caseId, userId])
+}
+
+model CaseMessage {
+  id          String           @id @default(cuid())
+  caseId      String
+  supportCase SupportCase      @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  senderId    String?
+  senderName  String
+  senderRole  String           // MEMBER, AGENT, MEDIATOR, SYSTEM
+  audience    String           @default("ALL") // ALL, REQUESTER_ONLY, OTHER_PARTY_ONLY (Garantit la séparation stricte en médiation)
+  content     String
+  createdAt   DateTime         @default(now())
+  
+  attachments CaseAttachment[]
+}
+
+model CaseInternalNote {
+  id          String      @id @default(cuid())
+  caseId      String
+  supportCase SupportCase @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  authorId    String
+  author      User        @relation(fields: [authorId], references: [id])
+  authorName  String
+  content     String      // Strictement réservé à l'équipe, JAMAIS exposé aux membres
+  createdAt   DateTime    @default(now())
+}
+
+model CaseAttachment {
+  id                   String       @id @default(cuid())
+  caseId               String
+  supportCase          SupportCase  @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  messageId            String?
+  message              CaseMessage? @relation(fields: [messageId], references: [id])
+  fileName             String
+  fileUrl              String
+  fileSizeBytes        Int
+  mimeType             String
+  visibilityScope      String       @default("PUBLIC_TO_CASE") // PUBLIC_TO_CASE, REQUESTER_ONLY, TEAM_ONLY_AUDIT, REDACTED_SHARED
+  isRedactedCopy       Boolean      @default(false)
+  originalAttachmentId String?
+  uploadedByUserId     String?
+  createdAt            DateTime     @default(now())
+}
+
+model CaseContextLink {
+  id          String      @id @default(cuid())
+  caseId      String
+  supportCase SupportCase @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  entityType  String      // TRADE, MESSAGE, PROFILE, TECHNICAL_ERROR
+  entityId    String      // ID de l'échange ou du message lié
+  summary     String      // Résumé factuel de l'entité
+  accessScope String      @default("SCOPED_EXCHANGE_ONLY") // Accès borné et journalisé
+  createdAt   DateTime    @default(now())
+}
+
+model CaseAssignment {
+  id           String      @id @default(cuid())
+  caseId       String
+  supportCase  SupportCase @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  assignedToId String
+  assignedTo   User        @relation("AssignedTo", fields: [assignedToId], references: [id])
+  assignedById String?
+  assignedBy   User?       @relation("AssignedBy", fields: [assignedById], references: [id])
+  reason       String?     // Motif obligatoire lors des transferts
+  assignedAt   DateTime    @default(now())
+}
+
+model CaseEvent {
+  id                  String      @id @default(cuid())
+  caseId              String
+  supportCase         SupportCase @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  eventType           String      // STATUS_CHANGE, ASSIGNED, PROPOSAL_CREATED, PROPOSAL_DECISION, REVIEW_REQUESTED, CLOSED
+  authorName          String
+  description         String
+  isPublicToRequester Boolean     @default(true)
+  createdAt           DateTime    @default(now())
+}
+
+model MediationProposal {
+  id                    String             @id @default(cuid())
+  caseId                String
+  supportCase           SupportCase        @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  version               Int                @default(1) // Proposition versionnée immuable
+  problemSummary        String
+  requesterObligations  String
+  otherPartyObligations String
+  deadlines             String
+  consequences          String
+  status                String             @default("PENDING") // PENDING, ACCEPTED, MODIFICATION_REQUESTED, REJECTED, SUPERSEDED
+  createdAt             DateTime           @default(now())
+  
+  decisions             ProposalDecision[]
+}
+
+model ProposalDecision {
+  id         String            @id @default(cuid())
+  proposalId String
+  proposal   MediationProposal @relation(fields: [proposalId], references: [id], onDelete: Cascade)
+  userId     String
+  user       User              @relation(fields: [userId], references: [id])
+  decision   String            // ACCEPTED, MODIFICATION_REQUESTED, REJECTED
+  feedback   String?
+  decidedAt  DateTime          @default(now())
+
+  @@unique([proposalId, userId])
+}
+
+model ResolutionFollowUp {
+  id                 String      @id @default(cuid())
+  caseId             String
+  supportCase        SupportCase @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  actionName         String
+  responsibleParty   String
+  isConfirmed        Boolean     @default(false)
+  confirmedAt        DateTime?
+  confirmedByUserId  String?
+  notes              String?
+}
+
+model CaseReviewRequest {
+  id             String      @id @default(cuid())
+  caseId         String
+  supportCase    SupportCase @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  requesterId    String
+  requester      User        @relation(fields: [requesterId], references: [id])
+  reason         String      // Motif de contestation
+  status         String      @default("PENDING") // PENDING, UNDER_REVIEW, UPHELD, OVERTURNED
+  reviewedById   String?
+  reviewDecision String?
+  createdAt      DateTime    @default(now())
+  reviewedAt     DateTime?
+}
+
+model HelpArticle {
+  id             String   @id @default(cuid())
+  slug           String   @unique
+  title          String
+  category       String   // COMPTE, HUMIDOR, CATALOGUE, CONFIDENTIALITE, ECHANGES, SALON, SIGNALEMENTS
+  summary        String
+  content        String
+  actionLabel    String?  // ex: "Ouvrir mon humidor"
+  actionUrl      String?  // ex: "/humidor"
+  version        String   @default("1.0")
+  status         String   @default("PUBLISHED") // DRAFT, PUBLISHED, ARCHIVED
+  authorName     String   @default("Équipe CigarConnect")
+  helpfulCount   Int      @default(0)
+  unhelpfulCount Int      @default(0)
+  lastReviewedAt DateTime @default(now())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }

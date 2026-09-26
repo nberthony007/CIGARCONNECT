@@ -17,7 +17,8 @@ import {
   Eye,
   Plus,
   Minus,
-  Check
+  Check,
+  HelpCircle
 } from "lucide-react";
 import { 
   TradeWithDetails, 
@@ -365,16 +366,29 @@ export const TradeNegotiationRoom: React.FC<TradeNegotiationRoomProps> = ({
                 ))}
               </div>
 
-              {/* Bouton direct pour ouvrir le formulaire de changement de vitoles */}
-              {trade.status !== "MUTUALLY_AGREED" && trade.status !== "COMPLETED" && (
-                <button
-                  onClick={() => setShowCounterOfferForm(!showCounterOfferForm)}
-                  className="px-3.5 py-1.5 rounded-xl border border-cigar-brass bg-white text-cigar-ink text-xs font-bold flex items-center gap-1.5 hover:bg-[#F4F0E7] shadow-xs transition-colors"
+              {/* Actions & Aide contextuelle */}
+              <div className="flex items-center gap-2">
+                {trade.status !== "MUTUALLY_AGREED" && trade.status !== "COMPLETED" && (
+                  <button
+                    onClick={() => setShowCounterOfferForm(!showCounterOfferForm)}
+                    className="px-3.5 py-1.5 rounded-xl border border-cigar-brass bg-white text-cigar-ink text-xs font-bold flex items-center gap-1.5 hover:bg-[#F4F0E7] shadow-xs transition-colors"
+                  >
+                    <SlidersHorizontal className="w-3.5 h-3.5 text-cigar-brass" />
+                    <span>{showCounterOfferForm ? "Masquer ajustements" : "Changer les vitoles / Contre-Offre"}</span>
+                  </button>
+                )}
+
+                <a
+                  href={`/app/assistance/nouvelle?cat=TRADE_ISSUE&tradeId=${trade.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-xl border border-cigar-stone/80 bg-white text-cigar-ink-muted hover:text-cigar-brass hover:border-cigar-brass text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-xs"
+                  title="Demander une médiation écrite pour cet échange"
                 >
-                  <SlidersHorizontal className="w-3.5 h-3.5 text-cigar-brass" />
-                  <span>{showCounterOfferForm ? "Masquer ajustements" : "Changer les vitoles / Contre-Offre"}</span>
-                </button>
-              )}
+                  <HelpCircle className="w-3.5 h-3.5 text-[#AA8959]" />
+                  <span className="hidden sm:inline">Aide & Médiation</span>
+                </a>
+              </div>
             </div>
 
             {/* Diptyque comparatif de la version inspectée (CLIQUABLE POUR VOIR DÉTAILS) */}

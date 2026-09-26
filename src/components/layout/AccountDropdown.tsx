@@ -12,7 +12,10 @@ import {
   Sparkles, 
   ChevronRight,
   Eye,
-  Check
+  Check,
+  LifeBuoy,
+  HelpCircle,
+  Scale
 } from "lucide-react";
 import { useAuth, PILOT_USERS } from "@/context/AuthContext";
 import { useToast } from "@/components/ui/Toast";
@@ -154,6 +157,42 @@ export const AccountDropdown: React.FC = () => {
               <span className="flex items-center gap-2.5 font-medium">
                 <span className="w-2 h-2 rounded-full bg-[#365343] inline-block shrink-0" />
                 <span>Le Salon (Espace Collectif)</span>
+              </span>
+              <ChevronRight className="w-3.5 h-3.5 text-[#857A6D] group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+
+            <Link
+              href="/app/assistance"
+              onClick={(e) => handleNavigate(e, "/app/assistance")}
+              className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-[#EEEAE3] transition-colors group cursor-pointer"
+            >
+              <span className="flex items-center gap-2.5 font-medium">
+                <LifeBuoy className="w-4 h-4 text-[#AA8959]" />
+                <span>Mes Demandes d'Aide</span>
+              </span>
+              <ChevronRight className="w-3.5 h-3.5 text-[#857A6D] group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+
+            <Link
+              href="/aide"
+              onClick={(e) => handleNavigate(e, "/aide")}
+              className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-[#EEEAE3] transition-colors group cursor-pointer"
+            >
+              <span className="flex items-center gap-2.5 font-medium">
+                <HelpCircle className="w-4 h-4 text-[#71513B]" />
+                <span>Centre d'Aide & Guides</span>
+              </span>
+              <ChevronRight className="w-3.5 h-3.5 text-[#857A6D] group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+
+            <Link
+              href="/admin/assistance"
+              onClick={(e) => handleNavigate(e, "/admin/assistance")}
+              className="flex items-center justify-between px-3 py-2 rounded-lg bg-[#FAF8F5] border border-[#D9D0C2] hover:bg-[#EEEAE3] transition-colors group cursor-pointer text-[#241E1A]"
+            >
+              <span className="flex items-center gap-2.5 font-semibold text-[11px]">
+                <Scale className="w-3.5 h-3.5 text-[#AA8959]" />
+                <span>Console Équipe Support & Médiation</span>
               </span>
               <ChevronRight className="w-3.5 h-3.5 text-[#857A6D] group-hover:translate-x-0.5 transition-transform" />
             </Link>
