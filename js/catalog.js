@@ -362,3 +362,5 @@ function cigarDetailModalClose() {
   const modal = document.getElementById('cigarDetailModal');
   if (modal) modal.classList.remove('active');
 }
+window.cigarDetailModalClose = cigarDetailModalClose;
+CigarCatalog.prototype.closeDetailModal = cigarDetailModalClose;

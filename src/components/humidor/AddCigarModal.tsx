@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { 
   X, 
   Box, 
@@ -112,8 +112,6 @@ export const AddCigarModal: React.FC<AddCigarModalProps> = ({
 
   const selectedCigar = universalCigars.find((c) => c.id === selectedCigarId);
 
-  if (!isOpen) return null;
-
   // Réinitialisation lors de la fermeture
   const handleModalClose = () => {
     setStep("search");
@@ -124,6 +122,23 @@ export const AddCigarModal: React.FC<AddCigarModalProps> = ({
     setSuccessBanner(null);
     onClose();
   };
+
+  // Fermeture par touche Échap et verrouillage du scroll
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") handleModalClose();
+    };
+    if (isOpen) {
+      document.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
+  if (!isOpen) return null;
 
   // Soumission Étape 2A (Pièce référencée)
   const handleSubmitReferenced = async (e: React.FormEvent) => {

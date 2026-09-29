@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNotifications();
   initMembershipModal();
   initBrandModal();
+  initGlobalModalListeners();
 
   // Initialisation des modules métiers
   window.cigarCatalog = new CigarCatalog();
@@ -219,12 +220,20 @@ function initNotifications() {
   if (notifBtn && notifDrawer) {
     notifBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      notifDrawer.classList.toggle('active');
+      const isActive = notifDrawer.classList.contains('active') || notifDrawer.style.display === 'block';
+      if (isActive) {
+        notifDrawer.classList.remove('active');
+        notifDrawer.style.display = 'none';
+      } else {
+        notifDrawer.classList.add('active');
+        notifDrawer.style.display = 'block';
+      }
     });
 
     document.addEventListener('click', (e) => {
       if (!notifDrawer.contains(e.target) && !notifBtn.contains(e.target)) {
         notifDrawer.classList.remove('active');
+        notifDrawer.style.display = 'none';
       }
     });
   }
@@ -233,21 +242,23 @@ function initNotifications() {
 /* ==========================================================================
    MODALE ADHÉSION & CLUB PRIVÉ (MONÉTISATION)
    ========================================================================== */
+window.openVipModal = function() {
+  const modal = document.getElementById('vipClubModal');
+  if (modal) modal.classList.add('active');
+};
+
+window.closeVipModal = function() {
+  const modal = document.getElementById('vipClubModal');
+  if (modal) modal.classList.remove('active');
+};
+
+window.subscribeTier = function(tierName) {
+  window.closeVipModal();
+  showToast(`Bienvenue dans le rang ${tierName} de CigarConnect ! Vos privilèges sont actifs.`);
+};
+
 function initMembershipModal() {
-  window.openVipModal = function() {
-    const modal = document.getElementById('vipClubModal');
-    if (modal) modal.classList.add('active');
-  };
-
-  window.closeVipModal = function() {
-    const modal = document.getElementById('vipClubModal');
-    if (modal) modal.classList.remove('active');
-  };
-
-  window.subscribeTier = function(tierName) {
-    closeVipModal();
-    showToast(`Bienvenue dans le rang ${tierName} de CigarConnect ! Vos privilèges sont actifs.`);
-  };
+  // Déjà lié sur l'objet window
 }
 
 /* ==========================================================================
@@ -277,30 +288,33 @@ function showToast(message) {
 }
 
 /* ==========================================================================
+/* ==========================================================================
    MODALE CHARTE GRAPHIQUE & IDENTITÉ OFFICIELLE
    ========================================================================== */
-function initBrandModal() {
-  window.openBrandModal = function() {
-    const modal = document.getElementById('brandCharterModal');
-    if (modal) modal.classList.add('active');
-  };
+window.openBrandModal = function() {
+  const modal = document.getElementById('brandCharterModal');
+  if (modal) modal.classList.add('active');
+};
 
-  window.closeBrandModal = function() {
-    const modal = document.getElementById('brandCharterModal');
-    if (modal) modal.classList.remove('active');
-  };
+window.closeBrandModal = function() {
+  const modal = document.getElementById('brandCharterModal');
+  if (modal) modal.classList.remove('active');
+};
 
-  window.copyHex = function(hex, name) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(hex).then(() => {
-        showToast(`Code couleur ${name} (${hex}) copié !`);
-      }).catch(() => {
-        showToast(`Couleur : ${hex}`);
-      });
-    } else {
+window.copyHex = function(hex, name) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(hex).then(() => {
+      showToast(`Code couleur ${name} (${hex}) copié !`);
+    }).catch(() => {
       showToast(`Couleur : ${hex}`);
-    }
-  };
+    });
+  } else {
+    showToast(`Couleur : ${hex}`);
+  }
+};
+
+function initBrandModal() {
+  // Déjà lié sur l'objet window
 }
 
 // Fonctions de Navigation Mobile
@@ -319,7 +333,47 @@ window.selectMobileView = function(viewId) {
 
 // Exports explicites sur l'objet window
 window.switchView = switchView;
+window.navigateToHome = navigateToHome;
 window.showToast = showToast;
 window.openNewThreadModal = openNewThreadModal;
 window.initBrandModal = initBrandModal;
+
+/* ==========================================================================
+   GESTIONNAIRE GLOBAL DES MODALES (CLIC BACKDROP & ÉCHAP)
+   ========================================================================== */
+function initGlobalModalListeners() {
+  // Fermeture des modales au clic sur le fond obscurci
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove('active');
+        if (overlay.id === 'tradeNegotiationModal' && window.cigarTrade) {
+          window.cigarTrade.activeNegotiationId = null;
+        }
+      }
+    });
+  });
+
+  // Fermeture de toutes les modales actives à la touche Échap
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const activeModal = document.querySelector('.modal-overlay.active');
+      if (activeModal) {
+        activeModal.classList.remove('active');
+        if (activeModal.id === 'tradeNegotiationModal' && window.cigarTrade) {
+          window.cigarTrade.activeNegotiationId = null;
+        }
+      }
+      const notifDrawer = document.getElementById('notificationsDrawer');
+      if (notifDrawer) {
+        notifDrawer.classList.remove('active');
+        notifDrawer.style.display = 'none';
+      }
+      if (window.toggleMobileNav) {
+        window.toggleMobileNav(false);
+      }
+    }
+  });
+}
+window.initGlobalModalListeners = initGlobalModalListeners;
 

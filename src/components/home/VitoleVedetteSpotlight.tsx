@@ -267,7 +267,11 @@ export const VitoleVedetteSpotlight: React.FC = () => {
             {MYTHICAL_VITOLAS.map((_, idx) => (
               <button
                 key={idx}
-                onClick={() => changeVitola(idx)}
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  changeVitola(idx);
+                }}
                 className={`h-1.5 rounded-full transition-all cursor-pointer ${
                   idx === currentIndex 
                     ? "w-4 bg-[#AA8959]" 

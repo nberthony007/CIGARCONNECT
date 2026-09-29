@@ -354,3 +354,8 @@ class CigarTrade {
     this.chatMessagesContainer.scrollTop = this.chatMessagesContainer.scrollHeight;
   }
 }
+
+CigarTrade.prototype.closeTradeProposalModal = CigarTrade.prototype.closeProposalModal;
+CigarTrade.prototype.openTradeProposalModal = CigarTrade.prototype.openProposalModal;
+CigarTrade.prototype.openNegotiationRoom = CigarTrade.prototype.openNegotiation;
+CigarTrade.prototype.closeNegotiationRoom = CigarTrade.prototype.closeNegotiation;

@@ -1482,6 +1482,11 @@ button, input, select, textarea {
   to { opacity: 1; transform: scale(1); }
 }
 
+#notificationsDrawer.active {
+  display: block !important;
+  animation: modalFadeIn 0.2s ease forwards;
+}
+
 .modal-box {
   background: #FFFFFF;
   border: 1px solid var(--stone-border);
