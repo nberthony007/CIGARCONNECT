@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0",
+  "purpose": "reference_candidates_not_inventory",
+  "count": 10,
+  "references": [
+    {
+      "candidate_key": "cc-existing-c2fdefe7532c",
+      "brand": "San Cristóbal de la Habana",
+      "declared_name": "El Morro Millésime 2003",
+      "declared_origin": "Cuba",
+      "declared_format": "Paco (180 mm · Cepo 49)",
+      "parsed_length_mm": 180,
+      "parsed_ring_gauge": 49,
+      "declared_vintage": null,
+      "manufacturer_country": null,
+      "evidence_status": "user_export_unverified",
+      "publication_status": "hold",
+      "notes": [
+        "Données issues de l’export utilisateur, pas une validation du fabricant.",
+        "Ne pas importer le champ vintage comme année de production sans qualifier sa signification.",
+        "Le nom comporte 2003 tandis que vintage est vide ; garder cette divergence pour revue."
+      ]
+    },
+    {
+      "candidate_key": "cc-existing-fae9a5ad0bd6",
+      "brand": "Trinidad",
+      "declared_name": "Fundadores Millésime 1998",
+      "declared_origin": "Cuba",
+      "declared_format": "Laguito No. 1 (Cepo 40 · 192mm)",
+      "parsed_length_mm": 192,
+      "parsed_ring_gauge": 40,
+      "declared_vintage": "1998",
+      "manufacturer_country": null,
+      "evidence_status": "user_export_unverified",
+      "publication_status": "hold",
+      "notes": [
+        "Données issues de l’export utilisateur, pas une validation du fabricant.",
+        "Ne pas importer le champ vintage comme année de production sans qualifier sa signification.",
+        "192 mm et calibre 40 concordent avec un document Habanos historique ; édition 1998 et nom de format restent à contrôler séparément."
+      ]
+    },
+    {
+      "candidate_key": "cc-existing-3e6245c4a509",
+      "brand": "Montecristo",
+      "declared_name": "No. 2 Reserva Cosecha 2005",
+      "declared_origin": "Cuba",
+      "declared_format": "Pirámide (Cepo 52 · 156mm)",
+      "parsed_length_mm": 156,
+      "parsed_ring_gauge": 52,
+      "declared_vintage": "2005",
+      "manufacturer_country": null,
+      "evidence_status": "user_export_unverified",
+      "publication_status": "hold",
+      "notes": [
+        "Données issues de l’export utilisateur, pas une validation du fabricant.",
+        "Ne pas importer le champ vintage comme année de production sans qualifier sa signification."
+      ]
+    },
+    {
+      "candidate_key": "cc-existing-ce55e67250ab",
+      "brand": "Partagás",
+      "declared_name": "Lusitanias Gran Reserva Cosecha 2007",
+      "declared_origin": "Cuba",
+      "declared_format": "Prominente (Cepo 49 · 194mm)",
+      "parsed_length_mm": 194,
+      "parsed_ring_gauge": 49,
+      "declared_vintage": "2007",
+      "manufacturer_country": null,
+      "evidence_status": "user_export_unverified",
+      "publication_status": "hold",
+      "notes": [
+        "Données issues de l’export utilisateur, pas une validation du fabricant.",
+        "Ne pas importer le champ vintage comme année de production sans qualifier sa signification."
+      ]
+    },
+    {
+      "candidate_key": "cc-existing-bf46a1e5fd75",
+      "brand": "Davidoff",
+      "declared_name": "Oro Blanco Special Reserve 2002",
+      "declared_origin": "République Dominicaine",
+      "declared_format": "Toro Extra (Cepo 54 · 152mm)",
+      "parsed_length_mm": 152,
+      "parsed_ring_gauge": 54,
+      "declared_vintage": "2002",
+      "manufacturer_country": null,
+      "evidence_status": "user_export_unverified",
+      "publication_status": "hold",
+      "notes": [
+        "Données issues de l’export utilisateur, pas une validation du fabricant.",
+        "Ne pas importer le champ vintage comme année de production sans qualifier sa signification."
+      ]
+    },
+    {
+      "candidate_key": "cc-existing-c1a193b87c0c",
+      "brand": "Cohiba",
+      "declared_name": "Behike BHK 56",
+      "declared_origin": "Cuba",
+      "declared_format": "Laguito No. 6 (Cepo 56 · 166mm)",
+      "parsed_length_mm": 166,
+      "parsed_ring_gauge": 56,
+      "declared_vintage": "2010",
+      "manufacturer_country": null,
+      "evidence_status": "user_export_unverified",
+      "publication_status": "hold",
+      "notes": [
+        "Données issues de l’export utilisateur, pas une validation du fabricant.",
+        "Ne pas importer le champ vintage comme année de production sans qualifier sa signification."
+      ]
+    },
+    {
+      "candidate_key": "cc-existing-8b274db80141",
+      "brand": "Kashimbo",
+      "declared_name": "Heritage Majestic (Gold Band)",
+      "declared_origin": "Haïti (Maison d'Auteur) · Multi-Terroirs",
+      "declared_format": "Gordo 6x60 (Cepo 60 · 152mm)",
+      "parsed_length_mm": 152,
+      "parsed_ring_gauge": 60,
+      "declared_vintage": "2021",
+      "manufacturer_country": null,
+      "evidence_status": "user_export_unverified",
+      "publication_status": "hold",
+      "notes": [
+        "Données issues de l’export utilisateur, pas une validation du fabricant.",
+        "Ne pas importer le champ vintage comme année de production sans qualifier sa signification.",
+        "Identité haïtienne déclarée dans l’export ; pays de fabrication non établi. Site officiel en reconstruction ; fiche fabricant demandée."
+      ]
+    },
+    {
+      "candidate_key": "cc-existing-dd0541b3dc74",
+      "brand": "Kashimbo",
+      "declared_name": "Year of the Horse — Limited Edition 2026",
+      "declared_origin": "Haïti (Maison d'Auteur) · Édition Limitée 2026",
+      "declared_format": "Toro 5x56 (Cepo 56 · 127mm)",
+      "parsed_length_mm": 127,
+      "parsed_ring_gauge": 56,
+      "declared_vintage": "2026",
+      "manufacturer_country": null,
+      "evidence_status": "user_export_unverified",
+      "publication_status": "hold",
+      "notes": [
+        "Données issues de l’export utilisateur, pas une validation du fabricant.",
+        "Ne pas importer le champ vintage comme année de production sans qualifier sa signification.",
+        "Identité haïtienne déclarée dans l’export ; pays de fabrication non établi. Site officiel en reconstruction ; fiche fabricant demandée."
+      ]
+    },
+    {
+      "candidate_key": "cc-existing-a3d5dfb489af",
+      "brand": "Kashimbo",
+      "declared_name": "Year of the Snake — Limited Edition 2025",
+      "declared_origin": "Haïti (Maison d'Auteur) · Édition Limitée 2025",
+      "declared_format": "Figurado 6x56 (Cepo 56 · 152mm)",
+      "parsed_length_mm": 152,
+      "parsed_ring_gauge": 56,
+      "declared_vintage": "2025",
+      "manufacturer_country": null,
+      "evidence_status": "user_export_unverified",
+      "publication_status": "hold",
+      "notes": [
+        "Données issues de l’export utilisateur, pas une validation du fabricant.",
+        "Ne pas importer le champ vintage comme année de production sans qualifier sa signification.",
+        "Identité haïtienne déclarée dans l’export ; pays de fabrication non établi. Site officiel en reconstruction ; fiche fabricant demandée."
+      ]
+    },
+    {
+      "candidate_key": "cc-existing-034467e5e663",
+      "brand": "Kashimbo",
+      "declared_name": "Heritage Noble Origins (Silver Band)",
+      "declared_origin": "Haïti (Maison d'Auteur) · Terroirs d'Exception",
+      "declared_format": "Toro 6x54 (Cepo 54 · 152mm)",
+      "parsed_length_mm": 152,
+      "parsed_ring_gauge": 54,
+      "declared_vintage": "2021",
+      "manufacturer_country": null,
+      "evidence_status": "user_export_unverified",
+      "publication_status": "hold",
+      "notes": [
+        "Données issues de l’export utilisateur, pas une validation du fabricant.",
+        "Ne pas importer le champ vintage comme année de production sans qualifier sa signification.",
+        "Identité haïtienne déclarée dans l’export ; pays de fabrication non établi. Site officiel en reconstruction ; fiche fabricant demandée."
+      ]
+    }
+  ]
+}

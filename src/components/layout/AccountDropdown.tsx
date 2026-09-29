@@ -15,7 +15,8 @@ import {
   Check,
   LifeBuoy,
   HelpCircle,
-  Scale
+  Scale,
+  Layers
 } from "lucide-react";
 import { useAuth, PILOT_USERS } from "@/context/AuthContext";
 import { useToast } from "@/components/ui/Toast";
@@ -193,6 +194,18 @@ export const AccountDropdown: React.FC = () => {
               <span className="flex items-center gap-2.5 font-semibold text-[11px]">
                 <Scale className="w-3.5 h-3.5 text-[#AA8959]" />
                 <span>Console Équipe Support & Médiation</span>
+              </span>
+              <ChevronRight className="w-3.5 h-3.5 text-[#857A6D] group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+
+            <Link
+              href="/admin/catalogue"
+              onClick={(e) => handleNavigate(e, "/admin/catalogue")}
+              className="flex items-center justify-between px-3 py-2 rounded-lg bg-[#FAF8F5] border border-[#D9D0C2] hover:bg-[#EEEAE3] transition-colors group cursor-pointer text-[#241E1A]"
+            >
+              <span className="flex items-center gap-2.5 font-semibold text-[11px]">
+                <Layers className="w-3.5 h-3.5 text-[#71513B]" />
+                <span>Préparation Catalogue (Lot 01)</span>
               </span>
               <ChevronRight className="w-3.5 h-3.5 text-[#857A6D] group-hover:translate-x-0.5 transition-transform" />
             </Link>

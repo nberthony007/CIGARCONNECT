@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { Search, Filter, Layers, SlidersHorizontal } from "lucide-react";
+import Link from "next/link";
+import { Search, Filter, Layers, SlidersHorizontal, Compass, ArrowRight } from "lucide-react";
 import { CigarCard, CigarData } from "./CigarCard";
 import { MotionReveal } from "@/components/motion/MotionReveal";
 
@@ -45,6 +46,16 @@ export const CigarCatalog: React.FC<CigarCatalogProps> = ({ initialCigars }) => 
           <p className="text-sm text-cigar-ink-muted mt-1 max-w-xl">
             Répertoire des modules d'exception documentés selon les critères des grandes maisons de vente.
           </p>
+          <div className="mt-3">
+            <Link
+              href="/admin/catalogue"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FAF8F5] border border-[#D9D0C2] hover:border-[#AA8959] text-xs font-semibold text-[#71513B] transition-colors"
+            >
+              <Compass className="w-3.5 h-3.5 text-[#AA8959]" />
+              <span>Zone de Préparation du Catalogue (Lot 01 · 40 Vitoles Candidates)</span>
+              <ArrowRight className="w-3 h-3 text-[#AA8959]" />
+            </Link>
+          </div>
         </div>
 
         {/* Barre de Recherche */}

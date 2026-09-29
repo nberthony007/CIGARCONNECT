@@ -759,3 +759,900 @@ const INITIAL_CIGARS = DEMO_CATALOG_CIGARS;
 const INITIAL_USER_HUMIDOR = DEMO_USER_HUMIDOR;
 const INITIAL_TRADES = DEMO_TRADES;
 const INITIAL_NEW_ARRIVALS = DEMO_NEW_ARRIVALS;
+
+/**
+ * LOT INTERNATIONAL 01 — ZONE DE PRÉPARATION DU CATALOGUE (STAGING)
+ * 40 Nouvelles Vitoles Candidates · 10 Désignations Rapprochées en Réserve
+ */
+const DEMO_CATALOG_STAGING_LOT_01 = [
+  {
+    "referenceKey": "cc-ref-efb9fa4bb59a",
+    "brand": "Padrón",
+    "line": "1964 Anniversary Series",
+    "name": "A",
+    "lengthMm": 209.55,
+    "ringGauge": 50,
+    "ringGaugeOriginal": "50",
+    "wrapperOptions": [
+      "Natural",
+      "Maduro"
+    ],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "padron1964"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-d83fc5795c32",
+    "brand": "Padrón",
+    "line": "1964 Anniversary Series",
+    "name": "Diplomatico",
+    "lengthMm": 177.8,
+    "ringGauge": 50,
+    "ringGaugeOriginal": "50",
+    "wrapperOptions": [
+      "Natural",
+      "Maduro"
+    ],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "padron1964"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-0cb61cdf3136",
+    "brand": "Padrón",
+    "line": "1964 Anniversary Series",
+    "name": "Monarca",
+    "lengthMm": 165.1,
+    "ringGauge": 46,
+    "ringGaugeOriginal": "46",
+    "wrapperOptions": [
+      "Natural",
+      "Maduro"
+    ],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "padron1964"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-c3fa033f340a",
+    "brand": "Padrón",
+    "line": "1964 Anniversary Series",
+    "name": "Superior",
+    "lengthMm": 165.1,
+    "ringGauge": 42,
+    "ringGaugeOriginal": "42",
+    "wrapperOptions": [
+      "Natural",
+      "Maduro"
+    ],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "padron1964"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-8bd24345577a",
+    "brand": "Padrón",
+    "line": "1964 Anniversary Series",
+    "name": "No. 4",
+    "lengthMm": 165.1,
+    "ringGauge": 60,
+    "ringGaugeOriginal": "60",
+    "wrapperOptions": [
+      "Natural",
+      "Maduro"
+    ],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "padron1964"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-7f7b5ec97388",
+    "brand": "Padrón",
+    "line": "1964 Anniversary Series",
+    "name": "Torpedo",
+    "lengthMm": 152.4,
+    "ringGauge": 52,
+    "ringGaugeOriginal": "52",
+    "wrapperOptions": [
+      "Natural",
+      "Maduro"
+    ],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "padron1964"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-81d32c02cd83",
+    "brand": "Padrón",
+    "line": "1964 Anniversary Series",
+    "name": "Imperial",
+    "lengthMm": 152.4,
+    "ringGauge": 54,
+    "ringGaugeOriginal": "54",
+    "wrapperOptions": [
+      "Natural",
+      "Maduro"
+    ],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "padron1964"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-696035c6a4fb",
+    "brand": "Padrón",
+    "line": "1964 Anniversary Series",
+    "name": "Exclusivo",
+    "lengthMm": 139.7,
+    "ringGauge": 50,
+    "ringGaugeOriginal": "50",
+    "wrapperOptions": [
+      "Natural",
+      "Maduro"
+    ],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "padron1964"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-1171f32c161a",
+    "brand": "Arturo Fuente",
+    "line": "Hemingway",
+    "name": "Short Story",
+    "lengthMm": 102,
+    "ringGauge": null,
+    "ringGaugeOriginal": "42/49",
+    "wrapperOptions": [
+      "N",
+      "M"
+    ],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "fuente"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-52759b2c8ebf",
+    "brand": "Arturo Fuente",
+    "line": "Hemingway",
+    "name": "Best Seller",
+    "lengthMm": 114,
+    "ringGauge": null,
+    "ringGaugeOriginal": "43/55",
+    "wrapperOptions": [
+      "N",
+      "M"
+    ],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "fuente"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-f6bd6df8ab8a",
+    "brand": "Arturo Fuente",
+    "line": "Hemingway",
+    "name": "Between The Lines",
+    "lengthMm": 114,
+    "ringGauge": null,
+    "ringGaugeOriginal": "45/54",
+    "wrapperOptions": [
+      "N/M"
+    ],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "fuente"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-431123f7da9e",
+    "brand": "Arturo Fuente",
+    "line": "Hemingway",
+    "name": "Work of Art",
+    "lengthMm": 124,
+    "ringGauge": null,
+    "ringGaugeOriginal": "46/60",
+    "wrapperOptions": [
+      "N",
+      "M"
+    ],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "fuente"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-71859c38ec2b",
+    "brand": "Arturo Fuente",
+    "line": "Hemingway",
+    "name": "Signature",
+    "lengthMm": 152,
+    "ringGauge": 46,
+    "ringGaugeOriginal": "46",
+    "wrapperOptions": [
+      "N",
+      "M",
+      "S"
+    ],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "fuente"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-a39b2a40a963",
+    "brand": "Arturo Fuente",
+    "line": "Hemingway",
+    "name": "Classic",
+    "lengthMm": 178,
+    "ringGauge": 46,
+    "ringGaugeOriginal": "46",
+    "wrapperOptions": [
+      "N",
+      "M",
+      "S"
+    ],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "fuente"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-9126429a6b0d",
+    "brand": "Arturo Fuente",
+    "line": "Hemingway",
+    "name": "Untold Story",
+    "lengthMm": 190,
+    "ringGauge": 54,
+    "ringGaugeOriginal": "54",
+    "wrapperOptions": [
+      "M"
+    ],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "fuente"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-55eaa68fa9a3",
+    "brand": "Arturo Fuente",
+    "line": "Hemingway",
+    "name": "Masterpiece",
+    "lengthMm": 229,
+    "ringGauge": 52,
+    "ringGaugeOriginal": "52",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "fuente"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-b7df4130e74d",
+    "brand": "Oliva",
+    "line": "Serie V",
+    "name": "Churchill Extra",
+    "lengthMm": 177.8,
+    "ringGauge": 52,
+    "ringGaugeOriginal": "52",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "oliva"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-b60224a3791a",
+    "brand": "Oliva",
+    "line": "Serie V",
+    "name": "Lancero",
+    "lengthMm": 177.8,
+    "ringGauge": 38,
+    "ringGaugeOriginal": "38",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "oliva"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-f596afadf866",
+    "brand": "Oliva",
+    "line": "Serie V",
+    "name": "Special V Figurado",
+    "lengthMm": 152.4,
+    "ringGauge": 60,
+    "ringGaugeOriginal": "60",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "oliva"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-2c06a20d27fd",
+    "brand": "Oliva",
+    "line": "Serie V",
+    "name": "Double Toro",
+    "lengthMm": 152.4,
+    "ringGauge": 60,
+    "ringGaugeOriginal": "60",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "oliva"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-bd3658ee7039",
+    "brand": "Oliva",
+    "line": "Serie V",
+    "name": "Torpedo",
+    "lengthMm": 152.4,
+    "ringGauge": 56,
+    "ringGaugeOriginal": "56",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "oliva"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-29cbac1cc0af",
+    "brand": "Oliva",
+    "line": "Serie V",
+    "name": "Belicoso",
+    "lengthMm": 127,
+    "ringGauge": 54,
+    "ringGaugeOriginal": "54",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "oliva"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-d0faf7287afb",
+    "brand": "Oliva",
+    "line": "Serie V",
+    "name": "Double Robusto",
+    "lengthMm": 127,
+    "ringGauge": 54,
+    "ringGaugeOriginal": "54",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "oliva"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-3ebd147fc09e",
+    "brand": "Oliva",
+    "line": "Serie V",
+    "name": "No. 4",
+    "lengthMm": 127,
+    "ringGauge": 43,
+    "ringGaugeOriginal": "43",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "oliva"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-94351e46f05e",
+    "brand": "AJ Fernandez",
+    "line": "New World Dorado",
+    "name": "Corona",
+    "lengthMm": 142.875,
+    "ringGauge": 46,
+    "ringGaugeOriginal": "46",
+    "wrapperOptions": [],
+    "manufacturerCountry": "NI",
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "aj",
+      "ajfactory"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-2801ea790bd7",
+    "brand": "AJ Fernandez",
+    "line": "New World Dorado",
+    "name": "Robusto",
+    "lengthMm": 139.7,
+    "ringGauge": 52,
+    "ringGaugeOriginal": "52",
+    "wrapperOptions": [],
+    "manufacturerCountry": "NI",
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "aj",
+      "ajfactory"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-c1c2b10bca30",
+    "brand": "AJ Fernandez",
+    "line": "New World Dorado",
+    "name": "Gordito",
+    "lengthMm": 139.7,
+    "ringGauge": 60,
+    "ringGaugeOriginal": "60",
+    "wrapperOptions": [],
+    "manufacturerCountry": "NI",
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "aj",
+      "ajfactory"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-2a6c173025c1",
+    "brand": "AJ Fernandez",
+    "line": "New World Dorado",
+    "name": "Figurado",
+    "lengthMm": 152.4,
+    "ringGauge": 56,
+    "ringGaugeOriginal": "56",
+    "wrapperOptions": [],
+    "manufacturerCountry": "NI",
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "aj",
+      "ajfactory"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-e4b241587bf2",
+    "brand": "AJ Fernandez",
+    "line": "New World Dorado",
+    "name": "Toro",
+    "lengthMm": 152.4,
+    "ringGauge": 54,
+    "ringGaugeOriginal": "54",
+    "wrapperOptions": [],
+    "manufacturerCountry": "NI",
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "aj",
+      "ajfactory"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-5b66e7397ca3",
+    "brand": "Bohekio",
+    "line": "Habano",
+    "name": "Robusto",
+    "lengthMm": 127,
+    "ringGauge": 50,
+    "ringGaugeOriginal": "50",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": "HT",
+    "evidenceStatus": "source_documented_with_origin_conflict",
+    "publicationStatus": "draft",
+    "sources": [
+      "bohekio",
+      "bohekio_store",
+      "supreme_about"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-32107adfe220",
+    "brand": "Bohekio",
+    "line": "Habano",
+    "name": "Robusto Gordo",
+    "lengthMm": 127,
+    "ringGauge": 55,
+    "ringGaugeOriginal": "55",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": "HT",
+    "evidenceStatus": "source_documented_with_origin_conflict",
+    "publicationStatus": "draft",
+    "sources": [
+      "bohekio",
+      "bohekio_store",
+      "supreme_about"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-bf3330503baa",
+    "brand": "Bohekio",
+    "line": "Habano",
+    "name": "Toro Gordo",
+    "lengthMm": 152.4,
+    "ringGauge": 55,
+    "ringGaugeOriginal": "55",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": "HT",
+    "evidenceStatus": "source_documented_with_origin_conflict",
+    "publicationStatus": "draft",
+    "sources": [
+      "bohekio",
+      "bohekio_store",
+      "supreme_about"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-2bb08a294cec",
+    "brand": "Bohekio",
+    "line": "Habano",
+    "name": "Toro Gordo Box Pressed",
+    "lengthMm": 152.4,
+    "ringGauge": 55,
+    "ringGaugeOriginal": "55",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": "HT",
+    "evidenceStatus": "source_documented_with_origin_conflict",
+    "publicationStatus": "draft",
+    "sources": [
+      "bohekio",
+      "bohekio_store",
+      "supreme_about"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-2facf6cd7926",
+    "brand": "Bohekio",
+    "line": "Habano",
+    "name": "Churchill",
+    "lengthMm": 177.8,
+    "ringGauge": 50,
+    "ringGaugeOriginal": "50",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": "HT",
+    "evidenceStatus": "source_documented_with_origin_conflict",
+    "publicationStatus": "draft",
+    "sources": [
+      "bohekio",
+      "bohekio_store",
+      "supreme_about"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-50f283d9eff7",
+    "brand": "Cohiba",
+    "line": "Behike",
+    "name": "BHK 52",
+    "lengthMm": 119,
+    "ringGauge": 52,
+    "ringGaugeOriginal": "52",
+    "wrapperOptions": [],
+    "manufacturerCountry": "CU",
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "habanos"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-68082d80e7ae",
+    "brand": "Cohiba",
+    "line": "Behike",
+    "name": "BHK 54",
+    "lengthMm": 144,
+    "ringGauge": 54,
+    "ringGaugeOriginal": "54",
+    "wrapperOptions": [],
+    "manufacturerCountry": "CU",
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "habanos"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-eb29108ad521",
+    "brand": "Cohiba",
+    "line": "Línea Clásica",
+    "name": "Lanceros",
+    "lengthMm": 192,
+    "ringGauge": 38,
+    "ringGaugeOriginal": "38",
+    "wrapperOptions": [],
+    "manufacturerCountry": "CU",
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "habanos"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-c7f9e65a44f2",
+    "brand": "Cohiba",
+    "line": "Línea Clásica",
+    "name": "Robustos",
+    "lengthMm": 124,
+    "ringGauge": 50,
+    "ringGaugeOriginal": "50",
+    "wrapperOptions": [],
+    "manufacturerCountry": "CU",
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "habanos"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-89c735d24a0e",
+    "brand": "Cohiba",
+    "line": "Línea 1492",
+    "name": "Siglo VI",
+    "lengthMm": 150,
+    "ringGauge": 52,
+    "ringGaugeOriginal": "52",
+    "wrapperOptions": [],
+    "manufacturerCountry": "CU",
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "habanos"
+    ]
+  },
+  {
+    "referenceKey": "cc-ref-f73de248b4f2",
+    "brand": "Cohiba",
+    "line": null,
+    "name": "Pirámides Extra",
+    "lengthMm": 160,
+    "ringGauge": 54,
+    "ringGaugeOriginal": "54",
+    "wrapperOptions": [],
+    "manufacturerCountry": "CU",
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "source_documented",
+    "publicationStatus": "draft",
+    "sources": [
+      "habanos"
+    ]
+  },
+  {
+    "referenceKey": "cc-existing-c2fdefe7532c",
+    "brand": "San Cristóbal de la Habana",
+    "line": null,
+    "name": "El Morro Millésime 2003",
+    "lengthMm": 180,
+    "ringGauge": 49,
+    "ringGaugeOriginal": "49",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "user_export_unverified",
+    "publicationStatus": "hold",
+    "sources": []
+  },
+  {
+    "referenceKey": "cc-existing-fae9a5ad0bd6",
+    "brand": "Trinidad",
+    "line": null,
+    "name": "Fundadores Millésime 1998",
+    "lengthMm": 192,
+    "ringGauge": 40,
+    "ringGaugeOriginal": "40",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "user_export_unverified",
+    "publicationStatus": "hold",
+    "sources": []
+  },
+  {
+    "referenceKey": "cc-existing-3e6245c4a509",
+    "brand": "Montecristo",
+    "line": null,
+    "name": "No. 2 Reserva Cosecha 2005",
+    "lengthMm": 156,
+    "ringGauge": 52,
+    "ringGaugeOriginal": "52",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "user_export_unverified",
+    "publicationStatus": "hold",
+    "sources": []
+  },
+  {
+    "referenceKey": "cc-existing-ce55e67250ab",
+    "brand": "Partagás",
+    "line": null,
+    "name": "Lusitanias Gran Reserva Cosecha 2007",
+    "lengthMm": 194,
+    "ringGauge": 49,
+    "ringGaugeOriginal": "49",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "user_export_unverified",
+    "publicationStatus": "hold",
+    "sources": []
+  },
+  {
+    "referenceKey": "cc-existing-bf46a1e5fd75",
+    "brand": "Davidoff",
+    "line": null,
+    "name": "Oro Blanco Special Reserve 2002",
+    "lengthMm": 152,
+    "ringGauge": 54,
+    "ringGaugeOriginal": "54",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "user_export_unverified",
+    "publicationStatus": "hold",
+    "sources": []
+  },
+  {
+    "referenceKey": "cc-existing-c1a193b87c0c",
+    "brand": "Cohiba",
+    "line": null,
+    "name": "Behike BHK 56",
+    "lengthMm": 166,
+    "ringGauge": 56,
+    "ringGaugeOriginal": "56",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": null,
+    "evidenceStatus": "user_export_unverified",
+    "publicationStatus": "hold",
+    "sources": []
+  },
+  {
+    "referenceKey": "cc-existing-8b274db80141",
+    "brand": "Kashimbo",
+    "line": null,
+    "name": "Heritage Majestic (Gold Band)",
+    "lengthMm": 152,
+    "ringGauge": 60,
+    "ringGaugeOriginal": "60",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": "HT",
+    "evidenceStatus": "user_export_unverified",
+    "publicationStatus": "hold",
+    "sources": []
+  },
+  {
+    "referenceKey": "cc-existing-dd0541b3dc74",
+    "brand": "Kashimbo",
+    "line": null,
+    "name": "Year of the Horse — Limited Edition 2026",
+    "lengthMm": 127,
+    "ringGauge": 56,
+    "ringGaugeOriginal": "56",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": "HT",
+    "evidenceStatus": "user_export_unverified",
+    "publicationStatus": "hold",
+    "sources": []
+  },
+  {
+    "referenceKey": "cc-existing-a3d5dfb489af",
+    "brand": "Kashimbo",
+    "line": null,
+    "name": "Year of the Snake — Limited Edition 2025",
+    "lengthMm": 152,
+    "ringGauge": 56,
+    "ringGaugeOriginal": "56",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": "HT",
+    "evidenceStatus": "user_export_unverified",
+    "publicationStatus": "hold",
+    "sources": []
+  },
+  {
+    "referenceKey": "cc-existing-034467e5e663",
+    "brand": "Kashimbo",
+    "line": null,
+    "name": "Heritage Noble Origins (Silver Band)",
+    "lengthMm": 152,
+    "ringGauge": 54,
+    "ringGaugeOriginal": "54",
+    "wrapperOptions": [],
+    "manufacturerCountry": null,
+    "brandCountryAffiliation": "HT",
+    "evidenceStatus": "user_export_unverified",
+    "publicationStatus": "hold",
+    "sources": []
+  }
+];

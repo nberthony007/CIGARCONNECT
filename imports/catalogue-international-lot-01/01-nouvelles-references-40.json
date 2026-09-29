@@ -1,0 +1,2019 @@
+{
+  "schema_version": "1.0",
+  "created_on": "2026-09-29",
+  "purpose": "catalog_reference_staging_only",
+  "production_import_authorized": false,
+  "count": 40,
+  "sources": {
+    "padron1964": {
+      "url": "https://padron.com/padron-1964-anniversary-series/",
+      "title": "Padrón — 1964 Anniversary Series",
+      "accessed_on": "2026-09-29",
+      "source_type": "manufacturer_or_brand",
+      "reuse_permission": "not_assessed",
+      "media_copied": false
+    },
+    "fuente": {
+      "url": "https://arturofuente.com/our-cigars/hemingway/",
+      "title": "Arturo Fuente — Hemingway",
+      "accessed_on": "2026-09-29",
+      "source_type": "manufacturer_or_brand",
+      "reuse_permission": "not_assessed",
+      "media_copied": false
+    },
+    "oliva": {
+      "url": "https://olivacigar.com/cigars/serie-v/",
+      "title": "Oliva — Serie V",
+      "accessed_on": "2026-09-29",
+      "source_type": "manufacturer_or_brand",
+      "reuse_permission": "not_assessed",
+      "media_copied": false
+    },
+    "aj": {
+      "url": "https://ajfcigars.com/cigars/new-world/dorado/",
+      "title": "AJ Fernandez — New World Dorado",
+      "accessed_on": "2026-09-29",
+      "source_type": "manufacturer_or_brand",
+      "reuse_permission": "not_assessed",
+      "media_copied": false
+    },
+    "ajfactory": {
+      "url": "https://ajfcigars.com/",
+      "title": "AJ Fernandez — présentation de la fabrication",
+      "accessed_on": "2026-09-29",
+      "source_type": "manufacturer_or_brand",
+      "reuse_permission": "not_assessed",
+      "media_copied": false
+    },
+    "bohekio": {
+      "url": "https://www.supremetobaccohaiti.com/bohekio-habano",
+      "title": "Supreme Tobacco — formats Bohekio Habano",
+      "accessed_on": "2026-09-29",
+      "source_type": "manufacturer_or_brand",
+      "reuse_permission": "not_assessed",
+      "media_copied": false
+    },
+    "bohekio_store": {
+      "url": "https://www.supremetobaccohaiti.com/store/p/bohekio-habano",
+      "title": "Supreme Tobacco — fiche Bohekio Habano : fabrication dominicaine indiquée",
+      "accessed_on": "2026-09-29",
+      "source_type": "manufacturer_or_brand",
+      "reuse_permission": "not_assessed",
+      "media_copied": false
+    },
+    "supreme_about": {
+      "url": "https://www.supremetobaccohaiti.com/about",
+      "title": "Supreme Tobacco — histoire et identité haïtienne ; fabrication haïtienne évoquée",
+      "accessed_on": "2026-09-29",
+      "source_type": "manufacturer_or_brand",
+      "reuse_permission": "not_assessed",
+      "media_copied": false
+    },
+    "habanos": {
+      "url": "https://www.habanos.com/wp-content/uploads/Humidors_Auction_Catalogue.pdf",
+      "title": "Habanos — catalogue historique de vente de humidors",
+      "accessed_on": "2026-09-29",
+      "source_type": "manufacturer_or_brand",
+      "reuse_permission": "not_assessed",
+      "media_copied": false
+    },
+    "kashimbo": {
+      "url": "https://www.kashimbocigars.com/",
+      "title": "Kashimbo — site en reconstruction lors de la consultation",
+      "accessed_on": "2026-09-29",
+      "source_type": "manufacturer_or_brand",
+      "reuse_permission": "not_assessed",
+      "media_copied": false
+    },
+    "trinidad": {
+      "url": "https://www.habanos.com/wp-content/uploads/Info_Adicional_Trinidad_La-Trova.pdf",
+      "title": "Habanos — portfolio Trinidad historique",
+      "accessed_on": "2026-09-29",
+      "source_type": "manufacturer_or_brand",
+      "reuse_permission": "not_assessed",
+      "media_copied": false
+    }
+  },
+  "references": [
+    {
+      "reference_key": "cc-ref-efb9fa4bb59a",
+      "brand": "Padrón",
+      "line": "1964 Anniversary Series",
+      "commercial_name": "A",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 209.55,
+      "length_original": {
+        "value": 8.25,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 50,
+      "ring_gauge_original": "50",
+      "wrapper_options": [
+        "Natural",
+        "Maduro"
+      ],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "padron1964"
+      ],
+      "field_sources": {
+        "brand": [
+          "padron1964"
+        ],
+        "line": [
+          "padron1964"
+        ],
+        "commercial_name": [
+          "padron1964"
+        ],
+        "dimensions": [
+          "padron1964"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Choisir la cape lors du rattachement exact ; options non dédoublées en références pour gonfler le total.",
+        "1964 fait partie du nom de gamme, pas de l’année de production."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-d83fc5795c32",
+      "brand": "Padrón",
+      "line": "1964 Anniversary Series",
+      "commercial_name": "Diplomatico",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 177.8,
+      "length_original": {
+        "value": 7,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 50,
+      "ring_gauge_original": "50",
+      "wrapper_options": [
+        "Natural",
+        "Maduro"
+      ],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "padron1964"
+      ],
+      "field_sources": {
+        "brand": [
+          "padron1964"
+        ],
+        "line": [
+          "padron1964"
+        ],
+        "commercial_name": [
+          "padron1964"
+        ],
+        "dimensions": [
+          "padron1964"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Choisir la cape lors du rattachement exact ; options non dédoublées en références pour gonfler le total.",
+        "1964 fait partie du nom de gamme, pas de l’année de production."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-0cb61cdf3136",
+      "brand": "Padrón",
+      "line": "1964 Anniversary Series",
+      "commercial_name": "Monarca",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 165.1,
+      "length_original": {
+        "value": 6.5,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 46,
+      "ring_gauge_original": "46",
+      "wrapper_options": [
+        "Natural",
+        "Maduro"
+      ],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "padron1964"
+      ],
+      "field_sources": {
+        "brand": [
+          "padron1964"
+        ],
+        "line": [
+          "padron1964"
+        ],
+        "commercial_name": [
+          "padron1964"
+        ],
+        "dimensions": [
+          "padron1964"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Choisir la cape lors du rattachement exact ; options non dédoublées en références pour gonfler le total.",
+        "1964 fait partie du nom de gamme, pas de l’année de production."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-c3fa033f340a",
+      "brand": "Padrón",
+      "line": "1964 Anniversary Series",
+      "commercial_name": "Superior",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 165.1,
+      "length_original": {
+        "value": 6.5,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 42,
+      "ring_gauge_original": "42",
+      "wrapper_options": [
+        "Natural",
+        "Maduro"
+      ],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "padron1964"
+      ],
+      "field_sources": {
+        "brand": [
+          "padron1964"
+        ],
+        "line": [
+          "padron1964"
+        ],
+        "commercial_name": [
+          "padron1964"
+        ],
+        "dimensions": [
+          "padron1964"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Choisir la cape lors du rattachement exact ; options non dédoublées en références pour gonfler le total.",
+        "1964 fait partie du nom de gamme, pas de l’année de production."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-8bd24345577a",
+      "brand": "Padrón",
+      "line": "1964 Anniversary Series",
+      "commercial_name": "No. 4",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 165.1,
+      "length_original": {
+        "value": 6.5,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 60,
+      "ring_gauge_original": "60",
+      "wrapper_options": [
+        "Natural",
+        "Maduro"
+      ],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "padron1964"
+      ],
+      "field_sources": {
+        "brand": [
+          "padron1964"
+        ],
+        "line": [
+          "padron1964"
+        ],
+        "commercial_name": [
+          "padron1964"
+        ],
+        "dimensions": [
+          "padron1964"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Choisir la cape lors du rattachement exact ; options non dédoublées en références pour gonfler le total.",
+        "1964 fait partie du nom de gamme, pas de l’année de production."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-7f7b5ec97388",
+      "brand": "Padrón",
+      "line": "1964 Anniversary Series",
+      "commercial_name": "Torpedo",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 152.4,
+      "length_original": {
+        "value": 6,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 52,
+      "ring_gauge_original": "52",
+      "wrapper_options": [
+        "Natural",
+        "Maduro"
+      ],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "padron1964"
+      ],
+      "field_sources": {
+        "brand": [
+          "padron1964"
+        ],
+        "line": [
+          "padron1964"
+        ],
+        "commercial_name": [
+          "padron1964"
+        ],
+        "dimensions": [
+          "padron1964"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Choisir la cape lors du rattachement exact ; options non dédoublées en références pour gonfler le total.",
+        "1964 fait partie du nom de gamme, pas de l’année de production."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-81d32c02cd83",
+      "brand": "Padrón",
+      "line": "1964 Anniversary Series",
+      "commercial_name": "Imperial",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 152.4,
+      "length_original": {
+        "value": 6,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 54,
+      "ring_gauge_original": "54",
+      "wrapper_options": [
+        "Natural",
+        "Maduro"
+      ],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "padron1964"
+      ],
+      "field_sources": {
+        "brand": [
+          "padron1964"
+        ],
+        "line": [
+          "padron1964"
+        ],
+        "commercial_name": [
+          "padron1964"
+        ],
+        "dimensions": [
+          "padron1964"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Choisir la cape lors du rattachement exact ; options non dédoublées en références pour gonfler le total.",
+        "1964 fait partie du nom de gamme, pas de l’année de production."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-696035c6a4fb",
+      "brand": "Padrón",
+      "line": "1964 Anniversary Series",
+      "commercial_name": "Exclusivo",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 139.7,
+      "length_original": {
+        "value": 5.5,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 50,
+      "ring_gauge_original": "50",
+      "wrapper_options": [
+        "Natural",
+        "Maduro"
+      ],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "padron1964"
+      ],
+      "field_sources": {
+        "brand": [
+          "padron1964"
+        ],
+        "line": [
+          "padron1964"
+        ],
+        "commercial_name": [
+          "padron1964"
+        ],
+        "dimensions": [
+          "padron1964"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Choisir la cape lors du rattachement exact ; options non dédoublées en références pour gonfler le total.",
+        "1964 fait partie du nom de gamme, pas de l’année de production."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-1171f32c161a",
+      "brand": "Arturo Fuente",
+      "line": "Hemingway",
+      "commercial_name": "Short Story",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 102,
+      "length_original": {
+        "value": 102,
+        "unit": "mm"
+      },
+      "length_mm_method": "source_mm",
+      "ring_gauge": null,
+      "ring_gauge_original": "42/49",
+      "wrapper_options": [
+        "N",
+        "M"
+      ],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "fuente"
+      ],
+      "field_sources": {
+        "brand": [
+          "fuente"
+        ],
+        "line": [
+          "fuente"
+        ],
+        "commercial_name": [
+          "fuente"
+        ],
+        "dimensions": [
+          "fuente"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Codes de cape conservés tels que publiés ; ne pas les développer sans légende vérifiée.",
+        "Calibre double conservé sans le transformer en valeur unique."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-52759b2c8ebf",
+      "brand": "Arturo Fuente",
+      "line": "Hemingway",
+      "commercial_name": "Best Seller",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 114,
+      "length_original": {
+        "value": 114,
+        "unit": "mm"
+      },
+      "length_mm_method": "source_mm",
+      "ring_gauge": null,
+      "ring_gauge_original": "43/55",
+      "wrapper_options": [
+        "N",
+        "M"
+      ],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "fuente"
+      ],
+      "field_sources": {
+        "brand": [
+          "fuente"
+        ],
+        "line": [
+          "fuente"
+        ],
+        "commercial_name": [
+          "fuente"
+        ],
+        "dimensions": [
+          "fuente"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Codes de cape conservés tels que publiés ; ne pas les développer sans légende vérifiée.",
+        "Calibre double conservé sans le transformer en valeur unique."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-f6bd6df8ab8a",
+      "brand": "Arturo Fuente",
+      "line": "Hemingway",
+      "commercial_name": "Between The Lines",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 114,
+      "length_original": {
+        "value": 114,
+        "unit": "mm"
+      },
+      "length_mm_method": "source_mm",
+      "ring_gauge": null,
+      "ring_gauge_original": "45/54",
+      "wrapper_options": [
+        "N/M"
+      ],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "fuente"
+      ],
+      "field_sources": {
+        "brand": [
+          "fuente"
+        ],
+        "line": [
+          "fuente"
+        ],
+        "commercial_name": [
+          "fuente"
+        ],
+        "dimensions": [
+          "fuente"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Codes de cape conservés tels que publiés ; ne pas les développer sans légende vérifiée.",
+        "Calibre double conservé sans le transformer en valeur unique."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-431123f7da9e",
+      "brand": "Arturo Fuente",
+      "line": "Hemingway",
+      "commercial_name": "Work of Art",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 124,
+      "length_original": {
+        "value": 124,
+        "unit": "mm"
+      },
+      "length_mm_method": "source_mm",
+      "ring_gauge": null,
+      "ring_gauge_original": "46/60",
+      "wrapper_options": [
+        "N",
+        "M"
+      ],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "fuente"
+      ],
+      "field_sources": {
+        "brand": [
+          "fuente"
+        ],
+        "line": [
+          "fuente"
+        ],
+        "commercial_name": [
+          "fuente"
+        ],
+        "dimensions": [
+          "fuente"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Codes de cape conservés tels que publiés ; ne pas les développer sans légende vérifiée.",
+        "Calibre double conservé sans le transformer en valeur unique."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-71859c38ec2b",
+      "brand": "Arturo Fuente",
+      "line": "Hemingway",
+      "commercial_name": "Signature",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 152,
+      "length_original": {
+        "value": 152,
+        "unit": "mm"
+      },
+      "length_mm_method": "source_mm",
+      "ring_gauge": 46,
+      "ring_gauge_original": "46",
+      "wrapper_options": [
+        "N",
+        "M",
+        "S"
+      ],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "fuente"
+      ],
+      "field_sources": {
+        "brand": [
+          "fuente"
+        ],
+        "line": [
+          "fuente"
+        ],
+        "commercial_name": [
+          "fuente"
+        ],
+        "dimensions": [
+          "fuente"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Codes de cape conservés tels que publiés ; disponibilité exacte à confirmer."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-a39b2a40a963",
+      "brand": "Arturo Fuente",
+      "line": "Hemingway",
+      "commercial_name": "Classic",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 178,
+      "length_original": {
+        "value": 178,
+        "unit": "mm"
+      },
+      "length_mm_method": "source_mm",
+      "ring_gauge": 46,
+      "ring_gauge_original": "46",
+      "wrapper_options": [
+        "N",
+        "M",
+        "S"
+      ],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "fuente"
+      ],
+      "field_sources": {
+        "brand": [
+          "fuente"
+        ],
+        "line": [
+          "fuente"
+        ],
+        "commercial_name": [
+          "fuente"
+        ],
+        "dimensions": [
+          "fuente"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Codes de cape conservés tels que publiés ; disponibilité exacte à confirmer."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-9126429a6b0d",
+      "brand": "Arturo Fuente",
+      "line": "Hemingway",
+      "commercial_name": "Untold Story",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 190,
+      "length_original": {
+        "value": 190,
+        "unit": "mm"
+      },
+      "length_mm_method": "source_mm",
+      "ring_gauge": 54,
+      "ring_gauge_original": "54",
+      "wrapper_options": [
+        "M"
+      ],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "fuente"
+      ],
+      "field_sources": {
+        "brand": [
+          "fuente"
+        ],
+        "line": [
+          "fuente"
+        ],
+        "commercial_name": [
+          "fuente"
+        ],
+        "dimensions": [
+          "fuente"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Codes de cape conservés tels que publiés ; disponibilité exacte à confirmer."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-55eaa68fa9a3",
+      "brand": "Arturo Fuente",
+      "line": "Hemingway",
+      "commercial_name": "Masterpiece",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 229,
+      "length_original": {
+        "value": 229,
+        "unit": "mm"
+      },
+      "length_mm_method": "source_mm",
+      "ring_gauge": 52,
+      "ring_gauge_original": "52",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "fuente"
+      ],
+      "field_sources": {
+        "brand": [
+          "fuente"
+        ],
+        "line": [
+          "fuente"
+        ],
+        "commercial_name": [
+          "fuente"
+        ],
+        "dimensions": [
+          "fuente"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Codes de cape conservés tels que publiés ; disponibilité exacte à confirmer."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-b7df4130e74d",
+      "brand": "Oliva",
+      "line": "Serie V",
+      "commercial_name": "Churchill Extra",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 177.8,
+      "length_original": {
+        "value": 7,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 52,
+      "ring_gauge_original": "52",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "oliva"
+      ],
+      "field_sources": {
+        "brand": [
+          "oliva"
+        ],
+        "line": [
+          "oliva"
+        ],
+        "commercial_name": [
+          "oliva"
+        ],
+        "dimensions": [
+          "oliva"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "La composition du tabac ne suffit pas seule à prouver le pays de fabrication ; champ conservé vide dans ce lot."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-b60224a3791a",
+      "brand": "Oliva",
+      "line": "Serie V",
+      "commercial_name": "Lancero",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 177.8,
+      "length_original": {
+        "value": 7,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 38,
+      "ring_gauge_original": "38",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "oliva"
+      ],
+      "field_sources": {
+        "brand": [
+          "oliva"
+        ],
+        "line": [
+          "oliva"
+        ],
+        "commercial_name": [
+          "oliva"
+        ],
+        "dimensions": [
+          "oliva"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "La composition du tabac ne suffit pas seule à prouver le pays de fabrication ; champ conservé vide dans ce lot."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-f596afadf866",
+      "brand": "Oliva",
+      "line": "Serie V",
+      "commercial_name": "Special V Figurado",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 152.4,
+      "length_original": {
+        "value": 6,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 60,
+      "ring_gauge_original": "60",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "oliva"
+      ],
+      "field_sources": {
+        "brand": [
+          "oliva"
+        ],
+        "line": [
+          "oliva"
+        ],
+        "commercial_name": [
+          "oliva"
+        ],
+        "dimensions": [
+          "oliva"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "La composition du tabac ne suffit pas seule à prouver le pays de fabrication ; champ conservé vide dans ce lot."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-2c06a20d27fd",
+      "brand": "Oliva",
+      "line": "Serie V",
+      "commercial_name": "Double Toro",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 152.4,
+      "length_original": {
+        "value": 6,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 60,
+      "ring_gauge_original": "60",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "oliva"
+      ],
+      "field_sources": {
+        "brand": [
+          "oliva"
+        ],
+        "line": [
+          "oliva"
+        ],
+        "commercial_name": [
+          "oliva"
+        ],
+        "dimensions": [
+          "oliva"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "La composition du tabac ne suffit pas seule à prouver le pays de fabrication ; champ conservé vide dans ce lot."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-bd3658ee7039",
+      "brand": "Oliva",
+      "line": "Serie V",
+      "commercial_name": "Torpedo",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 152.4,
+      "length_original": {
+        "value": 6,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 56,
+      "ring_gauge_original": "56",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "oliva"
+      ],
+      "field_sources": {
+        "brand": [
+          "oliva"
+        ],
+        "line": [
+          "oliva"
+        ],
+        "commercial_name": [
+          "oliva"
+        ],
+        "dimensions": [
+          "oliva"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "La composition du tabac ne suffit pas seule à prouver le pays de fabrication ; champ conservé vide dans ce lot."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-29cbac1cc0af",
+      "brand": "Oliva",
+      "line": "Serie V",
+      "commercial_name": "Belicoso",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 127.0,
+      "length_original": {
+        "value": 5,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 54,
+      "ring_gauge_original": "54",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "oliva"
+      ],
+      "field_sources": {
+        "brand": [
+          "oliva"
+        ],
+        "line": [
+          "oliva"
+        ],
+        "commercial_name": [
+          "oliva"
+        ],
+        "dimensions": [
+          "oliva"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "La composition du tabac ne suffit pas seule à prouver le pays de fabrication ; champ conservé vide dans ce lot."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-d0faf7287afb",
+      "brand": "Oliva",
+      "line": "Serie V",
+      "commercial_name": "Double Robusto",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 127.0,
+      "length_original": {
+        "value": 5,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 54,
+      "ring_gauge_original": "54",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "oliva"
+      ],
+      "field_sources": {
+        "brand": [
+          "oliva"
+        ],
+        "line": [
+          "oliva"
+        ],
+        "commercial_name": [
+          "oliva"
+        ],
+        "dimensions": [
+          "oliva"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "La composition du tabac ne suffit pas seule à prouver le pays de fabrication ; champ conservé vide dans ce lot."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-3ebd147fc09e",
+      "brand": "Oliva",
+      "line": "Serie V",
+      "commercial_name": "No. 4",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": null,
+      "length_mm": 127.0,
+      "length_original": {
+        "value": 5,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 43,
+      "ring_gauge_original": "43",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "oliva"
+      ],
+      "field_sources": {
+        "brand": [
+          "oliva"
+        ],
+        "line": [
+          "oliva"
+        ],
+        "commercial_name": [
+          "oliva"
+        ],
+        "dimensions": [
+          "oliva"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "La composition du tabac ne suffit pas seule à prouver le pays de fabrication ; champ conservé vide dans ce lot."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-94351e46f05e",
+      "brand": "AJ Fernandez",
+      "line": "New World Dorado",
+      "commercial_name": "Corona",
+      "record_granularity": "model_format",
+      "manufacturer_country": "NI",
+      "brand_country_affiliation": null,
+      "length_mm": 142.875,
+      "length_original": {
+        "value": 5.625,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 46,
+      "ring_gauge_original": "46",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "aj",
+        "ajfactory"
+      ],
+      "field_sources": {
+        "brand": [
+          "aj"
+        ],
+        "line": [
+          "aj"
+        ],
+        "commercial_name": [
+          "aj"
+        ],
+        "dimensions": [
+          "aj"
+        ],
+        "manufacturer_country": [
+          "ajfactory"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": []
+    },
+    {
+      "reference_key": "cc-ref-2801ea790bd7",
+      "brand": "AJ Fernandez",
+      "line": "New World Dorado",
+      "commercial_name": "Robusto",
+      "record_granularity": "model_format",
+      "manufacturer_country": "NI",
+      "brand_country_affiliation": null,
+      "length_mm": 139.7,
+      "length_original": {
+        "value": 5.5,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 52,
+      "ring_gauge_original": "52",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "aj",
+        "ajfactory"
+      ],
+      "field_sources": {
+        "brand": [
+          "aj"
+        ],
+        "line": [
+          "aj"
+        ],
+        "commercial_name": [
+          "aj"
+        ],
+        "dimensions": [
+          "aj"
+        ],
+        "manufacturer_country": [
+          "ajfactory"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": []
+    },
+    {
+      "reference_key": "cc-ref-c1c2b10bca30",
+      "brand": "AJ Fernandez",
+      "line": "New World Dorado",
+      "commercial_name": "Gordito",
+      "record_granularity": "model_format",
+      "manufacturer_country": "NI",
+      "brand_country_affiliation": null,
+      "length_mm": 139.7,
+      "length_original": {
+        "value": 5.5,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 60,
+      "ring_gauge_original": "60",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "aj",
+        "ajfactory"
+      ],
+      "field_sources": {
+        "brand": [
+          "aj"
+        ],
+        "line": [
+          "aj"
+        ],
+        "commercial_name": [
+          "aj"
+        ],
+        "dimensions": [
+          "aj"
+        ],
+        "manufacturer_country": [
+          "ajfactory"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": []
+    },
+    {
+      "reference_key": "cc-ref-2a6c173025c1",
+      "brand": "AJ Fernandez",
+      "line": "New World Dorado",
+      "commercial_name": "Figurado",
+      "record_granularity": "model_format",
+      "manufacturer_country": "NI",
+      "brand_country_affiliation": null,
+      "length_mm": 152.4,
+      "length_original": {
+        "value": 6,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 56,
+      "ring_gauge_original": "56",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "aj",
+        "ajfactory"
+      ],
+      "field_sources": {
+        "brand": [
+          "aj"
+        ],
+        "line": [
+          "aj"
+        ],
+        "commercial_name": [
+          "aj"
+        ],
+        "dimensions": [
+          "aj"
+        ],
+        "manufacturer_country": [
+          "ajfactory"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": []
+    },
+    {
+      "reference_key": "cc-ref-e4b241587bf2",
+      "brand": "AJ Fernandez",
+      "line": "New World Dorado",
+      "commercial_name": "Toro",
+      "record_granularity": "model_format",
+      "manufacturer_country": "NI",
+      "brand_country_affiliation": null,
+      "length_mm": 152.4,
+      "length_original": {
+        "value": 6,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 54,
+      "ring_gauge_original": "54",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "aj",
+        "ajfactory"
+      ],
+      "field_sources": {
+        "brand": [
+          "aj"
+        ],
+        "line": [
+          "aj"
+        ],
+        "commercial_name": [
+          "aj"
+        ],
+        "dimensions": [
+          "aj"
+        ],
+        "manufacturer_country": [
+          "ajfactory"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": []
+    },
+    {
+      "reference_key": "cc-ref-5b66e7397ca3",
+      "brand": "Bohekio",
+      "line": "Habano",
+      "commercial_name": "Robusto",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": "HT",
+      "length_mm": 127.0,
+      "length_original": {
+        "value": 5,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 50,
+      "ring_gauge_original": "50",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "bohekio",
+        "bohekio_store",
+        "supreme_about"
+      ],
+      "field_sources": {
+        "brand": [
+          "bohekio"
+        ],
+        "line": [
+          "bohekio"
+        ],
+        "commercial_name": [
+          "bohekio"
+        ],
+        "dimensions": [
+          "bohekio"
+        ],
+        "brand_country_affiliation": [
+          "supreme_about"
+        ],
+        "tobacco_origin": [
+          "bohekio"
+        ]
+      },
+      "evidence_status": "source_documented_with_origin_conflict",
+      "publication_status": "draft",
+      "notes": [
+        "Pays de fabrication laissé indéterminé : page histoire et fiche produit officielles à réconcilier ; demander période et lot au fabricant."
+      ],
+      "tobacco_origin": {
+        "wrapper": "EC",
+        "binder": "HT",
+        "filler": [
+          "HT"
+        ]
+      }
+    },
+    {
+      "reference_key": "cc-ref-32107adfe220",
+      "brand": "Bohekio",
+      "line": "Habano",
+      "commercial_name": "Robusto Gordo",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": "HT",
+      "length_mm": 127.0,
+      "length_original": {
+        "value": 5,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 55,
+      "ring_gauge_original": "55",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "bohekio",
+        "bohekio_store",
+        "supreme_about"
+      ],
+      "field_sources": {
+        "brand": [
+          "bohekio"
+        ],
+        "line": [
+          "bohekio"
+        ],
+        "commercial_name": [
+          "bohekio"
+        ],
+        "dimensions": [
+          "bohekio"
+        ],
+        "brand_country_affiliation": [
+          "supreme_about"
+        ],
+        "tobacco_origin": [
+          "bohekio"
+        ]
+      },
+      "evidence_status": "source_documented_with_origin_conflict",
+      "publication_status": "draft",
+      "notes": [
+        "Pays de fabrication laissé indéterminé : page histoire et fiche produit officielles à réconcilier ; demander période et lot au fabricant."
+      ],
+      "tobacco_origin": {
+        "wrapper": "EC",
+        "binder": "HT",
+        "filler": [
+          "HT"
+        ]
+      }
+    },
+    {
+      "reference_key": "cc-ref-bf3330503baa",
+      "brand": "Bohekio",
+      "line": "Habano",
+      "commercial_name": "Toro Gordo",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": "HT",
+      "length_mm": 152.4,
+      "length_original": {
+        "value": 6,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 55,
+      "ring_gauge_original": "55",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "bohekio",
+        "bohekio_store",
+        "supreme_about"
+      ],
+      "field_sources": {
+        "brand": [
+          "bohekio"
+        ],
+        "line": [
+          "bohekio"
+        ],
+        "commercial_name": [
+          "bohekio"
+        ],
+        "dimensions": [
+          "bohekio"
+        ],
+        "brand_country_affiliation": [
+          "supreme_about"
+        ],
+        "tobacco_origin": [
+          "bohekio"
+        ]
+      },
+      "evidence_status": "source_documented_with_origin_conflict",
+      "publication_status": "draft",
+      "notes": [
+        "Pays de fabrication laissé indéterminé : page histoire et fiche produit officielles à réconcilier ; demander période et lot au fabricant."
+      ],
+      "tobacco_origin": {
+        "wrapper": "EC",
+        "binder": "HT",
+        "filler": [
+          "HT"
+        ]
+      }
+    },
+    {
+      "reference_key": "cc-ref-2bb08a294cec",
+      "brand": "Bohekio",
+      "line": "Habano",
+      "commercial_name": "Toro Gordo Box Pressed",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": "HT",
+      "length_mm": 152.4,
+      "length_original": {
+        "value": 6,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 55,
+      "ring_gauge_original": "55",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "bohekio",
+        "bohekio_store",
+        "supreme_about"
+      ],
+      "field_sources": {
+        "brand": [
+          "bohekio"
+        ],
+        "line": [
+          "bohekio"
+        ],
+        "commercial_name": [
+          "bohekio"
+        ],
+        "dimensions": [
+          "bohekio"
+        ],
+        "brand_country_affiliation": [
+          "supreme_about"
+        ],
+        "tobacco_origin": [
+          "bohekio"
+        ]
+      },
+      "evidence_status": "source_documented_with_origin_conflict",
+      "publication_status": "draft",
+      "notes": [
+        "Pays de fabrication laissé indéterminé : page histoire et fiche produit officielles à réconcilier ; demander période et lot au fabricant."
+      ],
+      "tobacco_origin": {
+        "wrapper": "EC",
+        "binder": "HT",
+        "filler": [
+          "HT"
+        ]
+      }
+    },
+    {
+      "reference_key": "cc-ref-2facf6cd7926",
+      "brand": "Bohekio",
+      "line": "Habano",
+      "commercial_name": "Churchill",
+      "record_granularity": "model_format",
+      "manufacturer_country": null,
+      "brand_country_affiliation": "HT",
+      "length_mm": 177.8,
+      "length_original": {
+        "value": 7,
+        "unit": "in"
+      },
+      "length_mm_method": "inches_x_25.4",
+      "ring_gauge": 50,
+      "ring_gauge_original": "50",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "bohekio",
+        "bohekio_store",
+        "supreme_about"
+      ],
+      "field_sources": {
+        "brand": [
+          "bohekio"
+        ],
+        "line": [
+          "bohekio"
+        ],
+        "commercial_name": [
+          "bohekio"
+        ],
+        "dimensions": [
+          "bohekio"
+        ],
+        "brand_country_affiliation": [
+          "supreme_about"
+        ],
+        "tobacco_origin": [
+          "bohekio"
+        ]
+      },
+      "evidence_status": "source_documented_with_origin_conflict",
+      "publication_status": "draft",
+      "notes": [
+        "Pays de fabrication laissé indéterminé : page histoire et fiche produit officielles à réconcilier ; demander période et lot au fabricant."
+      ],
+      "tobacco_origin": {
+        "wrapper": "EC",
+        "binder": "HT",
+        "filler": [
+          "HT"
+        ]
+      }
+    },
+    {
+      "reference_key": "cc-ref-50f283d9eff7",
+      "brand": "Cohiba",
+      "line": "Behike",
+      "commercial_name": "BHK 52",
+      "record_granularity": "model_format",
+      "manufacturer_country": "CU",
+      "brand_country_affiliation": null,
+      "length_mm": 119,
+      "length_original": {
+        "value": 119,
+        "unit": "mm"
+      },
+      "length_mm_method": "source_mm",
+      "ring_gauge": 52,
+      "ring_gauge_original": "52",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "habanos"
+      ],
+      "field_sources": {
+        "brand": [
+          "habanos"
+        ],
+        "line": [
+          "habanos"
+        ],
+        "commercial_name": [
+          "habanos"
+        ],
+        "dimensions": [
+          "habanos"
+        ],
+        "manufacturer_country": [
+          "habanos"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Source historique : existence et dimensions documentées, disponibilité actuelle non vérifiée."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-68082d80e7ae",
+      "brand": "Cohiba",
+      "line": "Behike",
+      "commercial_name": "BHK 54",
+      "record_granularity": "model_format",
+      "manufacturer_country": "CU",
+      "brand_country_affiliation": null,
+      "length_mm": 144,
+      "length_original": {
+        "value": 144,
+        "unit": "mm"
+      },
+      "length_mm_method": "source_mm",
+      "ring_gauge": 54,
+      "ring_gauge_original": "54",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "habanos"
+      ],
+      "field_sources": {
+        "brand": [
+          "habanos"
+        ],
+        "line": [
+          "habanos"
+        ],
+        "commercial_name": [
+          "habanos"
+        ],
+        "dimensions": [
+          "habanos"
+        ],
+        "manufacturer_country": [
+          "habanos"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Source historique : existence et dimensions documentées, disponibilité actuelle non vérifiée."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-eb29108ad521",
+      "brand": "Cohiba",
+      "line": "Línea Clásica",
+      "commercial_name": "Lanceros",
+      "record_granularity": "model_format",
+      "manufacturer_country": "CU",
+      "brand_country_affiliation": null,
+      "length_mm": 192,
+      "length_original": {
+        "value": 192,
+        "unit": "mm"
+      },
+      "length_mm_method": "source_mm",
+      "ring_gauge": 38,
+      "ring_gauge_original": "38",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "habanos"
+      ],
+      "field_sources": {
+        "brand": [
+          "habanos"
+        ],
+        "line": [
+          "habanos"
+        ],
+        "commercial_name": [
+          "habanos"
+        ],
+        "dimensions": [
+          "habanos"
+        ],
+        "manufacturer_country": [
+          "habanos"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Source historique : existence et dimensions documentées, disponibilité actuelle non vérifiée."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-c7f9e65a44f2",
+      "brand": "Cohiba",
+      "line": "Línea Clásica",
+      "commercial_name": "Robustos",
+      "record_granularity": "model_format",
+      "manufacturer_country": "CU",
+      "brand_country_affiliation": null,
+      "length_mm": 124,
+      "length_original": {
+        "value": 124,
+        "unit": "mm"
+      },
+      "length_mm_method": "source_mm",
+      "ring_gauge": 50,
+      "ring_gauge_original": "50",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "habanos"
+      ],
+      "field_sources": {
+        "brand": [
+          "habanos"
+        ],
+        "line": [
+          "habanos"
+        ],
+        "commercial_name": [
+          "habanos"
+        ],
+        "dimensions": [
+          "habanos"
+        ],
+        "manufacturer_country": [
+          "habanos"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Source historique : existence et dimensions documentées, disponibilité actuelle non vérifiée."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-89c735d24a0e",
+      "brand": "Cohiba",
+      "line": "Línea 1492",
+      "commercial_name": "Siglo VI",
+      "record_granularity": "model_format",
+      "manufacturer_country": "CU",
+      "brand_country_affiliation": null,
+      "length_mm": 150,
+      "length_original": {
+        "value": 150,
+        "unit": "mm"
+      },
+      "length_mm_method": "source_mm",
+      "ring_gauge": 52,
+      "ring_gauge_original": "52",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "habanos"
+      ],
+      "field_sources": {
+        "brand": [
+          "habanos"
+        ],
+        "line": [
+          "habanos"
+        ],
+        "commercial_name": [
+          "habanos"
+        ],
+        "dimensions": [
+          "habanos"
+        ],
+        "manufacturer_country": [
+          "habanos"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Source historique : existence et dimensions documentées, disponibilité actuelle non vérifiée."
+      ]
+    },
+    {
+      "reference_key": "cc-ref-f73de248b4f2",
+      "brand": "Cohiba",
+      "line": "",
+      "commercial_name": "Pirámides Extra",
+      "record_granularity": "model_format",
+      "manufacturer_country": "CU",
+      "brand_country_affiliation": null,
+      "length_mm": 160,
+      "length_original": {
+        "value": 160,
+        "unit": "mm"
+      },
+      "length_mm_method": "source_mm",
+      "ring_gauge": 54,
+      "ring_gauge_original": "54",
+      "wrapper_options": [],
+      "edition_year": null,
+      "production_year": null,
+      "harvest_year": null,
+      "image_url": null,
+      "source_ids": [
+        "habanos"
+      ],
+      "field_sources": {
+        "brand": [
+          "habanos"
+        ],
+        "line": [
+          "habanos"
+        ],
+        "commercial_name": [
+          "habanos"
+        ],
+        "dimensions": [
+          "habanos"
+        ],
+        "manufacturer_country": [
+          "habanos"
+        ]
+      },
+      "evidence_status": "source_documented",
+      "publication_status": "draft",
+      "notes": [
+        "Source historique : existence et dimensions documentées, disponibilité actuelle non vérifiée."
+      ]
+    }
+  ]
+}

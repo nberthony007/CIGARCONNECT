@@ -78,6 +78,11 @@ model CigarReference {
   defaultImageUrl String
   factoryNotes    String?            // Notes de cape, terroir, méthode
   strength        String             @default("Moyenne à Forte") // Douce, Moyenne, Forte
+  brandCountryAffiliation String?    // Affiliation de marque (ex: HT, CU, DO, NI)
+  manufacturerCountry     String?    // Pays de fabrication avéré
+  line                    String?    // Nom de la gamme
+  stagingReferenceKey     String?    // Clé de staging rapprochée
+  evidenceStatus          String?    // source_documented, etc.
   lots            HumidorLot[]
   variants        ReferenceVariant[]
 }
@@ -524,3 +529,80 @@ model HelpArticle {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 }
+
+// ==========================================
+// ZONE DE PRÉPARATION DU CATALOGUE (STAGING)
+// Cahier des charges — Lot International 01
+// ==========================================
+
+model CatalogImportBatch {
+  id              String                    @id @default(cuid())
+  batchKey        String                    @unique // ex: "catalogue-international-lot-01"
+  title           String
+  schemaVersion   String                    @default("1.0")
+  purpose         String                    @default("catalog_reference_staging_only")
+  status          String                    @default("staged") // staged, in_review, partially_published, archived
+  sourceFiles     String?                   // JSON summary of source files
+  sourcesMetadata String?                   // JSON dictionary of sources
+  notes           String?
+  importedAt      DateTime                  @default(now())
+  updatedAt       DateTime                  @updatedAt
+  references      CatalogStagingReference[]
+}
+
+model CatalogStagingReference {
+  id                         String              @id @default(cuid())
+  batchKey                   String
+  batch                      CatalogImportBatch  @relation(fields: [batchKey], references: [batchKey], onDelete: Cascade)
+  referenceKey               String              @unique // Clé externe unique (ex: "cc-ref-efb9fa4bb59a" ou "cc-existing-...")
+  brand                      String
+  line                       String?             // Gamme (ex: "1964 Anniversary Series", "Hemingway")
+  commercialName             String              // Nom commercial (ex: "Diplomatico", "Short Story")
+  recordGranularity          String              @default("model_format")
+  
+  // Séparation stricte de la géographie & provenance
+  brandCountryAffiliation    String?             // Identité / Affiliation de marque (ex: "HT", "CU", "DO", "NI")
+  manufacturerCountry        String?             // Fabrication vérifiée (null si inconnue ou conflit)
+  tobaccoOrigin              String?             // JSON { wrapper, binder, filler } si documenté
+  
+  // Dimensions avec calibres doubles et méthodes de calcul
+  lengthMm                   Float?              // Longueur exacte en mm (ex: 209.55, 142.875)
+  lengthOriginalValue        Float?
+  lengthOriginalUnit         String?             // "in", "mm"
+  lengthMmMethod             String?             // "inches_x_25.4", "direct_mm"
+  ringGauge                  Int?                // Nullable si double calibre
+  ringGaugeOriginal          String?             // "42/49", "50", "56", etc.
+  
+  // Variantes et options
+  wrapperOptions             String?             // JSON ["Natural", "Maduro"]
+  
+  // Datations qualifiées
+  editionYear                String?
+  productionYear             String?
+  harvestYear                String?
+  
+  // Médias
+  imageUrl                   String?             // Null par défaut (placeholder neutre, aucune aspiration distante)
+  
+  // Traçabilité & Sources
+  sourceIds                  String?             // JSON array d'identifiants sources
+  fieldSources               String?             // JSON mapping { field: [source_id] }
+  evidenceStatus             String              @default("source_documented") // source_documented, source_documented_with_origin_conflict, user_export_unverified
+  publicationStatus          String              @default("draft") // draft, hold, approved, published, archived
+  
+  // Rapprochement avec les pièces existantes (SANS modifier les stocks)
+  isCandidateForReconciliation Boolean           @default(false)
+  reconciledReferenceId      String?             // ID dans CigarReference si existant
+  reconciledLotId            String?             // ID du lot membre associé pour audit
+  reconciliationNotes        String?
+  
+  notes                      String?             // JSON array de notes qualitatives
+  createdAt                  DateTime            @default(now())
+  updatedAt                  DateTime            @updatedAt
+
+  @@index([batchKey])
+  @@index([brand])
+  @@index([evidenceStatus])
+  @@index([publicationStatus])
+}
+
