@@ -398,9 +398,12 @@ export const AddCigarModal: React.FC<AddCigarModalProps> = ({
                       >
                         <div className="flex items-center gap-3">
                           <img
-                            src={cigar.defaultImageUrl}
+                            src={cigar.defaultImageUrl || "/assets/cigar-macro-detail.jpg"}
                             alt={cigar.name}
                             className="w-12 h-12 rounded-lg object-cover border border-[#D9D2C7] shrink-0"
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).src = "/assets/cigar-macro-detail.jpg";
+                            }}
                           />
                           <div>
                             <div className="font-serif font-semibold text-xs sm:text-sm text-[#211D19] group-hover:text-[#6C4935] transition-colors">
